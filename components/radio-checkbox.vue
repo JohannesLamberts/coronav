@@ -12,7 +12,7 @@
 export default {
   name: 'RadioCheckbox',
   props: {
-    label: String,
+    label: { type: String, required: true },
     value: Boolean
   },
   data() {

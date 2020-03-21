@@ -10,6 +10,6 @@
       sich bitte telefonisch an Ihren Hausarzt oder wählen Sie die 116117 - die
       Nummer des ärztlichen Bereitschaftsdienstes.
     </p>
-    <a href="./fragen">OK</a>
+    <a href="/test/fragen">OK</a>
   </div>
 </template>

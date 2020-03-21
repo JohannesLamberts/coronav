@@ -34,7 +34,7 @@
       label="hadBeenInRiskArea"
     />
     Result: {{ result }}
-    <a href="./ergebnis?ok=false">OK</a>
+    <a href="/test/ergebnis?ok=false">OK</a>
   </div>
 </template>
 

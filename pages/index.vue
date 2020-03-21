@@ -4,7 +4,7 @@
       <h1 class="title">
         COVID-19
       </h1>
-      <a href="./test/disclaimer">Zum Test</a>
+      <a href="/test/disclaimer">Zum Test</a>
     </div>
   </div>
 </template>
