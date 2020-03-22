@@ -14,7 +14,7 @@
         </b-progress-bar>
       </b-progress>
       <section :class="$style.question">
-        {{ currentStepObject.name }}
+        <component :is="currentStepObject.component" />
       </section>
       <div :class="$style.buttons">
         <b-button variant="primary" pill @click="nextStep(true)">
@@ -29,6 +29,9 @@
 </template>
 
 <script>
+import symptoms from './steps/symptoms'
+import directContact from './steps/directContact'
+
 export default {
   data() {
     return {
@@ -36,18 +39,39 @@ export default {
       currentStepIndex: 0,
       steps: [
         {
-          name: 'covid',
+          name: 'symptoms',
+          component: symptoms,
           value: null
         },
         {
-          name: 'otherSymptoms',
+          name: 'directContact',
+          component: directContact,
           value: null
         },
         {
-          name: 'risk',
+          name: 'riskArea',
+          value: null
+        },
+        {
+          name: 'ageRisk',
+          value: null
+        },
+        {
+          name: 'patientHistoryRisk',
           value: null
         }
       ]
+    }
+  },
+  computed: {
+    currentStepObject() {
+      return this.steps[this.currentStepIndex]
+    },
+    totalSteps() {
+      return this.steps.length
+    },
+    isLastStep() {
+      return this.currentStepIndex === this.totalSteps - 1
     }
   },
   methods: {
@@ -73,17 +97,6 @@ export default {
         return
       }
       this.currentStepIndex -= 1
-    }
-  },
-  computed: {
-    currentStepObject() {
-      return this.steps[this.currentStepIndex]
-    },
-    totalSteps() {
-      return this.steps.length
-    },
-    isLastStep() {
-      return this.currentStepIndex === this.totalSteps - 1
     }
   }
 }

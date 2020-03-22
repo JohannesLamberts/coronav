@@ -18,6 +18,34 @@ export default {
       'Sie gehören zur Risikogruppe -> Zu Hause, auf Symptome achten.',
     noTestNoSymptomsNoRisk: 'Alles ist gut. Kontakte vermeiden.'
   },
+  test: {
+    steps: {
+      symptoms: {
+        label: 'Haben Sie eines der folgenden Symptome?',
+        list: [
+          'allgemeines Krankheitsgefühl',
+          'laufende Nase',
+          'Fieber',
+          'Husten',
+          'Halsschmerzen',
+          'Atembeschwerden'
+        ]
+      },
+      contact: {
+        label:
+          'Hatten Sie in den letzten 14 Tagen direkten Kontakt zu einer Person, die positiv auf eine Corona-Infektion getestet wurde?',
+        info: 'Direkter Kontakt bedeutet etwa:',
+        infoList: [
+          'Mindestens 14 Min. persönlicher Kontakt zu dieser Person, z.B. in einem Gespräch ODER',
+          'Austausch von Körperflüssigkeiten über Küssen, Anniesen oder Anhusten'
+        ]
+      },
+      riskArea: {
+        label:
+          'Haben Sie sich in den letzten 14 Tagen in einem Risikogebiet oder einem besonders betroffenen Gebiet aufgehalten?'
+      }
+    }
+  },
   components: {
     hotlineSearch: {
       labelText: 'Postleitzahl eingeben',
