@@ -5,7 +5,14 @@
       <p>
         {{ $t('disclaimer') }}
       </p>
-      <b-button variant="primary" pill block size="lg" @click="onConfirm">
+      <b-button
+        variant="primary"
+        pill
+        block
+        size="lg"
+        :class="$style.button"
+        @click="onConfirm"
+      >
         {{ $t('global.ok') }}
       </b-button>
     </div>
@@ -36,3 +43,9 @@ export default {
   }
 }
 </script>
+<style module>
+.button {
+  max-width: 10em;
+  margin: 0 auto;
+}
+</style>
