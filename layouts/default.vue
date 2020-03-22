@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.wrapper">
     <header>
-      <b-navbar variant="info" type="dark">
+      <b-navbar variant="primary" type="dark">
         <b-navbar-brand href="/">
           Covid-19
         </b-navbar-brand>

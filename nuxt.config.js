@@ -25,7 +25,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/custom-bootstrap.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -61,7 +61,9 @@ export default {
     ]
   ],
   bootstrapVue: {
-    icons: true // Install the IconsPlugin (in addition to BootStrapVue plugin
+    icons: true, // Install the IconsPlugin (in addition to BootStrapVue plugin
+    bootstrapCSS: false,
+    bootstrapVueCSS: false
   },
   /*
    ** Build configuration
