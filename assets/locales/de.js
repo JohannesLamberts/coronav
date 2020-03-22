@@ -12,5 +12,11 @@ export default {
     noTestNoSymptomsRisk: 'Alles ist gut. Kontakte vermeiden.',
     noTestNoSymptomsNoRisk:
       'Sie gehören zur Risikogruppe -> Zu Hause, auf Symptome achten.'
+  },
+  components: {
+    hotlineSearch: {
+      labelText: 'Postleitzahl eingeben',
+      buttonText: 'Hotline suchen'
+    }
   }
 }
