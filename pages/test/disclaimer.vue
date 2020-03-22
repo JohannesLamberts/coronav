@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Verdachtsprüfung</h1>
+    <h1>Sollte ich mich testen lassen?</h1>
     <p>
       Dieser Check soll über die Symptome und Erkrankungswahrscheinlichkeit der
       aktuellen Corona Pandemie informieren. Der Check wurde von Ärzten

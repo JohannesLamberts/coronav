@@ -1,10 +1,20 @@
 <template>
-  <b-form-group :label="label">
+  <b-form-group>
+    <slot name="label" slot="label">
+      {{ label }}
+      <b-button variant="link" @click="toggleInfo"
+        ><b-icon icon="info"></b-icon> Info</b-button
+      >
+    </slot>
     <b-form-radio-group
-      :value="radioValue"
+      :checked="radioValue"
       :options="options"
+      :name="name"
       @input="onChange"
     ></b-form-radio-group>
+    <p v-if="showInfo">
+      Information
+    </p>
   </b-form-group>
 </template>
 
@@ -13,10 +23,12 @@ export default {
   name: 'RadioCheckbox',
   props: {
     label: { type: String, required: true },
+    name: { type: String, required: true },
     value: Boolean
   },
   data() {
     return {
+      showInfo: false,
       options: [
         { text: 'Ja', value: 'yes' },
         { text: 'Nein', value: 'no' }
@@ -36,8 +48,10 @@ export default {
   },
   methods: {
     onChange(newValue) {
-      this.value = newValue
-      this.$emit('input', this.value === 'yes')
+      this.$emit('input', newValue === 'yes')
+    },
+    toggleInfo() {
+      this.showInfo = !this.showInfo
     }
   }
 }

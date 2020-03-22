@@ -1,3 +1,5 @@
+import de from './locales/de'
+
 export default {
   mode: 'universal',
   /*
@@ -43,8 +45,24 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    [
+      'nuxt-i18n',
+      {
+        locales: ['de'],
+        defaultLocale: 'de',
+        vueI18n: {
+          fallbackLocale: 'de',
+          messages: {
+            de
+          }
+        }
+      }
+    ]
   ],
+  bootstrapVue: {
+    icons: true // Install the IconsPlugin (in addition to BootStrapVue plugin
+  },
   /*
    ** Build configuration
    */
