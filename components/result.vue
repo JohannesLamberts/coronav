@@ -37,18 +37,26 @@ export default {
       const hasRisk = patientHistoryRisk || ageRisk
 
       if (symptoms) {
-        return 'undefined'
+        if (directContact || riskArea) {
+          return hasRisk
+            ? '1_symptoms_withContact_risk'
+            : '2_symptoms_withContact_noRisk'
+        }
+        return hasRisk
+          ? '3_symtoms_withoutContact_risk'
+          : '4_symtoms_withoutContact_noRisk'
       }
 
       if (directContact) {
         // riskArea does not matter in case of direct contact
-        return hasRisk ? '7_standard' : '8_standard'
+        return hasRisk ? '7_directContact_risk' : '8_directContact_noRisk'
       }
 
       if (riskArea) {
-        return hasRisk ? '6_isolation' : '5_isolation'
+        return hasRisk ? '6_areaContact_risk' : '5_areaContact_noRisk'
       }
-      return hasRisk ? '6_standard' : '5_standard'
+
+      return hasRisk ? '6_noFeatures_risk' : '5_noFeatures_noRisk'
     },
     // TODO: implement path
     showTestPath() {
