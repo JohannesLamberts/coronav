@@ -1,6 +1,6 @@
 <template>
   <b-form-group>
-    <slot name="label" slot="label">
+    <slot slot="label" name="label">
       {{ label }}
       <b-button variant="link" @click="toggleInfo"
         ><b-icon icon="info"></b-icon> Info</b-button
