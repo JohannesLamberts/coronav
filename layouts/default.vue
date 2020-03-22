@@ -3,7 +3,7 @@
     <header>
       <b-navbar variant="primary" type="dark">
         <b-navbar-brand href="/">
-          Covid-19
+          Coronav
         </b-navbar-brand>
       </b-navbar>
     </header>

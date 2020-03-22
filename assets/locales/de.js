@@ -4,13 +4,10 @@ export default {
     no: 'Nein',
     ok: 'Ok'
   },
-  disclaimer: `Dieser Check soll über die Symptome und Erkrankungswahrscheinlichkeit der
-        aktuellen Corona Pandemie informieren. Der Check wurde von Ärzten
-        entwickelt, kann jedoch keinen persönlichen Arztbesuch ersetzen. Bitte
-        richten Sie sich ebenfalls nach Ihren landesspezifischen Richtlinien.
-        Sollte Ihnen der Check eine ärztliche Rücksprache empfehlen, wenden Sie
-        sich bitte telefonisch an Ihren Hausarzt oder wählen Sie die 116117 - die
-        Nummer des ärztlichen Bereitschaftsdienstes.`,
+  disclaimer: `Dieser Check ist derzeit in Entwicklung und soll als 
+        Entscheidungshilfe vor einem Anruf bei der 116117 oder dem Gesundheitsamt dienen.
+        Der Check wurde mit Ärzten entwickelt, kann jedoch keinen persönlichen Arztbesuch ersetzen.
+        Bitte richten Sie sich ebenfalls nach Ihren landesspezifischen Richtlinien.`,
   results: {
     headline: 'Ergebnis',
     noResult: 'Bitte starten Sie den Test von der Frageseite.',
@@ -21,7 +18,7 @@ export default {
     noTestSymptomsRisk:
       'Sie müssen keinen Test machen, aber gehören zur Risikogruppe. -> Zum Arzt wegen Symptomen (normale Erkältung), Selbstisolation.',
     noTestSymptomsNoRisk:
-      'Ihre Symptome sprechen nicht für einen Test, sie gehören nicht zur Risikogruppe -> Zum Arzt, Selbstisolation.',
+      'Ihre Symptome sprechen nicht für einen Test, Sie gehören nicht zur Risikogruppe -> Zum Arzt, Selbstisolation.',
     noTestNoSymptomsRisk:
       'Sie gehören zur Risikogruppe -> Zu Hause, auf Symptome achten.',
     noTestNoSymptomsNoRisk: 'Alles ist gut. Kontakte vermeiden.'
@@ -30,7 +27,7 @@ export default {
     title: 'Fragebogen',
     steps: {
       symptoms: {
-        label: 'Haben Sie eines der folgenden Symptome?',
+        label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
         list: [
           'allgemeines Krankheitsgefühl',
           'laufende Nase',
@@ -43,10 +40,11 @@ export default {
       directContact: {
         label:
           'Hatten Sie in den letzten 14 Tagen direkten Kontakt zu einer Person, die positiv auf eine Corona-Infektion getestet wurde?',
-        info: 'Direkter Kontakt bedeutet etwa:',
+        info: 'Direkten Kontakt hatten Sie, wenn...',
         infoList: [
-          'Mindestens 14 Min. persönlicher Kontakt zu dieser Person, z.B. in einem Gespräch ODER',
-          'Austausch von Körperflüssigkeiten über Küssen, Anniesen oder Anhusten'
+          'Sie mit dieser Person im selben Haushalt leben ODER',
+          'Sie mindestens 15 Minuten persönlichen Kontakt zu dieser Person, zum Beispiel einem Gespräch hatten ODER',
+          'Körperflüssigkeiten auf Sie übertragen werden konnten, z.B. durch Küssen, Anniesen oder Anhusten'
         ]
       },
       riskArea: {
