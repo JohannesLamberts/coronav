@@ -5,7 +5,7 @@
       <p>
         {{ $t('disclaimer') }}
       </p>
-      <b-button variant="primary" pill @click="onConfirm">
+      <b-button variant="primary" pill block size="lg" @click="onConfirm">
         {{ $t('global.ok') }}
       </b-button>
     </div>
