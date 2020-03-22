@@ -69,6 +69,9 @@ html {
   grid-template-rows: 64px auto;
 }
 .content {
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 50em;
   padding: 12px;
 }
 </style>
