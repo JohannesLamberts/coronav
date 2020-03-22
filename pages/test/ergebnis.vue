@@ -1,15 +1,17 @@
 <template>
   <div>
     <h1>{{ $t('results.headline') }}</h1>
-    <div v-if="!hasFilledOut">
-      <b-button variant="link" to="/test/disclaimer">
-        {{ $t('results.noResult') }}
-      </b-button>
-    </div>
-    <div v-else>
-      {{ resultText }}
-      <div v-if="test">
-        <hotline-search />
+    <div v-if="showResult">
+      <div v-if="!hasFilledOut">
+        <b-button variant="link" to="/test/disclaimer">
+          {{ $t('results.noResult') }}
+        </b-button>
+      </div>
+      <div v-else>
+        {{ resultText }}
+        <div v-if="test">
+          <hotline-search />
+        </div>
       </div>
     </div>
   </div>
@@ -19,6 +21,11 @@
 import HotlineSearch from '../../components/hotline-search'
 export default {
   components: { HotlineSearch },
+  data() {
+    return {
+      showResult: false
+    }
+  },
   computed: {
     hasFilledOut() {
       return (
@@ -50,6 +57,10 @@ export default {
       }
       return this.risk ? 'noTestNoSymptomsRisk' : 'noTestNoSymptomsNoRisk'
     }
+  },
+  mounted() {
+    // query is not available in generated pages
+    this.showResult = true
   }
 }
 </script>
