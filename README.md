@@ -1,6 +1,6 @@
-# covid-19
+# coronav
 
-> COVID-19 testing form.
+> Coronavirus testing form.
 
 ## Build Setup
 

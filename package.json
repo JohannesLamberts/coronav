@@ -1,7 +1,7 @@
 {
-  "name": "covid-19",
+  "name": "coronav",
   "version": "1.0.0",
-  "description": "COVID-19 testing form.",
+  "description": "Coronavirus testing form.",
   "author": "Johannes Lamberts",
   "private": true,
   "scripts": {

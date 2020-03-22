@@ -2,11 +2,12 @@
   <div>
     <h1>{{ $t('results.headline') }}</h1>
     <div>
-      {{ response }}
+      {{ responseText }}
       <div v-if="showTestPath">
         <ol>
-          <li>Rufen Sie ihr lokales Gesundheitsamt an</li>
-          <li>Bereiten Sie sich auf die ärztliche Anamnese vor</li>
+          <li v-for="step in $t('results.testCase.steps')" :key="step">
+            {{ step }}
+          </li>
         </ol>
         <hotline-search />
       </div>
@@ -26,7 +27,10 @@ export default {
     }
   },
   computed: {
-    response() {
+    responseText() {
+      return this.$t(`result.cases.${this.responseIdent}`)
+    },
+    responseIdent() {
       const {
         symptoms,
         directContact,

@@ -6,8 +6,7 @@ export default {
   },
   disclaimer: `Dieser Check ist derzeit in Entwicklung und soll als 
         Entscheidungshilfe vor einem Anruf bei der 116117 oder dem Gesundheitsamt dienen.
-        Der Check wurde mit Ärzten entwickelt, kann jedoch keinen persönlichen Arztbesuch ersetzen.
-        Bitte richten Sie sich ebenfalls nach Ihren landesspezifischen Richtlinien.`,
+        Der Check wurde mit Ärzten entwickelt, kann jedoch keinen persönlichen Arztbesuch ersetzen.`,
   results: {
     headline: 'Ergebnis',
     noResult: 'Bitte starten Sie den Test von der Frageseite.',
@@ -21,7 +20,35 @@ export default {
       'Ihre Symptome sprechen nicht für einen Test, Sie gehören nicht zur Risikogruppe -> Zum Arzt, Selbstisolation.',
     noTestNoSymptomsRisk:
       'Sie gehören zur Risikogruppe -> Zu Hause, auf Symptome achten.',
-    noTestNoSymptomsNoRisk: 'Alles ist gut. Kontakte vermeiden.'
+    noTestNoSymptomsNoRisk: 'Alles ist gut. Kontakte vermeiden.',
+    cases: {
+      '1_symptoms_withContact_risk':
+        'Sie haben Kontakt gehabt und weisen Symptome auf. Sie gehören außerdem zur Risikogruppe.',
+      '2_symptoms_withContact_noRisk':
+        'Sie haben Kontakt gehabt und weisen Symptome auf. Sie gehören allerdings nicht zur Risikogruppe.',
+      '3_symtoms_withoutContact_risk':
+        'Sie haben keinen Kontakt gehabt, weisen aber allgemeine Symptome auf. Sie gehören außerdem zur Risikogruppe.',
+      '4_symtoms_withoutContact_noRisk':
+        'Sie haben keinen Kontakt gehabt, weisen aber allgemeine Symptome auf. Sie gehören allerdings nicht zur Risikogruppe.',
+      '7_directContact_risk':
+        'Sie haben keine Symptome, hatten aber direkten Kontakt. Sie gehören zur Risikogruppe.',
+      '8_directContact_noRisk':
+        'Sie haben keine Symptome, hatten aber direkten Kontakt. Sie gehören auch nicht zur Risikogruppe.',
+      '6_areaContact_risk':
+        'Sie haben keine Symptome, waren aber in einem Risikogebiet oder einem besonders betroffenen Gebiet. Sie gehören außerdem zur Risikogruppe.',
+      '5_areaContact_noRisk':
+        'Sie haben keine Symptome, waren aber in einem Risikogebiet oder einem besonders betroffenen Gebiet. Sie gehören allerdings nicht zur Risikogruppe.',
+      '6_noFeatures_risk':
+        'Sie haben keine Symptome, hatten auch keinen Kontakt und waren auch nicht in einem Risikogebiet. Sie gehören außerdem zur Risikogruppe.',
+      '5_noFeatures_noRisk':
+        'Sie haben keine Symptome, hatten auch keinen Kontakt und waren auch nicht in einem Risikogebiet. Sie gehören auch nicht zur Risikogruppe.'
+    },
+    testCase: {
+      steps: [
+        'Rufen Sie ihr lokales Gesundheitsamt an',
+        'Bereiten Sie sich auf die ärztliche Anamnese vor'
+      ]
+    }
   },
   test: {
     title: 'Fragebogen',
@@ -43,7 +70,7 @@ export default {
         info: 'Direkten Kontakt hatten Sie, wenn...',
         infoList: [
           'Sie mit dieser Person im selben Haushalt leben ODER',
-          'Sie mindestens 15 Minuten persönlichen Kontakt zu dieser Person, zum Beispiel einem Gespräch hatten ODER',
+          'Sie mindestens 15 Minuten persönlichen Kontakt zu dieser Person, zum Beispiel in einem Gespräch hatten ODER',
           'Körperflüssigkeiten auf Sie übertragen werden konnten, z.B. durch Küssen, Anniesen oder Anhusten'
         ]
       },
