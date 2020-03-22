@@ -1,6 +1,15 @@
 <template>
-  <div>
-    <nuxt />
+  <div :class="$style.wrapper">
+    <header>
+      <b-navbar variant="info" type="dark">
+        <b-navbar-brand href="/">
+          Covid-19
+        </b-navbar-brand>
+      </b-navbar>
+    </header>
+    <main :class="$style.content">
+      <nuxt />
+    </main>
   </div>
 </template>
 
@@ -51,5 +60,15 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+</style>
+
+<style module>
+.wrapper {
+  display: grid;
+  grid-template-rows: 64px auto;
+}
+.content {
+  padding: 12px;
 }
 </style>
