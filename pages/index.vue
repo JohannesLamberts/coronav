@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
+  <div :class="$style.container">
     <div>
-      <h1 class="title">
+      <h1 :class="$style.title">
         Corona-Virus
       </h1>
       <b-button
-        variant="primary"
+        variant="outline-primary"
         pill
         block
         size="lg"
@@ -30,5 +30,9 @@
 .button {
   max-width: 10em;
   margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 2rem;
 }
 </style>

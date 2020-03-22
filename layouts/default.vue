@@ -129,7 +129,7 @@ body {
     padding: 48px 32px;
   }
   .content {
-    width: auto;
+    width: 60vw;
     grid-row: 2;
     grid-column: 2;
   }

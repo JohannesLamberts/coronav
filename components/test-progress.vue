@@ -1,11 +1,5 @@
 <template>
-  <b-progress
-    :max="max"
-    variant="success"
-    show-progress
-    show-value
-    height="1rem"
-  >
+  <b-progress :max="max" variant="info" show-progress show-value height="1rem">
     <b-progress-bar :value="current">
       <strong>{{ current }} / {{ max }}</strong>
     </b-progress-bar>
