@@ -1,4 +1,4 @@
-import de from './locales/de'
+import de from './assets/locales/de'
 
 export default {
   mode: 'universal',
