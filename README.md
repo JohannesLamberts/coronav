@@ -63,12 +63,16 @@ Sie können mit Ihrem Gütesiegel helfen, dass die Menschen unserer Webseite ver
 
 ## Team
 
+- Fabian Nokodian (Assistenzarzt in der Mund-Kiefer-Gesichtschirugie aus Rostock, Gründer [Medventi](https://www.medventi.com/) und Initiator von [https://www.onlinecoronacheck.com/index.html](https://www.onlinecoronacheck.com/index.html))
 - Johannes Lamberts (Software Developer aus Hamburg)
 Twitter: [https://twitter.com/jlbrts](https://twitter.com/jlbrts)
 Web: [https://j-lamberts.de/#/](https://j-lamberts.de/#/)
 - Markus Sierung (UI Engineer aus Hamburg)
 Twitter: [https://twitter.com/HerrBertling](https://twitter.com/HerrBertling)
 Web: [https://herrsiering.de/](https://herrsiering.de/)
+- Sascha Stoltenow (Partner bei SCRIPT aus Wiesbaden)
+Web: [https://script-com.de/team/sascha-stoltenow/](https://script-com.de/team/sascha-stoltenow/)
+- Steffi Blumentritt (Leiterin Unternehmertum Wissensfabrik aus Stuttgart)
 - Steffi Stoppel (Software Developer und Machine Learning Engineer [WIP] aus Hamburg)
 Twitter: [https://twitter.com/Qbrid_](https://twitter.com/Qbrid_)
-- Tina Hassberg (Ärztin aus Tübingen)
+- Tina Hassberg (Ärztin bei KME Kern Medical Engineering aus Tübingen)
