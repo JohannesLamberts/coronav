@@ -85,7 +85,7 @@ body {
 
 .logo {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 0;
 }
 .logoLink {
@@ -104,5 +104,34 @@ body {
   max-width: 50em;
   padding: 20px;
   padding-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 200px minmax(540px, 50em);
+    padding: 12px;
+  }
+  .header {
+    background-image: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 16px 0;
+  }
+  .logo {
+    background-image: url('~assets/shapes/header-large.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+    padding: 48px 32px;
+  }
+  .content {
+    width: auto;
+    grid-row: 2;
+    grid-column: 2;
+  }
 }
 </style>

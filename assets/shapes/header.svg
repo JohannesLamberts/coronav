@@ -1,9 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="314px" height="64px" viewBox="0 0 314 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-    <title>Polygon</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M314,0 L314,27.2402504 C262.666667,23.8045431 218,29.9397347 180,45.645825 C129.074839,66.694119 69.0748394,69.6390109 0,54.4805008 L0,0 L314,0 Z" id="Polygon" fill="#3525E6"></path>
-    </g>
+<svg width="640px" height="64px" viewBox="0 0 640 64" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <path d="M640,0 L640,27.2402504 C535.37155,23.8045431 444.33121,29.9397347 366.878981,45.645825 C263.082475,66.694119 140.789482,69.6390109 0,54.4805008 L0,0 L640,0 Z" fill="#3525E6"></path>
+  </g>
 </svg>
