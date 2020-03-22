@@ -1,9 +1,16 @@
 <template>
   <div>
     <h1>{{ $t('results.headline') }}</h1>
-    {{ resultText }}
-    <div v-if="test">
-      <hotline-search />
+    <div v-if="!hasFilledOut">
+      <b-button variant="link" to="/test/disclaimer">
+        {{ $t('results.noResult') }}
+      </b-button>
+    </div>
+    <div v-else>
+      {{ resultText }}
+      <div v-if="test">
+        <hotline-search />
+      </div>
     </div>
   </div>
 </template>
@@ -13,6 +20,12 @@ import HotlineSearch from '../../components/hotline-search'
 export default {
   components: { HotlineSearch },
   computed: {
+    hasFilledOut() {
+      return (
+        ['covid', 'general', 'none'].includes(this.symptoms) &&
+        ['yes', 'no'].includes(this.$route.query.risk)
+      )
+    },
     symptoms() {
       return this.$route.query.symptoms
     },

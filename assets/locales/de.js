@@ -1,6 +1,7 @@
 export default {
   results: {
-    headline: 'Ihr Ergebnis',
+    headline: 'Ergebnis',
+    noResult: 'Bitte starten Sie den Test von der Frageseite.',
     testRisk:
       'Sie sollten einen Test machen und gehören zur Risikogruppe. -> PLZ, Teststellen, Hotlines.',
     testNoRisk:
@@ -9,8 +10,8 @@ export default {
       'Sie müssen keinen Test machen, aber gehören zur Risikogruppe. -> Zum Arzt wegen Symptomen (normale Erkältung), Selbstisolation.',
     noTestSymptomsNoRisk:
       'Ihre Symptome sprechen nicht für einen Test, sie gehören nicht zur Risikogruppe -> Zum Arzt, Selbstisolation.',
-    noTestNoSymptomsRisk: 'Alles ist gut. Kontakte vermeiden.',
-    noTestNoSymptomsNoRisk:
-      'Sie gehören zur Risikogruppe -> Zu Hause, auf Symptome achten.'
+    noTestNoSymptomsRisk:
+      'Sie gehören zur Risikogruppe -> Zu Hause, auf Symptome achten.',
+    noTestNoSymptomsNoRisk: 'Alles ist gut. Kontakte vermeiden.'
   }
 }
