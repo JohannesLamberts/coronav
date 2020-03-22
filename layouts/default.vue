@@ -101,7 +101,7 @@ body {
 .content {
   margin: 0 auto;
   width: 100vw;
-  max-width: 50em;
+  max-width: 40em;
   padding: 20px;
   padding-bottom: 48px;
 }
