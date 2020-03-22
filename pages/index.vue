@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <h1 class="title">
-        Coronavirus
+        Corona-Virus
       </h1>
       <a href="/fragebogen">Sollte ich mich testen lassen?</a>
     </div>
