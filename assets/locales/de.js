@@ -55,8 +55,16 @@ export default {
         label: 'Sind Sie 50 Jahre oder älter?'
       },
       patientHistoryRisk: {
-        label: 'Haben Sie eine oder mehrere der folgenden Vorerkrankungen?',
-        list: ['Not yet defined', 'Not yet defined too']
+        label: 'Haben Sie eine oder mehrere der folgenden Diagnosen?',
+        list: [
+          'Herzerkrankung',
+          'Bluthochdruck',
+          'Diabetes',
+          'Fettleibigkeit',
+          'Lungenerkrankung',
+          'Lebererkrankung',
+          'Nierenerkrankung'
+        ]
       }
     }
   },
