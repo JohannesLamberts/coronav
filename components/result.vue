@@ -20,7 +20,7 @@
           v-for="page of $t('results.additionalRessources.pages')"
           :key="page.url"
         >
-          <a :href="page.url" rel="noreferrer noopener">
+          <a :href="page.url" target="_blank" rel="noreferrer noopener">
             {{ page.label }}
           </a>
         </li>
