@@ -4,17 +4,31 @@
       <h1 class="title">
         Corona-Virus
       </h1>
-      <a href="/fragebogen">Sollte ich mich testen lassen?</a>
+      <b-button
+        variant="primary"
+        pill
+        block
+        size="lg"
+        :class="$style.button"
+        to="/fragebogen"
+      >
+        Zum Test
+      </b-button>
     </div>
   </div>
 </template>
 
-<style>
+<style module>
 .container {
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.button {
+  max-width: 10em;
+  margin: 0 auto;
 }
 </style>
