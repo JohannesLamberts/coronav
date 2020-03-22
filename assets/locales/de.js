@@ -1,4 +1,8 @@
 export default {
+  global: {
+    yes: 'Ja',
+    no: 'Nein'
+  },
   results: {
     headline: 'Ergebnis',
     noResult: 'Bitte starten Sie den Test von der Frageseite.',
