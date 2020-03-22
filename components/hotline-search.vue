@@ -1,6 +1,7 @@
 <template>
-  <b-form-group :label="$t('components.hotlineSearch.labelText')">
+  <b-form-group>
     <b-form-input
+      :placeholder="$t('components.hotlineSearch.labelText')"
       v-model="zipCode"
       type="text"
       @keypress.enter="goToRkiPLZTool"
