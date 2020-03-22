@@ -1,8 +1,16 @@
 export default {
   global: {
     yes: 'Ja',
-    no: 'Nein'
+    no: 'Nein',
+    ok: 'Ok'
   },
+  disclaimer: `Dieser Check soll über die Symptome und Erkrankungswahrscheinlichkeit der
+        aktuellen Corona Pandemie informieren. Der Check wurde von Ärzten
+        entwickelt, kann jedoch keinen persönlichen Arztbesuch ersetzen. Bitte
+        richten Sie sich ebenfalls nach Ihren landesspezifischen Richtlinien.
+        Sollte Ihnen der Check eine ärztliche Rücksprache empfehlen, wenden Sie
+        sich bitte telefonisch an Ihren Hausarzt oder wählen Sie die 116117 - die
+        Nummer des ärztlichen Bereitschaftsdienstes.`,
   results: {
     headline: 'Ergebnis',
     noResult: 'Bitte starten Sie den Test von der Frageseite.',
@@ -19,6 +27,7 @@ export default {
     noTestNoSymptomsNoRisk: 'Alles ist gut. Kontakte vermeiden.'
   },
   test: {
+    title: 'Fragebogen',
     steps: {
       symptoms: {
         label: 'Haben Sie eines der folgenden Symptome?',
@@ -31,7 +40,7 @@ export default {
           'Atembeschwerden'
         ]
       },
-      contact: {
+      directContact: {
         label:
           'Hatten Sie in den letzten 14 Tagen direkten Kontakt zu einer Person, die positiv auf eine Corona-Infektion getestet wurde?',
         info: 'Direkter Kontakt bedeutet etwa:',
@@ -43,13 +52,20 @@ export default {
       riskArea: {
         label:
           'Haben Sie sich in den letzten 14 Tagen in einem Risikogebiet oder einem besonders betroffenen Gebiet aufgehalten?'
+      },
+      ageRisk: {
+        label: 'Sind Sie 50 Jahre oder älter?'
+      },
+      patientHistoryRisk: {
+        label: 'Haben Sie eine oder mehrere der folgenden Vorerkrankungen?',
+        list: ['Not yet defined', 'Not yet defined too']
       }
     }
   },
   components: {
     hotlineSearch: {
       labelText: 'Postleitzahl eingeben',
-      buttonText: 'Hotline suchen'
+      buttonText: 'Gesundheitsamt suchen'
     },
     riskAreas: {
       title: 'Risikogebiete',

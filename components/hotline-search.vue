@@ -6,7 +6,7 @@
       type="text"
       @keypress.enter="goToRkiPLZTool"
     />
-    <b-button type="button" @click="goToRkiPLZTool">{{
+    <b-button type="button" variant="primary" @click="goToRkiPLZTool">{{
       $t('components.hotlineSearch.buttonText')
     }}</b-button>
   </b-form-group>

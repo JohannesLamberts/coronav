@@ -4,7 +4,7 @@
       <h1 class="title">
         COVID-19
       </h1>
-      <a href="/test/disclaimer">Sollte ich mich testen lassen?</a>
+      <a href="/fragebogen">Sollte ich mich testen lassen?</a>
     </div>
   </div>
 </template>
