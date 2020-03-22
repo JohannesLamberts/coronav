@@ -1,0 +1,21 @@
+$gray-base: #102a43;
+$gray-darker: #243b53;
+$gray-dark: #334e68;
+$gray: #486581;
+$gray-light: #627d98;
+$gray-lighter: #d9e2ec;
+
+$theme-colors: (
+  'primary': #3525e6,
+  'danger': #cf1124,
+  'success': #199473,
+  'info': #2bb0ed,
+  'warning': #f0b429
+);
+
+$font-family-sans-serif: Avenir, Roboto, 'Helvetica Neue', Helvetica, Arial,
+  sans-serif;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif !default;
+
+@import 'bootstrap/scss/bootstrap.scss';
+@import 'bootstrap-vue/src/index.scss';
