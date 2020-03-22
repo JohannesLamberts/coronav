@@ -9,39 +9,77 @@ export default {
         Der Check wurde mit Ärzten entwickelt, kann jedoch keinen persönlichen Arztbesuch ersetzen.`,
   results: {
     headline: 'Ergebnis',
-    noResult: 'Bitte starten Sie den Test von der Frageseite.',
-    testRisk:
-      'Sie sollten einen Test machen und gehören zur Risikogruppe. -> PLZ, Teststellen, Hotlines.',
-    testNoRisk:
-      'Sie sollten einen Test machen, aber gehören nicht zur Risikogruppe. -> PLZ, Teststellen, Hotlines.',
-    noTestSymptomsRisk:
-      'Sie müssen keinen Test machen, aber gehören zur Risikogruppe. -> Zum Arzt wegen Symptomen (normale Erkältung), Selbstisolation.',
-    noTestSymptomsNoRisk:
-      'Ihre Symptome sprechen nicht für einen Test, Sie gehören nicht zur Risikogruppe -> Zum Arzt, Selbstisolation.',
-    noTestNoSymptomsRisk:
-      'Sie gehören zur Risikogruppe -> Zu Hause, auf Symptome achten.',
-    noTestNoSymptomsNoRisk: 'Alles ist gut. Kontakte vermeiden.',
+    additionalRessources: {
+      label: 'Mehr Informationen finden Sie auf folgenden Seiten:',
+      pages: [
+        {
+          label: 'Infektionsschutz.de',
+          url: 'https://www.infektionsschutz.de/'
+        },
+        {
+          label: 'RKI - COVID-19',
+          url:
+            'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/nCoV.html'
+        }
+      ]
+    },
     cases: {
-      '1_symptoms_withContact_risk':
-        'Sie haben Kontakt gehabt und weisen Symptome auf. Sie gehören außerdem zur Risikogruppe.',
-      '2_symptoms_withContact_noRisk':
-        'Sie haben Kontakt gehabt und weisen Symptome auf. Sie gehören allerdings nicht zur Risikogruppe.',
-      '3_symtoms_withoutContact_risk':
-        'Sie haben keinen Kontakt gehabt, weisen aber allgemeine Symptome auf. Sie gehören außerdem zur Risikogruppe.',
-      '4_symtoms_withoutContact_noRisk':
-        'Sie haben keinen Kontakt gehabt, weisen aber allgemeine Symptome auf. Sie gehören allerdings nicht zur Risikogruppe.',
-      '7_directContact_risk':
-        'Sie haben keine Symptome, hatten aber direkten Kontakt. Sie gehören zur Risikogruppe.',
-      '8_directContact_noRisk':
-        'Sie haben keine Symptome, hatten aber direkten Kontakt. Sie gehören auch nicht zur Risikogruppe.',
-      '6_areaContact_risk':
-        'Sie haben keine Symptome, waren aber in einem Risikogebiet oder einem besonders betroffenen Gebiet. Sie gehören außerdem zur Risikogruppe.',
-      '5_areaContact_noRisk':
-        'Sie haben keine Symptome, waren aber in einem Risikogebiet oder einem besonders betroffenen Gebiet. Sie gehören allerdings nicht zur Risikogruppe.',
-      '6_noFeatures_risk':
-        'Sie haben keine Symptome, hatten auch keinen Kontakt und waren auch nicht in einem Risikogebiet. Sie gehören außerdem zur Risikogruppe.',
-      '5_noFeatures_noRisk':
-        'Sie haben keine Symptome, hatten auch keinen Kontakt und waren auch nicht in einem Risikogebiet. Sie gehören auch nicht zur Risikogruppe.'
+      '1_symptoms_withContact_risk': {
+        label: 'Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt!',
+        info: 'Sie können unten nach Ihrem lokalen Gesundheitsamt suchen.',
+        items: [
+          'bei Ihnen besteht erhöhter Verdacht auf eine Corona-Infektion',
+          'Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf',
+          'beachten Sie Husten und Niesregeln',
+          'beachten Sie die Händehygiene',
+          'halten Sie 2m Abstand zu anderen Personen'
+        ]
+      },
+      '2_symptoms_withContact_noRisk': {
+        label: 'Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt!',
+        info: 'Sie können unten nach Ihrem lokalen Gesundheitsamt suchen.',
+        items: [
+          'bei Ihnen besteht erhöhter Verdacht auf eine Corona-Infektion',
+          'beachten Sie Husten und Niesregeln',
+          'beachten Sie die Händehygiene',
+          'halten Sie 2m Abstand zu anderen Personen'
+        ]
+      },
+      '3_symtoms_withoutContact_risk': {
+        label:
+          'Bitte bleiben Sie zuhause. Sie müssen sich vorerst nicht beim Gesundheitsamt melden.',
+        items: [
+          'Derzeit besteht bei Ihnen kein erhöhter Verdacht auf eine Corona-Infektion.'
+        ]
+      },
+      '4_symtoms_withoutContact_noRisk': {
+        label: '',
+        items: []
+      },
+      '7_directContact_risk': {
+        label: '',
+        items: []
+      },
+      '8_directContact_noRisk': {
+        label: '',
+        items: []
+      },
+      '6_areaContact_risk': {
+        label: '',
+        items: []
+      },
+      '5_areaContact_noRisk': {
+        label: '',
+        items: []
+      },
+      '6_noFeatures_risk': {
+        label: '',
+        items: []
+      },
+      '5_noFeatures_noRisk': {
+        label: '',
+        items: []
+      }
     },
     testCase: {
       steps: [
@@ -54,6 +92,7 @@ export default {
     title: 'Fragebogen',
     steps: {
       symptoms: {
+        title: 'Symptome',
         label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
         list: [
           'allgemeines Krankheitsgefühl',
@@ -65,6 +104,7 @@ export default {
         ]
       },
       directContact: {
+        title: 'Kontakte',
         label:
           'Hatten Sie in den letzten 14 Tagen direkten Kontakt zu einer Person, die positiv auf eine Corona-Infektion getestet wurde?',
         info: 'Direkten Kontakt hatten Sie, wenn...',
@@ -75,13 +115,16 @@ export default {
         ]
       },
       riskArea: {
+        title: 'Risikogebiete',
         label:
           'Haben Sie sich in den letzten 14 Tagen in einem Risikogebiet oder einem besonders betroffenen Gebiet aufgehalten?'
       },
       ageRisk: {
+        title: 'Alter',
         label: 'Sind Sie 50 Jahre oder älter?'
       },
       patientHistoryRisk: {
+        title: 'Vorerkrankungen',
         label: 'Haben Sie eine oder mehrere der folgenden Diagnosen?',
         list: [
           'Herzerkrankung',

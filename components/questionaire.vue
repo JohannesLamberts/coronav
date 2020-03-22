@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ $t('test.title') }}</h1>
+    <h1>{{ $t(`test.steps.${currentStepObject.name}.title`) }}</h1>
     <div :class="$style.wrapper">
       <test-progress :max="totalSteps" :current="currentStepIndex" />
       <section :class="$style.question">

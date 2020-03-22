@@ -49,6 +49,7 @@ export default {
     [
       'nuxt-i18n',
       {
+        silentTranslationWarn: true,
         locales: ['de'],
         defaultLocale: 'de',
         vueI18n: {

@@ -2,15 +2,29 @@
   <div>
     <h1>{{ $t('results.headline') }}</h1>
     <div>
-      {{ responseText }}
-      <div v-if="showTestPath">
-        <ol>
-          <li v-for="step in $t('results.testCase.steps')" :key="step">
-            {{ step }}
-          </li>
-        </ol>
+      <strong>{{ responseText.label }}</strong>
+      <p v-if="responseText.info">{{ responseText.info }}</p>
+      <ul>
+        <li v-for="text of responseText.items" :key="text">
+          {{ text }}
+        </li>
+      </ul>
+      <div v-if="showHotlineSearch">
         <hotline-search />
       </div>
+      <p>
+        {{ $t('results.additionalRessources.label') }}
+      </p>
+      <ul>
+        <li
+          v-for="page of $t('results.additionalRessources.pages')"
+          :key="page.url"
+        >
+          <a :href="page.url" rel="noreferrer noopener">
+            {{ page.label }}
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -28,7 +42,7 @@ export default {
   },
   computed: {
     responseText() {
-      return this.$t(`result.cases.${this.responseIdent}`)
+      return this.$t(`results.cases.${this.responseIdent}`)
     },
     responseIdent() {
       const {
@@ -62,9 +76,8 @@ export default {
 
       return hasRisk ? '6_noFeatures_risk' : '5_noFeatures_noRisk'
     },
-    // TODO: implement path
-    showTestPath() {
-      return true
+    showHotlineSearch() {
+      return ['1_symptoms_withContact_risk'].includes(this.responseIdent)
     }
   }
 }
