@@ -1,3 +1,9 @@
+const generalSuggestions = [
+  'beachten Sie Husten und Niesregeln.',
+  'beachten Sie die Händehygiene.',
+  'halten Sie 2m Abstand zu anderen Personen.'
+]
+
 export default {
   global: {
     yes: 'Ja',
@@ -28,33 +34,47 @@ export default {
         label: 'Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt!',
         info: 'Sie können unten nach Ihrem lokalen Gesundheitsamt suchen.',
         items: [
-          'bei Ihnen besteht erhöhter Verdacht auf eine Corona-Infektion',
-          'Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf',
-          'beachten Sie Husten und Niesregeln',
-          'beachten Sie die Händehygiene',
-          'halten Sie 2m Abstand zu anderen Personen'
+          'bei Ihnen besteht erhöhter Verdacht auf eine Corona-Infektion.',
+          'Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
+          ...generalSuggestions
         ]
       },
       '2_symptoms_withContact_noRisk': {
         label: 'Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt!',
         info: 'Sie können unten nach Ihrem lokalen Gesundheitsamt suchen.',
         items: [
-          'bei Ihnen besteht erhöhter Verdacht auf eine Corona-Infektion',
-          'beachten Sie Husten und Niesregeln',
-          'beachten Sie die Händehygiene',
-          'halten Sie 2m Abstand zu anderen Personen'
+          'bei Ihnen besteht erhöhter Verdacht auf eine Corona-Infektion.',
+          ...generalSuggestions
         ]
       },
       '3_symtoms_withoutContact_risk': {
         label:
           'Bitte bleiben Sie zuhause. Sie müssen sich vorerst nicht beim Gesundheitsamt melden.',
         items: [
-          'Derzeit besteht bei Ihnen kein erhöhter Verdacht auf eine Corona-Infektion.'
+          'Derzeit besteht bei Ihnen kein erhöhter Verdacht auf eine Corona-Infektion.',
+          'Sie haben aufgrund von Alter oder Vorerkrankungen bei einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
+          'Sie sollten aufgrund Ihrer Symptome vorsorglich telefonisch einen Arzt kontaktieren.',
+          'Verlassen Sie Ihre Wohnung nur, wenn unbedingt notwendig und tragen Sie außer Haus einen Mundschutz.',
+          ...generalSuggestions
         ]
       },
       '4_symtoms_withoutContact_noRisk': {
-        label: '',
-        items: []
+        label:
+          'Bitte bleiben Sie zuhause. Sie müssen sich vorerst nicht beim Gesundheitsamt melden.',
+        items: [
+          'Derzeit besteht bei Ihnen kein erhöhter Verdacht auf eine Corona-Infektion.',
+          'kontaktieren Sie telefonisch Ihren Hausarzt, wenn sich Ihre Symptome verschlechtern.',
+          'Verlassen Sie Ihre Wohnung nur, wenn unbedingt notwendig und tragen Sie außer Haus einen Mundschutz.',
+          ...generalSuggestions
+        ]
+      },
+      '5_noFeatures_noRisk': {
+        label:
+          'Bitte bleiben Sie zuhause. Sie müssen sich vorerst nicht bei Gesundheitsamt melden.',
+        items: [
+          'Derzeit besteht bei Ihnen kein erhöhter Verdacht auf eine Corona-Infektion.',
+          ...generalSuggestions
+        ]
       },
       '7_directContact_risk': {
         label: '',
@@ -73,10 +93,6 @@ export default {
         items: []
       },
       '6_noFeatures_risk': {
-        label: '',
-        items: []
-      },
-      '5_noFeatures_noRisk': {
         label: '',
         items: []
       }
