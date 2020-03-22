@@ -1,17 +1,29 @@
 <template>
   <div>
     <h1>Fragen</h1>
-    <div>
-      {{ currentStepObject.name }}
-      <b-button-group>
-        <b-button @click="nextStep(true)">Ja</b-button>
-        <b-button @click="nextStep(false)">Nein</b-button>
-      </b-button-group>
-      <b-progress :max="totalSteps" show-progress show-value height="2rem">
+    <div :class="$style.wrapper">
+      <b-progress
+        :max="totalSteps"
+        variant="success"
+        show-progress
+        show-value
+        height="1rem"
+      >
         <b-progress-bar :value="currentStepIndex">
           <strong>{{ currentStepIndex }} / {{ totalSteps }}</strong>
         </b-progress-bar>
       </b-progress>
+      <section :class="$style.question">
+        {{ currentStepObject.name }}
+      </section>
+      <div :class="$style.buttons">
+        <b-button variant="primary" pill @click="nextStep(true)">
+          {{ $t('global.yes') }}
+        </b-button>
+        <b-button variant="secondary" pill @click="nextStep(false)">
+          {{ $t('global.no') }}
+        </b-button>
+      </div>
     </div>
   </div>
 </template>
@@ -76,3 +88,24 @@ export default {
   }
 }
 </script>
+
+<style module>
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr 64px 16px;
+  grid-gap: 12px;
+  padding: 12px;
+  height: 100%;
+}
+.question {
+  width: 100%;
+  min-height: 50vw;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+  height: 64px;
+}
+</style>
