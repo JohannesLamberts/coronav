@@ -67,7 +67,7 @@ Sie können mit Ihrem Gütesiegel helfen, dass die Menschen unserer Webseite ver
 - Johannes Lamberts (Software Developer aus Hamburg)
 Twitter: [https://twitter.com/jlbrts](https://twitter.com/jlbrts)
 Web: [https://j-lamberts.de/#/](https://j-lamberts.de/#/)
-- Markus Sierung (UI Engineer aus Hamburg)
+- Markus Siering (UI Engineer aus Hamburg)
 Twitter: [https://twitter.com/HerrBertling](https://twitter.com/HerrBertling)
 Web: [https://herrsiering.de/](https://herrsiering.de/)
 - Sascha Stoltenow (Partner bei SCRIPT aus Wiesbaden)
