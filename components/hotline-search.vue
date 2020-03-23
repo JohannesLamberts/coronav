@@ -25,9 +25,7 @@ export default {
   name: 'HotlineSearch',
   data() {
     return {
-      labelText: 'Postleitzahl eingeben',
-      buttonText: 'Hotline suchen',
-      zipCode: null
+      zipCode: ''
     }
   },
   methods: {
