@@ -1,22 +1,18 @@
 <template>
-  <ul>
-    <li>
-      <strong>{{ $t('components.riskAreas.title') }}</strong>
-      <ul>
-        <li v-for="(country, index) of riskAreasCountries" :key="index">
-          <strong>{{ country.name }}:</strong> {{ country.riskArea }}
-        </li>
-      </ul>
-    </li>
-    <li>
-      <strong>{{ $t('components.riskAreas.germany.title') }}</strong>
-      <ul>
-        <li v-for="(area, index) of riskAreasGermany" :key="index">
-          {{ area.name }}
-        </li>
-      </ul>
-    </li>
-  </ul>
+  <div>
+    <h2 class="h6">{{ $t('components.riskAreas.title') }}</h2>
+    <ul>
+      <li v-for="(country, index) of riskAreasCountries" :key="index">
+        <strong>{{ country.name }}:</strong> {{ country.riskArea }}
+      </li>
+    </ul>
+    <h2 class="h6">{{ $t('components.riskAreas.germany.title') }}</h2>
+    <ul>
+      <li v-for="(area, index) of riskAreasGermany" :key="index">
+        {{ area.name }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>

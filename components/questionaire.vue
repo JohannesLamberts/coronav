@@ -4,7 +4,9 @@
     <div :class="$style.wrapper">
       <test-progress :max="totalSteps" :current="currentStepIndex" />
       <section :class="$style.question">
-        <p>{{ $t(`test.steps.${currentStepObject.name}.label`) }}</p>
+        <h2 class="h6 mb-3">
+          {{ $t(`test.steps.${currentStepObject.name}.label`) }}
+        </h2>
         <component
           :is="currentStepObject.component"
           v-if="currentStepObject.component"
@@ -107,8 +109,8 @@ export default {
 <style module>
 .wrapper {
   display: grid;
-  grid-template-rows: 1fr auto 16px;
-  grid-gap: 12px;
+  grid-template-rows: 1fr auto auto;
+  grid-gap: 1.5rem;
   padding: 12px;
   height: 100%;
 }

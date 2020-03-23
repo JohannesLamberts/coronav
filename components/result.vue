@@ -2,8 +2,10 @@
   <div>
     <h1>{{ $t('results.headline') }}</h1>
     <div>
-      <strong>{{ responseText.label }}</strong>
-      <p v-if="responseText.info">{{ responseText.info }}</p>
+      <b-alert :show="!!responseText.label && !!responseText.info" class="my-4">
+        <strong>{{ responseText.label }}</strong>
+        <p v-if="responseText.info" class="mb-0">{{ responseText.info }}</p>
+      </b-alert>
       <ul>
         <li v-for="text of responseText.items" :key="text">
           {{ text }}
@@ -12,9 +14,9 @@
       <div v-if="showHotlineSearch">
         <hotline-search />
       </div>
-      <p>
+      <h4 class="h5">
         {{ $t('results.additionalRessources.label') }}
-      </p>
+      </h4>
       <ul>
         <li
           v-for="page of $t('results.additionalRessources.pages')"

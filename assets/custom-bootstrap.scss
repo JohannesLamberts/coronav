@@ -1,22 +1,46 @@
-$gray-base: #102a43;
-$gray-darker: #243b53;
-$gray-dark: #334e68;
-$gray: #486581;
-$gray-light: #627d98;
-$gray-lighter: #d9e2ec;
+$white: #fff !default;
+$gray-100: #f0f4f8 !default;
+$gray-200: #d9e2ec !default;
+$gray-300: #bcccdc !default;
+$gray-400: #9fb3c8 !default;
+$gray-500: #829ab1 !default;
+$gray-600: #627d98 !default;
+$gray-700: #486581 !default;
+$gray-800: #334e68 !default;
+$gray-900: #243b53 !default;
+$black: #102a43 !default;
+
+$blue: #0f609b !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e66a6a !default;
+$red: #ba2525 !default;
+$orange: #e9b949 !default;
+$yellow: #f7d070 !default;
+$green: #079a82 !default;
+$teal: #2dcca7 !default;
+$cyan: #62b0e8 !default;
 
 $theme-colors: (
-  'primary': #3525e6,
+  'primary': #0f609b,
   'secondary': #829ab1,
-  'danger': #cf1124,
-  'success': #199473,
-  'info': #2bb0ed,
-  'warning': #f0b429
+  'danger': #ba2525,
+  'success': #17b897,
+  'info': #4098d7,
+  'warning': #e9b949
 );
 
-$font-family-sans-serif: Avenir, Roboto, 'Helvetica Neue', Helvetica, Arial,
-  sans-serif;
-$font-family-serif: Georgia, 'Times New Roman', Times, serif !default;
+$body-color: $gray-800;
+
+$link-color: #17b897;
+
+$font-family-sans-serif: 'Lato', Avenir, Roboto, 'Helvetica Neue', Helvetica,
+  Arial, sans-serif;
+$font-family-serif: 'Merriweather', Georgia, 'Times New Roman', Times, serif !default;
+
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 900;
+$headings-color: $gray-700;
 
 @import 'bootstrap/scss/bootstrap.scss';
 @import 'bootstrap-vue/src/index.scss';
