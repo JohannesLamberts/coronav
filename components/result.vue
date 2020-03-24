@@ -2,14 +2,16 @@
   <div>
     <h1>{{ $t('results.headline') }}</h1>
     <div>
-      <b-alert :show="!!responseText.label && !!responseText.info" class="my-4">
-        <strong>{{ responseText.label }}</strong>
-        <p v-if="responseText.info" class="mb-0">{{ responseText.info }}</p>
+      <b-alert show class="my-4">
+        <strong v-html="responseText.label" />
+        <p v-if="showHotlineSearch">
+          <i>{{ $t('results.searchInfo') }}</i>
+        </p>
+        <p v-html="responseText.result" />
       </b-alert>
+      <p>{{ $t('results.todosLabel') }}</p>
       <ul>
-        <li v-for="text of responseText.items" :key="text">
-          {{ text }}
-        </li>
+        <li v-for="text of responseText.todos" :key="text">{{ text }}</li>
       </ul>
       <div v-if="showHotlineSearch">
         <hotline-search />
@@ -72,14 +74,15 @@ export default {
         return hasRisk ? '7_directContact_risk' : '8_directContact_noRisk'
       }
 
-      if (riskArea) {
-        return hasRisk ? '6_areaContact_risk' : '5_areaContact_noRisk'
-      }
-
       return hasRisk ? '6_noFeatures_risk' : '5_noFeatures_noRisk'
     },
     showHotlineSearch() {
-      return ['1_symptoms_withContact_risk'].includes(this.responseIdent)
+      return [
+        '1_symptoms_withContact_risk',
+        '2_symptoms_withContact_noRisk',
+        '7_directContact_risk',
+        '8_directContact_noRisk'
+      ].includes(this.responseIdent)
     }
   }
 }

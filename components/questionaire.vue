@@ -13,7 +13,7 @@
         />
       </section>
       <div :class="$style.buttons">
-        <b-button variant="primary" pill size="lg" @click="nextStep(true)">
+        <b-button variant="secondary" pill size="lg" @click="nextStep(true)">
           {{ $t('global.yes') }}
         </b-button>
         <b-button variant="secondary" pill size="lg" @click="nextStep(false)">

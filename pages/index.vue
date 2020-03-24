@@ -2,8 +2,11 @@
   <div :class="$style.container">
     <div>
       <h1 :class="$style.title">
-        Corona-Virus
+        {{ $t('index.title') }}
       </h1>
+      <p>
+        {{ $t('index.description') }}
+      </p>
       <b-button
         variant="outline-primary"
         pill
@@ -12,7 +15,7 @@
         :class="$style.button"
         to="/fragebogen"
       >
-        Zum Test
+        {{ $t('index.cta') }}
       </b-button>
     </div>
   </div>
