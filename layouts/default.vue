@@ -1,13 +1,18 @@
 <template>
-  <div :class="$style.wrapper">
-    <header :class="$style.header">
-      <h1 :class="$style.logo">
-        <nuxt-link :class="$style.logoLink" to="/">Coronav</nuxt-link>
-      </h1>
-    </header>
-    <main :class="$style.content">
-      <nuxt />
-    </main>
+  <div>
+    <div :class="$style.wrapper">
+      <header :class="$style.header">
+        <h1 :class="$style.logo">
+          <nuxt-link :class="$style.logoLink" to="/">Coronav</nuxt-link>
+        </h1>
+      </header>
+      <main :class="$style.content">
+        <nuxt />
+      </main>
+    </div>
+    <footer :class="$style.footer">
+      <nuxt-link to="/impressum">{{ $t('impressum.title') }}</nuxt-link>
+    </footer>
   </div>
 </template>
 
@@ -66,7 +71,7 @@ body {
 }
 </style>
 
-<style module>
+<style lang="scss" module>
 .wrapper {
   display: grid;
   grid-template-rows: 90px 1fr;
@@ -104,6 +109,20 @@ body {
   max-width: 40em;
   padding: 20px;
   padding-bottom: 48px;
+}
+
+.footer {
+  background-color: #0a558c;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.3rem;
+  text-align: right;
+  a {
+    color: white;
+    font-size: 0.8rem;
+  }
 }
 
 @media (min-width: 768px) {

@@ -18,6 +18,9 @@ export default {
         Bitte beantworten Sie die Fragen, BEVOR Sie einen Arzt oder eine Hotline anrufen.`,
     cta: 'Zum Fragebogen'
   },
+  impressum: {
+    title: 'Impressum'
+  },
   disclaimer: `Dieser Fragebogen ist derzeit in Entwicklung und soll als
         Entscheidungshilfe vor einem Anruf bei dem Gesundheitsamt dienen.
         Der Fragebogen wurde mit Ärzten entwickelt und orientiert sich an den Angaben des Robert-Koch-Instituts (RKI).
