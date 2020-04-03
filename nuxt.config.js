@@ -66,7 +66,9 @@ export default {
           }
         }
       }
-    ]
+    ],
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap'
   ],
   bootstrapVue: {
     icons: true, // Install the IconsPlugin (in addition to BootStrapVue plugin
@@ -81,5 +83,9 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  sitemap: {
+    hostname: 'https://coronav.de',
+    gzip: true
   }
 }
