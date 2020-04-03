@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { rkiPLZTool } from 'static/uris.json'
+import URIS from '~/config/external-uris'
 
 export default {
   name: 'HotlineSearch',
@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     goToRkiPLZTool() {
-      const url = rkiPLZTool + this.zipCode
+      const url = URIS.rkiPLZTool + this.zipCode
       window.open(url, '_blank', 'noopener')
     }
   }
