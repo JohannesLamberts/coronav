@@ -1,51 +1,55 @@
 <template>
-  <div>
-    <div v-if="!disclaimerConfirmed">
-      <h1>{{ $t('test.title') }}</h1>
-      <p>
-        {{ $t('disclaimer') }}
-      </p>
-      <b-button
-        variant="primary"
-        pill
-        block
-        size="lg"
-        :class="$style.button"
-        @click="onConfirm"
-      >
-        {{ $t('global.ok') }}
-      </b-button>
-    </div>
-    <questionaire v-else-if="!result" @complete="onComplete" />
-    <questionaire-result v-else :result="result" />
+  <div :class="$style.wrapper">
+    <test-progress :max="totalSteps" :current="step" />
+    <question
+      v-if="!isComplete"
+      :config="currentQuestionConfig"
+      @decision="onDecision"
+    />
+    <questionnaire-result v-else :choices="choices" />
   </div>
 </template>
 
 <script>
-import Questionaire from '../components/questionaire'
-import QuestionaireResult from '../components/result'
+import QuestionnaireResult from '~/components/questionnaire-result'
+import Question from '~/components/question'
+import TestProgress from '~/components/test-progress'
+import { questions } from '~/config/questionaire'
 
 export default {
-  components: { QuestionaireResult, Questionaire },
+  name: 'Fragebogen',
+  components: { TestProgress, Question, QuestionnaireResult },
   data() {
     return {
-      disclaimerConfirmed: false,
-      result: null
+      step: 0,
+      questions,
+      choices: {}
+    }
+  },
+  computed: {
+    currentQuestionConfig() {
+      return questions[this.step]
+    },
+    totalSteps() {
+      return questions.length
+    },
+    isComplete() {
+      return this.step === this.totalSteps
     }
   },
   methods: {
-    onConfirm() {
-      this.disclaimerConfirmed = true
-    },
-    onComplete(result) {
-      this.result = result
+    onDecision(choice) {
+      this.choices[this.currentQuestionConfig.ident] = choice
+      this.step += 1
     }
   }
 }
 </script>
 <style module>
-.button {
-  max-width: 10em;
-  margin: 0 auto;
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-gap: 1.5rem;
+  height: 100%;
 }
 </style>

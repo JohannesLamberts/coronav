@@ -52,6 +52,7 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
+    '@nuxtjs/markdownit',
     '@nuxtjs/pwa',
     [
       'nuxt-i18n',
@@ -74,6 +75,9 @@ export default {
     icons: true, // Install the IconsPlugin (in addition to BootStrapVue plugin
     bootstrapCSS: false,
     bootstrapVueCSS: false
+  },
+  markdownit: {
+    injected: true
   },
   /*
    ** Build configuration

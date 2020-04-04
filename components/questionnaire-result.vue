@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>{{ $t('results.headline') }}</h1>
+    <h2 class="h5 mb-3">{{ $t('results.headline') }}</h2>
     <div>
       <b-alert show class="my-4">
         <strong v-html="responseText.label" />
         <p v-if="showHotlineSearch">
           <i>{{ $t('results.searchInfo') }}</i>
         </p>
-        <p v-html="responseText.result" />
+        <p v-html="responseText.questionnaire" />
       </b-alert>
       <p>{{ $t('results.todosLabel') }}</p>
       <ul>
@@ -35,16 +35,24 @@
 
 <script>
 import HotlineSearch from './hotline-search'
+
 export default {
-  name: 'QuestionaireResult',
+  name: 'QuestionnaireResult',
   components: { HotlineSearch },
   props: {
-    result: {
+    choices: {
       type: Object,
       required: true
     }
   },
   computed: {
+    result() {
+      const result = {}
+      Object.entries(this.choices).forEach(([key, choice]) => {
+        result[key] = choice === 'yes'
+      })
+      return result
+    },
     responseText() {
       return this.$t(`results.cases.${this.responseIdent}`)
     },
@@ -65,8 +73,8 @@ export default {
             : '2_symptoms_withContact_noRisk'
         }
         return hasRisk
-          ? '3_symtoms_withoutContact_risk'
-          : '4_symtoms_withoutContact_noRisk'
+          ? '3_symptoms_withoutContact_risk'
+          : '4_symptoms_withoutContact_noRisk'
       }
 
       if (directContact) {
