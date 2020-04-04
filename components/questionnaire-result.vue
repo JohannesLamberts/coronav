@@ -60,14 +60,15 @@ export default {
       const {
         symptoms,
         directContact,
+        workRiskContact,
         patientHistoryRisk,
-        ageRisk,
-        riskArea
+        patientImmuneRisk,
+        ageRisk
       } = this.result
-      const hasRisk = patientHistoryRisk || ageRisk
+      const hasRisk = patientHistoryRisk || ageRisk || patientImmuneRisk
 
       if (symptoms) {
-        if (directContact || riskArea) {
+        if (directContact || workRiskContact) {
           return hasRisk
             ? '1_symptoms_withContact_risk'
             : '2_symptoms_withContact_noRisk'

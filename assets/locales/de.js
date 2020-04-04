@@ -156,6 +156,10 @@ export default {
 - Halsschmerzen
 - Atembeschwerden`
     },
+    workRiskContact: {
+      label:
+        'Kommen Sie bei der Arbeit oder ehrenamtlichen Tätigkeit mit Menschen in Kontakt, die ein hohes Risiko für einen schweren Verlauf einer Corona-Virus-Infektion haben (z.B. im Krankenhaus oder der Altenpflege)?'
+    },
     directContact: {
       label:
         'Hatten Sie in den letzten 14 Tagen direkten Kontakt zu einer Person, die positiv auf eine Corona-Infektion getestet wurde?',
@@ -176,6 +180,14 @@ export default {
 - Lungenerkrankung
 - Lebererkrankung
 - Nierenerkrankung`
+    },
+    patientImmuneRisk: {
+      label: 'Haben Sie ein unterdrücktes Immunsystem?',
+      info: `zum Beispiel wegen:
+- Organtransplantation
+- Krebserkrankung
+- Chemotherapie
+- Cortison Tabletten-Einnahme - HIV`
     }
   },
   components: {

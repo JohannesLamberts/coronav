@@ -1,37 +1,60 @@
-const choiceYes = {
-  ident: 'yes'
+const CHOICES = {
+  YES: 'yes',
+  NO: 'no',
+  OK: 'ok'
 }
 
-const choiceNo = {
-  ident: 'no'
-}
+const choicesYesNo = [
+  {
+    ident: CHOICES.YES
+  },
+  {
+    ident: CHOICES.NO
+  }
+]
 
-const choicesYesNo = [choiceYes, choiceNo]
+const QUESTION_IDENTIFIERS = {
+  DISCLAIMER: 'disclaimer',
+  SYMPTOMS: 'symptoms',
+  CONTACT_DIRECT: 'directContact',
+  CONTACT_WORK: 'workRiskContact',
+  AGE_RISK: 'ageRisk',
+  PATIENT_HISTORY_RISK: 'patientHistoryRisk',
+  PATIENT_IMMUNE_RISK: 'patientImmuneRisk'
+}
 
 export const questions = [
   {
-    ident: 'disclaimer',
+    ident: QUESTION_IDENTIFIERS.DISCLAIMER,
     choices: [
       {
         variant: 'primary',
-        ident: 'ok'
+        ident: CHOICES.OK
       }
     ]
   },
   {
-    ident: 'symptoms',
+    ident: QUESTION_IDENTIFIERS.SYMPTOMS,
     choices: choicesYesNo
   },
   {
-    ident: 'directContact',
+    ident: QUESTION_IDENTIFIERS.CONTACT_DIRECT,
     choices: choicesYesNo
   },
   {
-    ident: 'ageRisk',
+    ident: QUESTION_IDENTIFIERS.CONTACT_WORK,
     choices: choicesYesNo
   },
   {
-    ident: 'patientHistoryRisk',
+    ident: QUESTION_IDENTIFIERS.AGE_RISK,
+    choices: choicesYesNo
+  },
+  {
+    ident: QUESTION_IDENTIFIERS.PATIENT_HISTORY_RISK,
+    choices: choicesYesNo
+  },
+  {
+    ident: QUESTION_IDENTIFIERS.PATIENT_IMMUNE_RISK,
     choices: choicesYesNo
   }
 ]
