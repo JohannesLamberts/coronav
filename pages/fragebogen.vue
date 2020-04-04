@@ -24,16 +24,21 @@ export default {
   data() {
     return {
       step: 0,
-      questions,
       choices: {}
     }
   },
   computed: {
+    questions() {
+      return questions.filter(
+        ({ skipIf }) =>
+          !(skipIf && matchesOnce(this.choicesWithDerived, skipIf))
+      )
+    },
     currentQuestionConfig() {
-      return questions[this.step]
+      return this.questions[this.step]
     },
     totalSteps() {
-      return questions.length
+      return this.questions.length
     },
     isComplete() {
       return this.step === this.totalSteps
@@ -42,7 +47,6 @@ export default {
       const result = {}
       derivedChoices.forEach(({ ident, matchers }) => {
         result[ident] = matchesOnce(this.choices, matchers)
-        console.log('derived', this.choices, ident, matchers, result[ident])
       })
       return result
     },
