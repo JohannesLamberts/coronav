@@ -6,7 +6,7 @@
       :config="currentQuestionConfig"
       @decision="onDecision"
     />
-    <questionnaire-result v-else :choices="choices" />
+    <questionnaire-result v-else :choices="choicesWithDerived" />
   </div>
 </template>
 
@@ -15,6 +15,8 @@ import QuestionnaireResult from '~/components/questionnaire-result'
 import Question from '~/components/question'
 import TestProgress from '~/components/test-progress'
 import { questions } from '~/config/questionaire'
+import { derivedChoices } from '@/config/questionaire'
+import { matchesOnce } from '@/utils'
 
 export default {
   name: 'Fragebogen',
@@ -35,11 +37,25 @@ export default {
     },
     isComplete() {
       return this.step === this.totalSteps
+    },
+    derived() {
+      const result = {}
+      derivedChoices.forEach(({ ident, matchers }) => {
+        result[ident] = matchesOnce(this.choices, matchers)
+        console.log('derived', this.choices, ident, matchers, result[ident])
+      })
+      return result
+    },
+    choicesWithDerived() {
+      return {
+        ...this.choices,
+        ...this.derived
+      }
     }
   },
   methods: {
     onDecision(choice) {
-      this.choices[this.currentQuestionConfig.ident] = choice
+      this.$set(this.choices, this.currentQuestionConfig.ident, choice)
       this.step += 1
     }
   }

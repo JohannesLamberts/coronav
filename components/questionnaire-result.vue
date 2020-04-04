@@ -46,44 +46,28 @@ export default {
     }
   },
   computed: {
-    result() {
-      const result = {}
-      Object.entries(this.choices).forEach(([key, choice]) => {
-        result[key] = choice === 'yes'
-      })
-      return result
-    },
     responseText() {
       return this.$t(`results.cases.${this.responseIdent}`)
     },
     responseIdent() {
-      const {
-        symptoms,
-        directContact,
-        workRiskContact,
-        patientHistoryRisk,
-        patientImmuneRisk,
-        ageRisk
-      } = this.result
-      const hasRisk = patientHistoryRisk || ageRisk || patientImmuneRisk
-
+      const { symptoms, directContact, contact, risk } = this.choices
       if (symptoms) {
-        if (directContact || workRiskContact) {
-          return hasRisk
+        if (contact) {
+          return risk
             ? '1_symptoms_withContact_risk'
             : '2_symptoms_withContact_noRisk'
         }
-        return hasRisk
+        return risk
           ? '3_symptoms_withoutContact_risk'
           : '4_symptoms_withoutContact_noRisk'
       }
 
       if (directContact) {
         // riskArea does not matter in case of direct contact
-        return hasRisk ? '7_directContact_risk' : '8_directContact_noRisk'
+        return risk ? '7_directContact_risk' : '8_directContact_noRisk'
       }
 
-      return hasRisk ? '6_noFeatures_risk' : '5_noFeatures_noRisk'
+      return risk ? '6_noFeatures_risk' : '5_noFeatures_noRisk'
     },
     showHotlineSearch() {
       return [
