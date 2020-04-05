@@ -65,9 +65,9 @@ export default {
       },
       '3_symptoms_withoutContact_risk': {
         label:
-          'Sie müssen vorerst <u>nicht</u> beim Gesundheitsamt anrufen. Sie sollten allerdings vorsorglich Ihren Hausarzt anrufen.',
+          'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden. Sie sollten allerdings vorsorglich Ihren Hausarzt anrufen.',
         result:
-          'Derzeit besteht bei Ihnen <u>kein</u> erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
+          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
         todos: [
           'bewahren Sie Ruhe',
           'verlassen Sie Ihre Wohnung nur, wenn unbedingt notwendig und tragen Sie außer Haus einen Mundschutz',
@@ -75,9 +75,9 @@ export default {
         ]
       },
       '4_symptoms_withoutContact_noRisk': {
-        label: 'Sie müssen vorerst <u>nicht</u> beim Gesundheitsamt anrufen.',
+        label: 'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.',
         result:
-          'Derzeit besteht bei Ihnen <u>kein</u> erhöhter Verdacht auf eine Corona-Infektion.',
+          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
         todos: [
           'bewahren Sie Ruhe',
           'kontaktieren Sie telefonisch Ihren Hausarzt, wenn sich Ihre Symptome verschlechtern',
@@ -86,10 +86,9 @@ export default {
         ]
       },
       '5_noFeatures_noRisk': {
-        label:
-          'Sie müssen sich vorerst <u>nicht</u> beim Gesundheitsamt anrufen.',
+        label: 'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.',
         result:
-          'Derzeit besteht bei Ihnen <u>kein</u> erhöhter Verdacht auf eine Corona-Infektion.',
+          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
         todos: [
           'bewahren Sie Ruhe',
           'bleiben Sie zu Hause',
@@ -97,10 +96,9 @@ export default {
         ]
       },
       '6_noFeatures_risk': {
-        label:
-          'Sie müssen sich vorerst <u>nicht</u> beim Gesundheitsamt anrufen.',
+        label: 'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.',
         result:
-          'Derzeit besteht bei Ihnen <u>kein</u> erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
+          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
         todos: [
           'bewahren Sie Ruhe',
           'bleiben Sie zu Hause',
@@ -111,7 +109,7 @@ export default {
         label:
           'Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt! Sie hatten Kontakt zu einer infizierten Person.',
         result:
-          'Derzeit besteht bei Ihnen <u>kein</u> erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
+          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
         todos: [
           'bewahren Sie Ruhe',
           'bleiben Sie zu Hause',
@@ -123,7 +121,7 @@ export default {
         label:
           'Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt! Sie hatten Kontakt zu einer infizierten Person.',
         result:
-          'Derzeit besteht bei Ihnen <u>kein</u> erhöhter Verdacht auf eine Corona-Infektion.',
+          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
         todos: [
           'bewahren Sie Ruhe',
           'bleiben Sie zu Hause',

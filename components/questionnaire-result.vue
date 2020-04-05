@@ -3,11 +3,13 @@
     <h2 class="h5 mb-3">{{ $t('results.headline') }}</h2>
     <div>
       <b-alert show class="my-4">
-        <strong v-html="responseText.label" />
+        <p>
+          <strong>{{ responseText.label }}</strong>
+        </p>
         <p v-if="showHotlineSearch">
           <i>{{ $t('results.searchInfo') }}</i>
         </p>
-        <p v-html="responseText.questionnaire" />
+        <p>{{ responseText.result }}</p>
       </b-alert>
       <p>{{ $t('results.todosLabel') }}</p>
       <ul>
