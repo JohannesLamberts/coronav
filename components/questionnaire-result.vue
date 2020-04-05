@@ -6,7 +6,7 @@
         <p>
           <strong>{{ responseText.label }}</strong>
         </p>
-        <p v-if="showHotlineSearch">
+        <p v-if="responseConfig.showHotlineSearch">
           <i>{{ $t('results.searchInfo') }}</i>
         </p>
         <p>{{ responseText.result }}</p>
@@ -15,7 +15,7 @@
       <ul>
         <li v-for="text of responseText.todos" :key="text">{{ text }}</li>
       </ul>
-      <div v-if="showHotlineSearch">
+      <div v-if="responseConfig.showHotlineSearch">
         <hotline-search />
       </div>
       <h4 class="h5">
@@ -42,42 +42,14 @@ export default {
   name: 'QuestionnaireResult',
   components: { HotlineSearch },
   props: {
-    choices: {
+    responseConfig: {
       type: Object,
       required: true
     }
   },
   computed: {
     responseText() {
-      return this.$t(`results.cases.${this.responseIdent}`)
-    },
-    responseIdent() {
-      const { symptoms, directContact, contact, risk } = this.choices
-      if (symptoms) {
-        if (contact) {
-          return risk
-            ? '1_symptoms_withContact_risk'
-            : '2_symptoms_withContact_noRisk'
-        }
-        return risk
-          ? '3_symptoms_withoutContact_risk'
-          : '4_symptoms_withoutContact_noRisk'
-      }
-
-      if (directContact) {
-        // riskArea does not matter in case of direct contact
-        return risk ? '7_directContact_risk' : '8_directContact_noRisk'
-      }
-
-      return risk ? '6_noFeatures_risk' : '5_noFeatures_noRisk'
-    },
-    showHotlineSearch() {
-      return [
-        '1_symptoms_withContact_risk',
-        '2_symptoms_withContact_noRisk',
-        '7_directContact_risk',
-        '8_directContact_noRisk'
-      ].includes(this.responseIdent)
+      return this.$t(`results.cases.${this.responseConfig.ident}`)
     }
   }
 }
