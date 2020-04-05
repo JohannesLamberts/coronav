@@ -129,12 +129,6 @@ export default {
           ...generalSuggestions
         ]
       }
-    },
-    testCase: {
-      steps: [
-        'Rufen Sie ihr lokales Gesundheitsamt an',
-        'Bereiten Sie sich auf die ärztliche Anamnese vor'
-      ]
     }
   },
   questions: {

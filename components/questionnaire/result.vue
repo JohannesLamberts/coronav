@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import HotlineSearch from './hotline-search'
+import HotlineSearch from '../hotline-search'
 
 export default {
   name: 'QuestionnaireResult',
