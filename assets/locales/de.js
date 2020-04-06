@@ -179,7 +179,8 @@ export default {
 - Organtransplantation
 - Krebserkrankung
 - Chemotherapie
-- Cortison Tabletten-Einnahme - HIV`
+- Cortison Tabletten-Einnahme 
+- HIV`
     }
   },
   components: {
