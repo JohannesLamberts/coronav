@@ -14,8 +14,8 @@
 import Result from './result'
 import Question from './question'
 import TestProgress from '~/components/test-progress'
-import { matches, matchesSome } from '@/utils'
-import { computeResultIdent } from '@/utils/questionnaire'
+import { matchesSome } from '@/utils'
+import { computeResultIdent, shouldSkipQuestion } from '@/utils/questionnaire'
 
 export default {
   name: 'Questionnaire',
@@ -35,13 +35,7 @@ export default {
   computed: {
     questions() {
       return this.config.questions.filter(
-        ({ skipIf, ident }) =>
-          !(
-            skipIf &&
-            matches(this.choicesWithDerived, skipIf) &&
-            // do not skip already answered questions
-            !Object.hasOwnProperty.call(this.choices, ident)
-          )
+        (questionConfig) => !shouldSkipQuestion(questionConfig, this.choices)
       )
     },
     currentQuestionConfig() {
