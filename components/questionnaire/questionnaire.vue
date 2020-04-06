@@ -14,7 +14,7 @@
 import Result from './result'
 import Question from './question'
 import TestProgress from '~/components/test-progress'
-import { matchesOnce } from '@/utils'
+import { matches, matchesSome } from '@/utils'
 import { computeResultIdent } from '@/utils/questionnaire'
 
 export default {
@@ -38,7 +38,7 @@ export default {
         ({ skipIf, ident }) =>
           !(
             skipIf &&
-            matchesOnce(this.choicesWithDerived, skipIf) &&
+            matches(this.choicesWithDerived, skipIf) &&
             // do not skip already answered questions
             !Object.hasOwnProperty.call(this.choices, ident)
           )
@@ -56,7 +56,7 @@ export default {
     choicesWithDerived() {
       const result = this.choices
       this.config.derived.forEach(({ ident, matchers }) => {
-        result[ident] = matchesOnce(result, matchers)
+        result[ident] = matchesSome(result, matchers)
       })
       return result
     },

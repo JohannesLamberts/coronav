@@ -57,16 +57,6 @@ export default {
   grid-template-rows: auto auto;
   height: 100%;
 }
-/*
-.buttons {
-  display: flex;
-  flex-flow: row nowrap;
-  height: 64px;
-  button {
-    flex-basis: 100%;
-    flex-grow: 1;
-  }
-}*/
 
 .buttons {
   display: grid;
