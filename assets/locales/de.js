@@ -5,10 +5,10 @@ const generalSuggestions = [
 ]
 
 export default {
-  global: {
+  choices: {
+    ok: 'Ok',
     yes: 'Ja',
-    no: 'Nein',
-    ok: 'Ok'
+    no: 'Nein'
   },
   index: {
     title: 'Corona-Virus',
@@ -21,10 +21,6 @@ export default {
   impressum: {
     title: 'Impressum'
   },
-  disclaimer: `Dieser Fragebogen ist derzeit in Entwicklung und soll als
-        Entscheidungshilfe vor einem Anruf bei dem Gesundheitsamt dienen.
-        Der Fragebogen wurde mit Ärzten entwickelt und orientiert sich an den Angaben des Robert-Koch-Instituts (RKI).
-        Er kann jedoch keinen persönlichen Arztbesuch ersetzen.`,
   results: {
     headline: 'Ergebnis',
     todosLabel: 'Das sollten Sie tun:',
@@ -67,21 +63,21 @@ export default {
           ...generalSuggestions
         ]
       },
-      '3_symtoms_withoutContact_risk': {
+      '3_symptoms_withoutContact_risk': {
         label:
-          'Sie müssen vorerst <u>nicht</u> beim Gesundheitsamt anrufen. Sie sollten allerdings vorsorglich Ihren Hausarzt anrufen.',
+          'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden. Sie sollten allerdings vorsorglich Ihren Hausarzt anrufen.',
         result:
-          'Derzeit besteht bei Ihnen <u>kein</u> erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
+          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
         todos: [
           'bewahren Sie Ruhe',
           'verlassen Sie Ihre Wohnung nur, wenn unbedingt notwendig und tragen Sie außer Haus einen Mundschutz',
           ...generalSuggestions
         ]
       },
-      '4_symtoms_withoutContact_noRisk': {
-        label: 'Sie müssen vorerst <u>nicht</u> beim Gesundheitsamt anrufen.',
+      '4_symptoms_withoutContact_noRisk': {
+        label: 'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.',
         result:
-          'Derzeit besteht bei Ihnen <u>kein</u> erhöhter Verdacht auf eine Corona-Infektion.',
+          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
         todos: [
           'bewahren Sie Ruhe',
           'kontaktieren Sie telefonisch Ihren Hausarzt, wenn sich Ihre Symptome verschlechtern',
@@ -90,10 +86,9 @@ export default {
         ]
       },
       '5_noFeatures_noRisk': {
-        label:
-          'Sie müssen sich vorerst <u>nicht</u> beim Gesundheitsamt anrufen.',
+        label: 'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.',
         result:
-          'Derzeit besteht bei Ihnen <u>kein</u> erhöhter Verdacht auf eine Corona-Infektion.',
+          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
         todos: [
           'bewahren Sie Ruhe',
           'bleiben Sie zu Hause',
@@ -101,10 +96,9 @@ export default {
         ]
       },
       '6_noFeatures_risk': {
-        label:
-          'Sie müssen sich vorerst <u>nicht</u> beim Gesundheitsamt anrufen.',
+        label: 'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.',
         result:
-          'Derzeit besteht bei Ihnen <u>kein</u> erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
+          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
         todos: [
           'bewahren Sie Ruhe',
           'bleiben Sie zu Hause',
@@ -115,7 +109,7 @@ export default {
         label:
           'Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt! Sie hatten Kontakt zu einer infizierten Person.',
         result:
-          'Derzeit besteht bei Ihnen <u>kein</u> erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
+          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
         todos: [
           'bewahren Sie Ruhe',
           'bleiben Sie zu Hause',
@@ -127,7 +121,7 @@ export default {
         label:
           'Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt! Sie hatten Kontakt zu einer infizierten Person.',
         result:
-          'Derzeit besteht bei Ihnen <u>kein</u> erhöhter Verdacht auf eine Corona-Infektion.',
+          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
         todos: [
           'bewahren Sie Ruhe',
           'bleiben Sie zu Hause',
@@ -135,96 +129,64 @@ export default {
           ...generalSuggestions
         ]
       }
-    },
-    testCase: {
-      steps: [
-        'Rufen Sie ihr lokales Gesundheitsamt an',
-        'Bereiten Sie sich auf die ärztliche Anamnese vor'
-      ]
     }
   },
-  test: {
-    title: 'Fragebogen',
-    steps: {
-      symptoms: {
-        title: 'Symptome',
-        label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
-        list: [
-          'allgemeines Krankheitsgefühl',
-          'laufende Nase',
-          'Fieber',
-          'Husten',
-          'Halsschmerzen',
-          'Atembeschwerden'
-        ]
-      },
-      directContact: {
-        title: 'Kontakte',
-        label:
-          'Hatten Sie in den letzten 14 Tagen direkten Kontakt zu einer Person, die positiv auf eine Corona-Infektion getestet wurde?',
-        info: 'Direkten Kontakt hatten Sie, wenn...',
-        infoList: [
-          'Sie mit dieser Person im selben Haushalt leben ODER',
-          'Sie mindestens 15 Minuten persönlichen Kontakt zu dieser Person, zum Beispiel in einem Gespräch hatten ODER',
-          'Körperflüssigkeiten auf Sie übertragen werden konnten, z.B. durch Küssen, Anniesen oder Anhusten'
-        ]
-      },
-      riskArea: {
-        title: 'Risikogebiete',
-        label:
-          'Haben Sie sich in den letzten 14 Tagen in einem Risikogebiet oder einem besonders betroffenen Gebiet aufgehalten?'
-      },
-      ageRisk: {
-        title: 'Alter',
-        label: 'Sind Sie 50 Jahre oder älter?'
-      },
-      patientHistoryRisk: {
-        title: 'Vorerkrankungen',
-        label: 'Haben Sie eine oder mehrere der folgenden Diagnosen?',
-        list: [
-          'Herzerkrankung',
-          'Bluthochdruck',
-          'Diabetes',
-          'Fettleibigkeit',
-          'Lungenerkrankung',
-          'Lebererkrankung',
-          'Nierenerkrankung'
-        ]
-      }
+  questions: {
+    disclaimer: {
+      label: 'Disclaimer',
+      info: `Dieser Fragebogen ist derzeit in Entwicklung und soll als
+        Entscheidungshilfe vor einem Anruf bei dem Gesundheitsamt dienen.
+        Der Fragebogen wurde mit Ärzten entwickelt und orientiert sich an den Angaben des Robert-Koch-Instituts (RKI).
+        Er kann jedoch keinen persönlichen Arztbesuch ersetzen.`
+    },
+    symptoms: {
+      label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
+      info: `- allgemeines Krankheitsgefühl
+- laufende Nase
+- Fieber
+- Husten
+- Halsschmerzen
+- Atembeschwerden`
+    },
+    workRiskContact: {
+      label:
+        'Kommen Sie bei der Arbeit oder ehrenamtlichen Tätigkeit mit Menschen in Kontakt, die ein hohes Risiko für einen schweren Verlauf einer Corona-Virus-Infektion haben (z.B. im Krankenhaus oder der Altenpflege)?'
+    },
+    directContact: {
+      label:
+        'Hatten Sie in den letzten 14 Tagen direkten Kontakt zu einer Person, die positiv auf eine Corona-Infektion getestet wurde?',
+      info: `Direkten Kontakt hatten Sie, wenn...
+- Sie mit dieser Person im selben Haushalt leben ODER
+- Sie mindestens 15 Minuten persönlichen Kontakt zu dieser Person, zum Beispiel in einem Gespräch hatten ODER
+- Körperflüssigkeiten auf Sie übertragen werden konnten, z.B. durch Küssen, Anniesen oder Anhusten`
+    },
+    ageRisk: {
+      label: 'Sind Sie 50 Jahre oder älter?'
+    },
+    patientHistoryRisk: {
+      label: 'Haben Sie eine oder mehrere der folgenden Diagnosen?',
+      info: `- Herzerkrankung
+- Bluthochdruck
+- Diabetes
+- Fettleibigkeit
+- Lungenerkrankung
+- Lebererkrankung
+- Nierenerkrankung`
+    },
+    patientImmuneRisk: {
+      label: 'Haben Sie ein unterdrücktes Immunsystem?',
+      info: `zum Beispiel wegen:
+- Organtransplantation
+- Krebserkrankung
+- Chemotherapie
+- Einnahme von Cortison-Tabletten 
+- HIV`
     }
   },
   components: {
     hotlineSearch: {
       labelText: 'Postleitzahl eingeben',
       buttonText: 'Gesundheitsamt suchen'
-    },
-    riskAreas: {
-      title: 'Risikogebiete',
-      countries: [
-        { name: 'Ägypten', riskArea: 'ganzes Land' },
-        { name: 'China', riskArea: 'Provinz Hubei (inkl. Stadt Wuhan)' },
-        {
-          name: 'Frankreich',
-          riskArea:
-            'Region Grand Est (diese Region enthält Elsass, Lothringen und Champagne-Ardenne)'
-        },
-        { name: 'Iran', riskArea: 'ganzes Land' },
-        { name: 'Italien', riskArea: 'ganzes Land' },
-        { name: 'Österreich', riskArea: 'Bundesland Tirol' },
-        { name: 'Spanien', riskArea: 'Madrid' },
-        {
-          name: 'Südkorea',
-          riskArea: 'Provinz Gyeongsangbuk-do (Nord-Gyeongsang)'
-        },
-        {
-          name: 'USA',
-          riskArea: 'Bundesstaaten Kalifornien, Washington und New York'
-        }
-      ],
-      germany: {
-        title: 'Besonders betroffene Gebiete in Deutschland',
-        areas: [{ name: 'Landkreis Heinsberg (Nordrhein-Westfalen)' }]
-      }
     }
   }
 }

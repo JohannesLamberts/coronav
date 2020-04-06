@@ -1,0 +1,79 @@
+questions:
+  - ident: disclaimer
+    choices:
+      - ident: ok
+        variant: primary
+  - ident: symptoms
+    choices:
+      - ident: yes
+      - ident: no
+  - ident: directContact
+    choices:
+      - ident: yes
+      - ident: no
+  - ident: workRiskContact
+    choices:
+      - ident: yes
+      - ident: no
+  - ident: ageRisk
+    choices:
+      - ident: yes
+      - ident: no
+  - ident: patientHistoryRisk
+    choices:
+      - ident: yes
+      - ident: no
+  - ident: patientImmuneRisk
+    choices:
+      - ident: yes
+      - ident: no
+    skipIf:
+      risk: true
+
+derived:
+  - ident: risk
+    matchers:
+      - ageRisk: yes
+      - patientHistoryRisk: yes
+      - patientImmuneRisk: yes
+  - ident: contact
+    matchers:
+      - directContact: yes
+      - workRiskContact: yes
+
+results:
+  - ident: 1_symptoms_withContact_risk
+    showHotlineSearch: true
+  - ident: 2_symptoms_withContact_noRisk
+    showHotlineSearch: true
+  - ident: 3_symptoms_withoutContact_risk
+  - ident: 4_symptoms_withoutContact_noRisk
+  - ident: 5_noFeatures_noRisk
+  - ident: 6_noFeatures_risk
+  - ident: 7_directContact_risk
+    showHotlineSearch: true
+  - ident: 8_directContact_noRisk
+    showHotlineSearch: true
+
+resultComputation:
+  ident: symptoms
+  yes:
+    ident: contact
+    true:
+      ident: risk
+      true: 1_symptoms_withContact_risk
+      default: 2_symptoms_withContact_noRisk
+    default:
+      ident: risk
+      true: 3_symptoms_withoutContact_risk
+      default: 4_symptoms_withoutContact_noRisk
+  default:
+    ident: directContact
+    yes:
+      ident: risk
+      true: 7_directContact_risk
+      default: 8_directContact_noRisk
+    default:
+      ident: risk
+      true: 6_noFeatures_risk
+      default: 5_noFeatures_noRisk
