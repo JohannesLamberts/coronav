@@ -33,11 +33,14 @@ export function computeResultIdent(computationConfig, choicesWithDerived) {
     : computeResultIdent(matchedConfig, choicesWithDerived)
 }
 
-export function shouldSkipQuestion({ skipIf, ident }, choices) {
-  return (
-    skipIf &&
-    matches(choices, skipIf) &&
-    // do not skip already answered questions
-    !Object.hasOwnProperty.call(choices, ident)
-  )
+export function shouldIncludeQuestion(
+  { skipIf, ident },
+  choicesWithDerived,
+  choices
+) {
+  const isAnswered = Object.hasOwnProperty.call(choices, ident)
+  if (!skipIf || isAnswered) {
+    return true
+  }
+  return !matches(choicesWithDerived, skipIf)
 }
