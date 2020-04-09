@@ -7495,10 +7495,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-i18n@^6.7.0:
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/nuxt-i18n/-/nuxt-i18n-6.7.0.tgz#85fee4265f79cc2631699b8efd7b5516c88abccf"
-  integrity sha512-MkVWXVA7t7XxrfBeiDTETu9FYlqD6C21LlEfU/3JNZi0TYhHa5+QTrSXbwFc3WnR/rlEs6SoHAXdxT5yuYOO3g==
+nuxt-i18n@^6.8.1:
+  version "6.8.1"
+  resolved "https://registry.yarnpkg.com/nuxt-i18n/-/nuxt-i18n-6.8.1.tgz#78c2240e3b4c05e0e32fda2a4e336be2c2ec4d70"
+  integrity sha512-+Vx12J5k63EwsOdTbVUI87kW2JexcAJwEMG8pl4DMrKQX7huwU2CGkzc77h/NRbbZtEvrp9aBQNmvxsHW9C+aw==
   dependencies:
     "@babel/parser" "^7.5.5"
     "@babel/traverse" "^7.5.5"
