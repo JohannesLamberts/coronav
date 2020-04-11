@@ -3,7 +3,7 @@
     <div :class="$style.wrapper">
       <header :class="$style.header">
         <h1 :class="$style.logo">
-          <nuxt-link :class="$style.logoLink" to="/">Coronav</nuxt-link>
+          <nuxt-link :class="$style.logoLink" to="/">CoroNav</nuxt-link>
         </h1>
       </header>
       <main :class="$style.content">
