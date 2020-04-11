@@ -1,4 +1,4 @@
-# Coronav
+# CoroNav
 
 Ein einfacher Online-Fragebogen mit Handlungsempfehlungen für Bürger:innen zur Entlastung von Hotlines und Ärzt:innen.
 
@@ -12,8 +12,8 @@ Unser Projekt ist inspiriert von Apps wie der Covapp des Charité ([https://cova
 
 ## Unsere Lösung
 
-Wir haben mit Coronav ein einfaches Leitsystem in Form eines Online-Fragebogens entwickelt: Es empfiehlt Menschen ohne akute Symptome, zu Hause zu bleiben und sich online zu informieren. Dadurch werden die Hotlines entlastet. Menschen mit Symptomen leiten wir an das für sie zuständige Gesundheitsamt weiter. Dazu benötigen wir lediglich eine Postleitzahl, die direkt an das Postleitzahl-Tool des Robert-Koch-Instituts gesendet wird, womit wir auf bestehende Lösungen zurückgreifen.
-Durch Coronav helfen wir Menschen, eine informierte Entscheidung zu treffen. Und wir entlasten von Anfang an die Mitarbeiter:innen des Gesundheitssystems.
+Wir haben mit CoroNav ein einfaches Leitsystem in Form eines Online-Fragebogens entwickelt: Es empfiehlt Menschen ohne akute Symptome, zu Hause zu bleiben und sich online zu informieren. Dadurch werden die Hotlines entlastet. Menschen mit Symptomen leiten wir an das für sie zuständige Gesundheitsamt weiter. Dazu benötigen wir lediglich eine Postleitzahl, die direkt an das Postleitzahl-Tool des Robert-Koch-Instituts gesendet wird, womit wir auf bestehende Lösungen zurückgreifen.
+Durch CoroNav helfen wir Menschen, eine informierte Entscheidung zu treffen. Und wir entlasten von Anfang an die Mitarbeiter:innen des Gesundheitssystems.
 
 ## Skalierbarkeit
 
@@ -31,11 +31,11 @@ Wir sind überzeugt, dass wir durch unser Leitsystem mehr Leute mit milden Sympt
 
 Als Teil der Challenge 1_011_c_infektionsfallübermittlung haben wir uns inspirieren lassen vom Team "FlowChart", die sehr gut dargestellt haben, wie manuell und unvollständig die Datenweiterleitung von den Laboren/Ärzten über die Gesundheitsämter zum RKI sind. Wir haben uns gefragt, an welcher Stelle wir ansetzen können und im Gespräch mit Ärzt*innen den ersten Punkt aufgegriffen, den wir gesehen haben: Die Überlastung der Hotlines. Während unserer Recherche haben wir verschiedene Apps und Webseiten unter die Lupe genommen und schnell den Punkt der Verständlichkeit der Fragestellungen als eine Herausforderung identifiziert. 
 
-Mit Coronav haben wir einen Fragebogen erstellt, der leicht verständlich ist. Basierend auf dem Online Corona Checker haben wir den Code weiterentwickelt und Open Source zur Verfügung gestellt.
+Mit CoroNav haben wir einen Fragebogen erstellt, der leicht verständlich ist. Basierend auf dem Online Corona Checker haben wir den Code weiterentwickelt und Open Source zur Verfügung gestellt.
 
 ## Ausblick
 
-Wir möchten Coronav gerne um folgende Aspekte erweitern:
+Wir möchten CoroNav gerne um folgende Aspekte erweitern:
 
 - **Barrierefreiheit:** sodass auch Menschen mit Einschränkungen die Seite nutzen können, z.B. durch einen Screenreader.
 - **Mehrsprachigkeit:** unser System ist von Anfang an so konzipiert, dass die Inhalte einfach in andere Sprachen übersetzt und integriert werden können.
