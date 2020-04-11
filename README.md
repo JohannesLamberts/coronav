@@ -58,6 +58,8 @@ Sie können mit Ihrem Gütesiegel helfen, dass die Menschen unserer Webseite ver
 - **Pitch Video auf YouTube:** [https://www.youtube.com/watch?v=49v7am3bH9g](https://www.youtube.com/watch?v=49v7am3bH9g)
 - **Prototyp:** [https://coronav.netlify.com/fragebogen/](https://coronav.netlify.com/fragebogen/)
 - **GitHub Repository mit Code (Open Source)**: [https://github.com/JohannesLamberts/covid-19-info](https://github.com/JohannesLamberts/covid-19-info)
+- **DevPost:**
+[https://devpost.com/software/skizze-eines-digitalen-meldeprozesses-zu-covid-19-testfallen](https://devpost.com/software/skizze-eines-digitalen-meldeprozesses-zu-covid-19-testfallen)
 - **Entscheidungsbaum für Fragebogen:**
 [https://app.creately.com/diagram/T968l5fOs8c/view](https://app.creately.com/diagram/T968l5fOs8c/view)
 
