@@ -1,7 +1,7 @@
 const generalSuggestions = [
   'husten und niesen Sie nur in Ihre Armbeuge',
-  'waschen Sie oft und gründliche Ihre Hände',
-  'halten Sie 2m Abstand zu anderen Personen'
+  'waschen Sie oft und gründlich Ihre Hände',
+  'halten Sie 2 Meter Abstand zu anderen Personen'
 ]
 
 export default {
