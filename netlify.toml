@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://coronav.netlify.app/*"
+  to = "https://coronav.de/:splat"
+  status = 301
+  force = true
