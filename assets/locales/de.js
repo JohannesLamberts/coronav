@@ -16,7 +16,7 @@ export default {
         Hier erfahren Sie, ob eine Infektion wahrscheinlich ist.
         Wir helfen Ihnen bei der Entscheidung, was dann zu tun ist. 
         Bitte beantworten Sie die Fragen, BEVOR Sie einen Arzt oder eine Hotline anrufen.`,
-    cta: 'Zum Fragebogen'
+    cta: 'Starten'
   },
   impressum: {
     title: 'Impressum'
@@ -134,10 +134,10 @@ export default {
   questions: {
     disclaimer: {
       label: 'Disclaimer',
-      info: `Dieser Fragebogen ist derzeit in Entwicklung und soll als
+      info: `Dieser Navigator ist derzeit in Entwicklung und soll als
         Entscheidungshilfe vor einem Anruf bei dem Gesundheitsamt dienen.
-        Der Fragebogen wurde mit Ärzten entwickelt und orientiert sich an den Angaben des Robert-Koch-Instituts (RKI).
-        Er kann jedoch keinen persönlichen Arztbesuch ersetzen.`
+        Fragen und Antworten wurden mit Ärzten entwickelt und orientieren sich an den Angaben des Robert-Koch-Instituts (RKI).
+        Diese können jedoch keinen persönlichen Arztbesuch ersetzen.`
     },
     symptoms: {
       label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
