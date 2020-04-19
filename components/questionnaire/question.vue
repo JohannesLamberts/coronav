@@ -72,8 +72,4 @@ export default {
   grid-gap: 12px;
   height: 64px;
 }
-/* Remove the h2 outline when it receives focus after element mounts (accessibility feature) */
-h2 {
-  outline: none;
-}
 </style>
