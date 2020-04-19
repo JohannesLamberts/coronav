@@ -46,11 +46,14 @@ export default {
     }
   },
   mounted() {
-    this.$refs.questionText.focus()
+    this.focusQuestionText()
   },
   methods: {
     decide(choice) {
       this.$emit('decision', choice)
+    },
+    focusQuestionText() {
+      this.$refs.questionText.focus()
     }
   }
 }
