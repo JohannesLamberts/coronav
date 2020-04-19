@@ -3,6 +3,7 @@
     <test-progress :max="totalSteps" :current="step" />
     <question
       v-if="!isComplete"
+      :key="step"
       :config="currentQuestionConfig"
       @decision="onDecision"
     />

@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2 class="h5 mb-3">{{ labelText }}</h2>
+    <h2 ref="questionText" class="h5 mb-3" tabindex="-1">
+      {{ labelText }}
+    </h2>
     <div :class="$style.wrapper">
       <section v-if="infoParsedText" v-html="infoParsedText" />
       <div :class="$style.buttons">
@@ -43,6 +45,9 @@ export default {
       return this.$md.render(this.infoText)
     }
   },
+  mounted() {
+    this.$refs.questionText.focus()
+  },
   methods: {
     decide(choice) {
       this.$emit('decision', choice)
@@ -63,5 +68,9 @@ export default {
   grid-auto-flow: column;
   grid-gap: 12px;
   height: 64px;
+}
+/* Remove the h2 outline when it receives focus after element mounts (accessibility feature) */
+h2 {
+  outline: none;
 }
 </style>
