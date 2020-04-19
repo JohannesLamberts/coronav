@@ -1,4 +1,5 @@
-import de from './assets/locales/de'
+const baseUrl = 'https://coronav.de'
+const hostname = baseUrl
 
 export default {
   mode: 'universal',
@@ -32,7 +33,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/custom-bootstrap.scss'],
+  css: ['@/assets/styles/custom-bootstrap.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -57,21 +58,22 @@ export default {
     [
       'nuxt-i18n',
       {
+        baseUrl,
         silentTranslationWarn: true,
         locales: [
-          {
-            code: 'de',
-            iso: 'de-DE'
-          }
+          { code: 'de', iso: 'de-DE', name: 'Deutsch', file: 'de-DE.js' },
+          { code: 'en', iso: 'en-US', name: 'English', file: 'en-EN.js' },
+          { code: 'ar', iso: 'ar', name: 'عربي', file: 'ar.js', dir: 'RTL' }
         ],
         defaultLocale: 'de',
-        seo: true,
+        // seo is activated in layouts
+        // https://nuxt-community.github.io/nuxt-i18n/seo.html#improving-performance
+        seo: false,
         vueI18n: {
-          fallbackLocale: 'de',
-          messages: {
-            de
-          }
-        }
+          fallbackLocale: 'de'
+        },
+        lazy: true,
+        langDir: 'assets/locales/'
       }
     ],
     '@nuxtjs/robots',
@@ -101,7 +103,7 @@ export default {
     }
   },
   sitemap: {
-    hostname: 'https://coronav.de',
+    hostname,
     gzip: true
   }
 }

@@ -13,7 +13,7 @@
         block
         size="lg"
         :class="$style.button"
-        to="/fragebogen"
+        :to="localePath('questionaires-should-i-get-testet-for-covid-19')"
       >
         {{ $t('index.cta') }}
       </b-button>

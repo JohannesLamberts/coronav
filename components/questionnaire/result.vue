@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-align-locale">
     <h2 ref="heading" tabindex="-1" class="h5 mb-3">
       {{ $t('results.headline') }}
     </h2>

@@ -1,5 +1,5 @@
 <template>
-  <section :class="$style.wrapper">
+  <section :class="[$style.wrapper, 'text-align-locale']">
     <h2 class="h5 mb-3" tabindex="-1">
       {{ labelText }}
     </h2>
