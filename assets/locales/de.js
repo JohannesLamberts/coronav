@@ -12,9 +12,9 @@ export default {
   },
   index: {
     title: 'Corona-Virus',
-    description: `Habe ich mich mit dem Corona-Virus angesteckt? 
+    description: `Habe ich mich mit dem Corona-Virus angesteckt?
         Hier erfahren Sie, ob eine Infektion wahrscheinlich ist.
-        Wir helfen Ihnen bei der Entscheidung, was dann zu tun ist. 
+        Wir helfen Ihnen bei der Entscheidung, was dann zu tun ist.
         Bitte beantworten Sie die Fragen, BEVOR Sie einen Arzt oder eine Hotline anrufen.`,
     cta: 'Zum Fragebogen'
   },
@@ -131,6 +131,9 @@ export default {
       }
     }
   },
+  testProgress: {
+    ariaLabel: 'Fortschritt:'
+  },
   questions: {
     disclaimer: {
       label: 'Disclaimer',
@@ -179,7 +182,7 @@ export default {
 - Organtransplantation
 - Krebserkrankung
 - Chemotherapie
-- Einnahme von Cortison-Tabletten 
+- Einnahme von Cortison-Tabletten
 - HIV`
     }
   },

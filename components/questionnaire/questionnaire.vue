@@ -1,9 +1,8 @@
 <template>
   <div :class="$style.wrapper">
-    <test-progress :max="totalSteps" :current="step" />
+    <test-progress ref="testProgress" :max="totalSteps" :current="step" />
     <question
       v-if="!isComplete"
-      :key="step"
       :config="currentQuestionConfig"
       @decision="onDecision"
     />
@@ -84,6 +83,10 @@ export default {
     onDecision(choice) {
       this.$set(this.choices, this.currentQuestionConfig.ident, choice)
       this.step += 1
+      this.focusProgressBar()
+    },
+    focusProgressBar() {
+      this.$refs.testProgress.focus()
     }
   }
 }
