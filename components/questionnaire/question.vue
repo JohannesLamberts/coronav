@@ -1,24 +1,22 @@
 <template>
-  <div>
-    <h2 ref="questionText" class="h5 mb-3" tabindex="-1">
+  <section :class="$style.wrapper">
+    <h2 class="h5 mb-3" tabindex="-1">
       {{ labelText }}
     </h2>
-    <div :class="$style.wrapper">
-      <section v-if="infoParsedText" v-html="infoParsedText" />
-      <div :class="$style.buttons">
-        <b-button
-          v-for="choice of config.choices"
-          :key="choice.ident"
-          :variant="choice.variant || 'secondary'"
-          pill
-          size="lg"
-          @click="decide(choice.ident)"
-        >
-          {{ $t(`choices.${choice.ident}`) }}
-        </b-button>
-      </div>
-    </div>
-  </div>
+    <span v-if="infoParsedText" v-html="infoParsedText" />
+    <b-button-group :class="$style.buttons">
+      <b-button
+        v-for="choice of config.choices"
+        :key="choice.ident"
+        :variant="choice.variant || 'secondary'"
+        pill
+        size="lg"
+        @click="decide(choice.ident)"
+      >
+        {{ $t(`choices.${choice.ident}`) }}
+      </b-button>
+    </b-button-group>
+  </section>
 </template>
 
 <script>
@@ -45,15 +43,9 @@ export default {
       return this.$md.render(this.infoText)
     }
   },
-  mounted() {
-    this.focusQuestionText()
-  },
   methods: {
     decide(choice) {
       this.$emit('decision', choice)
-    },
-    focusQuestionText() {
-      this.$refs.questionText.focus()
     }
   }
 }
