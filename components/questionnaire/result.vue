@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2 class="h5 mb-3">{{ $t('results.headline') }}</h2>
+    <h2 ref="heading" tabindex="-1" class="h5 mb-3">
+      {{ $t('results.headline') }}
+    </h2>
     <div>
       <b-alert show="true" class="my-4">
         <p>
@@ -50,6 +52,14 @@ export default {
   computed: {
     responseText() {
       return this.$t(`results.cases.${this.responseConfig.ident}`)
+    }
+  },
+  mounted() {
+    this.focusHeading()
+  },
+  methods: {
+    focusHeading() {
+      this.$refs.heading.focus()
     }
   }
 }
