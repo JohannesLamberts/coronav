@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.container">
     <div>
-      <h1 :class="$style.title">
+      <h1 ref="mainHeading" :class="$style.title" tabindex="-1">
         {{ $t('index.title') }}
       </h1>
       <p>
@@ -20,6 +20,20 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'Index',
+  mounted() {
+    this.focusMainHeading()
+  },
+  methods: {
+    focusMainHeading() {
+      this.$refs.mainHeading.focus()
+    }
+  }
+}
+</script>
 
 <style module>
 .container {

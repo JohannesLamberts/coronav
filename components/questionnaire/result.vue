@@ -1,13 +1,15 @@
 <template>
   <div>
-    <h2 class="h5 mb-3">{{ $t('results.headline') }}</h2>
+    <h2 ref="heading" tabindex="-1" class="h5 mb-3">
+      {{ $t('results.headline') }}
+    </h2>
     <div>
       <b-alert show class="my-4">
         <p>
           <strong>{{ responseText.label }}</strong>
         </p>
         <p v-if="responseConfig.showHotlineSearch">
-          <i>{{ $t('results.searchInfo') }}</i>
+          <em>{{ $t('results.searchInfo') }}</em>
         </p>
         <p>{{ responseText.result }}</p>
       </b-alert>
@@ -50,6 +52,14 @@ export default {
   computed: {
     responseText() {
       return this.$t(`results.cases.${this.responseConfig.ident}`)
+    }
+  },
+  mounted() {
+    this.focusHeading()
+  },
+  methods: {
+    focusHeading() {
+      this.$refs.heading.focus()
     }
   }
 }

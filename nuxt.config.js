@@ -58,8 +58,14 @@ export default {
       'nuxt-i18n',
       {
         silentTranslationWarn: true,
-        locales: ['de'],
+        locales: [
+          {
+            code: 'de',
+            iso: 'de-DE'
+          }
+        ],
         defaultLocale: 'de',
+        seo: true,
         vueI18n: {
           fallbackLocale: 'de',
           messages: {
