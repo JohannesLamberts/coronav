@@ -4,7 +4,7 @@
       {{ $t('results.headline') }}
     </h2>
     <div>
-      <b-alert show="true" class="my-4">
+      <b-alert show class="my-4">
         <p>
           <strong>{{ responseText.label }}</strong>
         </p>
