@@ -56,12 +56,12 @@ export default {
   display: grid;
   grid-template-rows: auto auto;
   height: 100%;
-}
 
-.buttons {
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 12px;
-  height: 64px;
+  .buttons {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 12px;
+    height: 64px;
+  }
 }
 </style>
