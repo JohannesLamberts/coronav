@@ -3,7 +3,11 @@
     <h2 class="h5 mb-3" tabindex="-1">
       {{ labelText }}
     </h2>
-    <span v-if="infoParsedText" v-html="infoParsedText" />
+    <span
+      v-if="infoParsedText"
+      :class="$style.infoText"
+      v-html="infoParsedText"
+    />
     <b-button-group :class="$style.buttons">
       <b-button
         v-for="choice of config.choices"
@@ -56,6 +60,10 @@ export default {
   display: grid;
   grid-template-rows: auto auto;
   height: 100%;
+
+  .infoText {
+    margin-bottom: 0.5rem;
+  }
 
   .buttons {
     display: grid;
