@@ -85,8 +85,6 @@ body {
 }
 
 .header {
-  background-size: cover;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -126,7 +124,6 @@ body {
     padding: 12px;
   }
   .header {
-    background-image: none;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 0 16px;
