@@ -1,8 +1,42 @@
-const generalSuggestions = [
-  'husten und niesen Sie nur in Ihre Armbeuge',
-  'waschen Sie oft und gründlich Ihre Hände',
-  'halten Sie 2 Meter Abstand zu anderen Personen'
+const generalTodos = [
+  'Waschen Sie oft und gründliche Ihre Hände',
+  'Halten Sie 2m Abstand zu anderen Personen',
+  'Husten und niesen Sie nur in Ihre Armbeuge'
 ]
+
+const symptomTodos = [
+  'Bleiben Sie bitte zuhause',
+  'Vermeiden Sie direkten Personenkontakt',
+  'Wenn Sie das Haus verlassen müssen, tragen Sie bitte einen Mundschutz',
+  ...generalTodos
+]
+
+const noSymptomTodos = ['Bleiben Sie, wenn möglich, zuhause', ...generalTodos]
+const noSymptomDirectContactTodos = [
+  'Bleiben Sie, wenn möglich, zuhause',
+  'Vermeiden Sie direkten Personenkontakt',
+  ...generalTodos
+]
+
+const resultTexts = {
+  contactPublicHealthDepartment:
+    'Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.',
+  doNotContactPublicHealthDepartment:
+    'Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.',
+  suspectedCase:
+    'Bei Ihnen besteht erhöhter Verdacht auf eine Coronavirus-Infektion.',
+  noSuspectedCase:
+    'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
+  noRiskTakeCare: `Auch wenn Sie nicht zur Risikogruppe gehören, können Sie 
+Überträger sein oder werden. Schützen Sie sich und andere!`,
+  riskInfo: `Sie haben aufgrund von Alter oder Vorerkrankungen Im Falle
+einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
+  contactWithoutSymptoms: `Sie hatten Kontakt zu einer infizierten Person. Derzeit besteht bei Ihnen KEIN
+erhöhter Verdacht auf eine CoronaInfektion.`,
+  contactDoctor: 'Sie sollten vorsorglich Ihren Hausarzt anrufen.',
+  contactDoctorIfWorsens:
+    'Wenn sich Ihre Symptome verschlechtern, kontaktieren Sie bitte einen Arzt.'
+}
 
 export default {
   choices: {
@@ -11,12 +45,31 @@ export default {
     no: 'Nein'
   },
   index: {
-    title: 'Corona-Virus',
+    title: 'Coronavirus-Infektion?',
     logoTitle: 'Zur CoroNav Startseite',
-    description: `Habe ich mich mit dem Corona-Virus angesteckt?
-        Hier erfahren Sie, ob eine Infektion wahrscheinlich ist.
-        Wir helfen Ihnen bei der Entscheidung, was dann zu tun ist.
-        Bitte beantworten Sie die Fragen, BEVOR Sie einen Arzt oder eine Hotline anrufen.`,
+    description: `Hier erfahren Sie, ob eine Infektion wahrscheinlich ist.
+Dieser Navigator leitet Sie sicher durch einige Fragen.
+
+Es kann geklärt werden: 
+- welche Symptome Sie aufweisen
+- ob es sich tatsächlich um eine Coronavirus-Infektion handeln könnte.
+
+Anschließend erhalten Sie:
+- eine Empfehlung wie Sie weiter vorgehen sollten
+- Kontakt-Information zum Gesundheitsamt in Ihrer Region.
+
+*Vielen Dank, dass Sie mithelfen Ärzte und Hotlines zu entlasten!*
+
+Bitte beachten Sie:
+
+Ein Test wird nach wie vor vom Gesundheitsamt oder von ärztlicher Seite 
+angeordnet.
+
+Die Anordnung erfolgt nach Kriterien, die sich entsprechend der 
+aktuellen Entwicklungen der Pandemie ändern. Die aktuellen Kriterien 
+sind in der Anwendung bereits berücksichtigt. Sie können Sie zusätzlich 
+[direkt beim Robert Koch-Institut](https://www.rki.de/SharedDocs/FAQ/NCOV2019/gesamt.html) 
+abrufen.`,
     cta: 'Starten'
   },
   impressum: {
@@ -42,93 +95,58 @@ export default {
     },
     cases: {
       '1_symptoms_withContact_risk': {
-        label:
-          'Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt! Sie sollten außerdem vorsorglich Ihren Hausarzt anrufen.',
-        result:
-          'Bei Ihnen besteht erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'vermeiden Sie direkten Personenkontakt',
-          'wenn Sie das Haus verlassen, tragen Sie bitte einen Mundschutz',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.contactPublicHealthDepartment}
+${resultTexts.suspectedCase}`,
+        result: `${resultTexts.contactDoctor} 
+
+${resultTexts.riskInfo}`,
+        todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        label: 'Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt!',
-        result:
-          'Bei Ihnen besteht erhöhter Verdacht auf eine Corona-Infektion.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'vermeiden Sie direkten Personenkontakt',
-          'wenn Sie das Haus verlassen, tragen Sie bitte einen Mundschutz',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.contactPublicHealthDepartment}
+${resultTexts.suspectedCase}`,
+        result: `${resultTexts.noRiskTakeCare}`,
+        todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        label:
-          'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden. Sie sollten allerdings vorsorglich Ihren Hausarzt anrufen.',
-        result:
-          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'verlassen Sie Ihre Wohnung nur, wenn unbedingt notwendig und tragen Sie außer Haus einen Mundschutz',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.doNotContactPublicHealthDepartment}
+${resultTexts.noSuspectedCase}`,
+        result: `${resultTexts.riskInfo}
+
+${resultTexts.contactDoctor}`,
+        todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        label: 'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.',
-        result:
-          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'kontaktieren Sie telefonisch Ihren Hausarzt, wenn sich Ihre Symptome verschlechtern',
-          'verlassen Sie Ihre Wohnung nur, wenn unbedingt notwendig und tragen Sie außer Haus einen Mundschutz',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.doNotContactPublicHealthDepartment}
+${resultTexts.noSuspectedCase}`,
+        result: `${resultTexts.contactDoctorIfWorsens}
+
+${resultTexts.noRiskTakeCare}`,
+        todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        label: 'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.',
-        result:
-          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'bleiben Sie zu Hause',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.doNotContactPublicHealthDepartment} 
+${resultTexts.noSuspectedCase}`,
+        result: `${resultTexts.noRiskTakeCare}`,
+        todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        label: 'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.',
-        result:
-          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'bleiben Sie zu Hause',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.doNotContactPublicHealthDepartment} 
+${resultTexts.noSuspectedCase}`,
+        result: `${resultTexts.riskInfo}`,
+        todos: noSymptomTodos
       },
       '7_directContact_risk': {
-        label:
-          'Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt! Sie hatten Kontakt zu einer infizierten Person.',
-        result:
-          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'bleiben Sie zu Hause',
-          'vermeiden Sie direkten Personenkontakt',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.contactPublicHealthDepartment}
+${resultTexts.contactWithoutSymptoms}`,
+        result: `${resultTexts.riskInfo}`,
+        todos: noSymptomDirectContactTodos
       },
       '8_directContact_noRisk': {
-        label:
-          'Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt! Sie hatten Kontakt zu einer infizierten Person.',
-        result:
-          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'bleiben Sie zu Hause',
-          'vermeiden Sie direkten Personenkontakt',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.contactPublicHealthDepartment}
+${resultTexts.contactWithoutSymptoms}`,
+        result: `${resultTexts.noRiskTakeCare}`,
+        todos: noSymptomDirectContactTodos
       }
     }
   },
@@ -138,44 +156,69 @@ export default {
   questions: {
     disclaimer: {
       label: 'Disclaimer',
-      info: `Dieser Navigator ist derzeit in Entwicklung und soll als
-        Entscheidungshilfe vor einem Anruf bei dem Gesundheitsamt dienen.
-        Fragen und Antworten wurden mit Ärzten entwickelt und orientieren sich an den Angaben des Robert-Koch-Instituts (RKI).
-        Diese können jedoch keinen persönlichen Arztbesuch ersetzen.`
+      info: `Dieser Navigator wird auf Basis
+aktuellster wissenschaftlicher
+Empfehlungen des Robert Koch-Instituts
+und der Bundesregierung zur Verfügung
+gestellt. Er befindet sich derzeit in
+Entwicklung und soll als
+Ersteinschätzung und Entscheidungshilfe
+vor einem Anruf beim Arzt oder
+Gesundheitsamt dienen
+Die Anwendung kann keine ärztliche
+Diagnose ersetzen. Bei akuten
+Symptomen oder Zweifeln wenden Sie
+sich bitte an einen Arzt.
+In dringenden Notfällen rufen Sie die 112
+an.`
     },
-    symptoms: {
+    symptoms_1: {
       label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
-      info: `- allgemeines Krankheitsgefühl
-- laufende Nase
-- Fieber
+      info: `- Fieber
 - Husten
-- Halsschmerzen
 - Atembeschwerden`
+    },
+    symptoms_2: {
+      label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
+      info: `- Laufende Nase
+- Halsschmerzen
+- Kopfschmerzen
+- allgemeines Krankheitsgefühl`
+    },
+    symptoms_3: {
+      label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
+      info: `- Durchfall
+- reduzierter Geruchs- oder Geschmackssinn`
     },
     workRiskContact: {
       label:
-        'Kommen Sie bei der Arbeit oder ehrenamtlichen Tätigkeit mit Menschen in Kontakt, die ein hohes Risiko für einen schweren Verlauf einer Corona-Virus-Infektion haben (z.B. im Krankenhaus oder der Altenpflege)?'
+        'Kommen Sie bei der Arbeit oder ehrenamtlichen Tätigkeit mit älteren oder kranken Menschen in Kontakt?'
     },
     directContact: {
       label:
-        'Hatten Sie in den letzten 14 Tagen direkten Kontakt zu einer Person, die positiv auf eine Corona-Infektion getestet wurde?',
-      info: `Direkten Kontakt hatten Sie, wenn...
-- Sie mit dieser Person im selben Haushalt leben ODER
-- Sie mindestens 15 Minuten persönlichen Kontakt zu dieser Person, zum Beispiel in einem Gespräch hatten ODER
-- Körperflüssigkeiten auf Sie übertragen werden konnten, z.B. durch Küssen, Anniesen oder Anhusten`
+        'Hatten Sie in den letzen 14 Tagen direkten Kontakt zu einer Person, bei der eine Coronavirus-Infektion festgestellt wurde?',
+      info: `Direkter Kontakt heißt:
+- Sie leben mit der Person im selben Haushalt ODER
+- Sie hatten mindestens 15 Minuten persönlichen Kontakt, z.B. in einem Gespräch. ODER
+- Körperflüssigkeiten konnten auf Sie übertragen werden, z.B. durch Küssen, Niesen, Husten`
     },
     ageRisk: {
       label: 'Sind Sie 50 Jahre oder älter?'
     },
-    patientHistoryRisk: {
-      label: 'Haben Sie eine oder mehrere der folgenden Diagnosen?',
-      info: `- Herzerkrankung
-- Bluthochdruck
+    patientDiagnoseRisk: {
+      label:
+        'Hat ein Arzt bei Ihnen eine oder mehrere der folgenden Diagnosen gestellt?',
+      info: `- Bluthochdruck
 - Diabetes
-- Fettleibigkeit
-- Lungenerkrankung
-- Lebererkrankung
-- Nierenerkrankung`
+- Fettleibigkeit`
+    },
+    patientOrganRisk: {
+      label:
+        'Haben Sie eine chronische Erkrankung eines oder mehrerer folgender Organe?',
+      info: `- Herz
+- Leber
+- Niere
+- Magen-Darm`
     },
     patientImmuneRisk: {
       label: 'Haben Sie ein unterdrücktes Immunsystem?',
@@ -183,8 +226,9 @@ export default {
 - Organtransplantation
 - Krebserkrankung
 - Chemotherapie
-- Einnahme von Cortison-Tabletten
-- HIV`
+- Einname von Kortison-Tabletten
+- HIV/AIDS
+- Andere Gründe`
     }
   },
   components: {

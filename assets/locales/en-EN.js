@@ -1,8 +1,40 @@
-const generalSuggestions = [
-  'husten und niesen Sie nur in Ihre Armbeuge',
-  'waschen Sie oft und gründliche Ihre Hände',
-  'halten Sie 2m Abstand zu anderen Personen'
+const generalTodos = [
+  'Wash your hands often and thoroughly',
+  'Keep 2 metres away from other people',
+  'Only cough and sneeze into the crook of your arm'
 ]
+
+const symptomTodos = [
+  'Please stay at home',
+  'Avoid direct personal contact',
+  'When you leave the house please wear a face mask',
+  ...generalTodos
+]
+
+const noSymptomTodos = ['Please stay at home, if possible', ...generalTodos]
+const noSymptomDirectContactTodos = [
+  'Please stay at home, if possible',
+  'Avoid direct personal contact',
+  ...generalTodos
+]
+
+const resultTexts = {
+  contactPublicHealthDepartment:
+    'Please report to your responsible health department!',
+  doNotContactPublicHealthDepartment:
+    'For now you do NOT have to report to the health department.',
+  suspectedCase: 'You are suspected of having a corona infection.',
+  noSuspectedCase:
+    'You are currently NOT suspected of having a corona infection.',
+  noRiskTakeCare: `Even if you do not belong to the risk group, you can be or
+become a carrier. Protect yourself and others!`,
+  riskInfo: `You have an increased risk of a more severe course of the disease
+due to age or previous illnesses in the event of an infection.`,
+  contactWithoutSymptoms: `You were in contact with an infected person.
+You are currently NOT suspected of having a corona infection.`,
+  contactDoctor: 'You should call your family doctor as a precaution.',
+  contactDoctorIfWorsens: 'If your symptoms worsen, please contact a doctor.'
+}
 
 export default {
   choices: {
@@ -11,22 +43,40 @@ export default {
     no: 'No'
   },
   index: {
-    title: 'Corona-Virus',
-    description: `Have I contracted the Corona virus? 
-    Here you can find out if an infection is likely. 
-    We'll help you decide what to do if you are. 
-    Please answer the questions BEFORE you call a doctor or a hotline.`,
+    title: 'Coronavirus-Infection?',
+    logoTitle: 'To the CoroNav homepage',
+    description: `Here you can find out whether an infection is likely. 
+This navigator will guide you safely through some questions.
+
+It can be clarified: 
+- what symptoms you show
+- if this could actually be a coronavirus infection.
+
+Then you will receive:
+- a recommendation on how to proceed
+- Contact information to the health office in your region
+
+*Thank you very much for helping to relieve doctors and hotlines!*
+
+Please note:
+
+A test is still ordered by the public health department or by doctors.
+
+The order is made according to criteria that change according to the current 
+developments of the pandemic. The current criteria are already taken into 
+account in the application. They can also be obtained directly 
+[from the Robert Koch-Institut](https://www.rki.de/SharedDocs/FAQ/NCOV2019/gesamt.html).`,
     cta: 'Start'
   },
   impressum: {
     title: 'Imprint'
   },
   results: {
-    headline: 'Ergebnis',
-    todosLabel: 'Das sollten Sie tun:',
-    searchInfo: 'Sie können unten nach Ihrem lokalen Gesundheitsamt suchen.',
+    headline: 'Results',
+    todosLabel: 'This is what you should do:',
+    searchInfo: 'You can search for your local health department below.',
     additionalRessources: {
-      label: 'Mehr Informationen finden Sie auf folgenden Seiten:',
+      label: 'You can find more information on the following pages:',
       pages: [
         {
           label: 'Infektionsschutz.de',
@@ -41,153 +91,138 @@ export default {
     },
     cases: {
       '1_symptoms_withContact_risk': {
-        label:
-          'Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt! Sie sollten außerdem vorsorglich Ihren Hausarzt anrufen.',
-        result:
-          'Bei Ihnen besteht erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'vermeiden Sie direkten Personenkontakt',
-          'wenn Sie das Haus verlassen, tragen Sie bitte einen Mundschutz',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.contactPublicHealthDepartment}
+${resultTexts.suspectedCase}`,
+        result: `${resultTexts.contactDoctor} 
+
+${resultTexts.riskInfo}`,
+        todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        label: 'Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt!',
-        result:
-          'Bei Ihnen besteht erhöhter Verdacht auf eine Corona-Infektion.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'vermeiden Sie direkten Personenkontakt',
-          'wenn Sie das Haus verlassen, tragen Sie bitte einen Mundschutz',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.contactPublicHealthDepartment}
+${resultTexts.suspectedCase}`,
+        result: `${resultTexts.noRiskTakeCare}`,
+        todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        label:
-          'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden. Sie sollten allerdings vorsorglich Ihren Hausarzt anrufen.',
-        result:
-          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'verlassen Sie Ihre Wohnung nur, wenn unbedingt notwendig und tragen Sie außer Haus einen Mundschutz',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.doNotContactPublicHealthDepartment}
+${resultTexts.noSuspectedCase}`,
+        result: `${resultTexts.riskInfo}
+
+${resultTexts.contactDoctor}`,
+        todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        label: 'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.',
-        result:
-          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'kontaktieren Sie telefonisch Ihren Hausarzt, wenn sich Ihre Symptome verschlechtern',
-          'verlassen Sie Ihre Wohnung nur, wenn unbedingt notwendig und tragen Sie außer Haus einen Mundschutz',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.doNotContactPublicHealthDepartment}
+${resultTexts.noSuspectedCase}`,
+        result: `${resultTexts.contactDoctorIfWorsens}
+
+${resultTexts.noRiskTakeCare}`,
+        todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        label: 'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.',
-        result:
-          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'bleiben Sie zu Hause',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.doNotContactPublicHealthDepartment} 
+${resultTexts.noSuspectedCase}`,
+        result: `${resultTexts.noRiskTakeCare}`,
+        todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        label: 'Sie müssen sich vorerst NICHT beim Gesundheitsamt melden.',
-        result:
-          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'bleiben Sie zu Hause',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.doNotContactPublicHealthDepartment} 
+${resultTexts.noSuspectedCase}`,
+        result: `${resultTexts.riskInfo}`,
+        todos: noSymptomTodos
       },
       '7_directContact_risk': {
-        label:
-          'Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt! Sie hatten Kontakt zu einer infizierten Person.',
-        result:
-          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion. Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'bleiben Sie zu Hause',
-          'vermeiden Sie direkten Personenkontakt',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.contactPublicHealthDepartment}
+${resultTexts.contactWithoutSymptoms}`,
+        result: `${resultTexts.riskInfo}`,
+        todos: noSymptomDirectContactTodos
       },
       '8_directContact_noRisk': {
-        label:
-          'Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt! Sie hatten Kontakt zu einer infizierten Person.',
-        result:
-          'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
-        todos: [
-          'bewahren Sie Ruhe',
-          'bleiben Sie zu Hause',
-          'vermeiden Sie direkten Personenkontakt',
-          ...generalSuggestions
-        ]
+        label: `${resultTexts.contactPublicHealthDepartment}
+${resultTexts.contactWithoutSymptoms}`,
+        result: `${resultTexts.noRiskTakeCare}`,
+        todos: noSymptomDirectContactTodos
       }
     }
+  },
+  testProgress: {
+    ariaLabel: 'Progress:'
   },
   questions: {
     disclaimer: {
       label: 'Disclaimer',
-      info: `This navigator is currently under development and is intended 
-      to be used as a decision-making aid before calling the public health department. 
-      Questions and answers were developed in cooperation with physicians 
-      and are based on information provided by the Robert Koch Institute (RKI). 
-      However, these cannot replace a personal visit to the doctor.`
+      info: `This navigator is provided on the basis of the latest scientific
+recommendations of the Robert Koch-Institut and the German government.
+It is currently in development and is intended to serve as an initial assessment
+and decision-making aid before calling a doctor or health authority. 
+The application cannot replace a medical diagnosis. 
+In case of acute symptoms or doubts, please consult a physician.
+For emergencies, call 112.`
     },
-    symptoms: {
-      label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
-      info: `- allgemeines Krankheitsgefühl
-- laufende Nase
-- Fieber
-- Husten
-- Halsschmerzen
-- Atembeschwerden`
+    symptoms_1: {
+      label: 'Do you have one or more of the following symptoms?',
+      info: `- fever
+- cough
+- breathing difficulties`
+    },
+    symptoms_2: {
+      label: 'Do you have one or more of the following symptoms?',
+      info: `- runny nose
+- sore throat
+- headaches
+- general feeling of malaise`
+    },
+    symptoms_3: {
+      label: 'Do you have one or more of the following symptoms?',
+      info: `- diarrhoea
+- reduced sense of smell or taste`
     },
     workRiskContact: {
-      label:
-        'Kommen Sie bei der Arbeit oder ehrenamtlichen Tätigkeit mit Menschen in Kontakt, die ein hohes Risiko für einen schweren Verlauf einer Corona-Virus-Infektion haben (z.B. im Krankenhaus oder der Altenpflege)?'
+      label: `Are you in contact with people who are at high risk for a severe 
+course of a coronavirus infection during work or volunteer activities?
+(e.g. in a hospital or elderly care)`
     },
     directContact: {
       label:
-        'Hatten Sie in den letzten 14 Tagen direkten Kontakt zu einer Person, die positiv auf eine Corona-Infektion getestet wurde?',
-      info: `Direkten Kontakt hatten Sie, wenn...
-- Sie mit dieser Person im selben Haushalt leben ODER
-- Sie mindestens 15 Minuten persönlichen Kontakt zu dieser Person, zum Beispiel in einem Gespräch hatten ODER
-- Körperflüssigkeiten auf Sie übertragen werden konnten, z.B. durch Küssen, Anniesen oder Anhusten`
+        'Have you had direct contact with a person who has tested positive for coronavirus in the past 14 days?',
+      info: `You had direct contact if:
+- you live with this person in the same household OR
+- you had at least 15 minutes of personal contact with this person, for example in a conversation OR
+- body fluids could have been transferred to you, e.g. by kissing, sneezing or coughing`
     },
     ageRisk: {
-      label: 'Sind Sie 50 Jahre oder älter?'
+      label: 'Are you age 50 or older?'
     },
-    patientHistoryRisk: {
-      label: 'Haben Sie eine oder mehrere der folgenden Diagnosen?',
-      info: `- Herzerkrankung
-- Bluthochdruck
-- Diabetes
-- Fettleibigkeit
-- Lungenerkrankung
-- Lebererkrankung
-- Nierenerkrankung`
+    patientDiagnoseRisk: {
+      label: 'Has a doctor made one or more of the following diagnoses?',
+      info: `- hypertension
+- diabetes 
+- obesity`
+    },
+    patientOrganRisk: {
+      label:
+        'Do you have a chronic disease of one or more of the following organs?',
+      info: `- heart
+- liver
+- kidney
+- stomach / gut`
     },
     patientImmuneRisk: {
-      label: 'Haben Sie ein unterdrücktes Immunsystem?',
-      info: `zum Beispiel wegen:
-- Organtransplantation
-- Krebserkrankung
-- Chemotherapie
-- Einnahme von Cortison-Tabletten 
-- HIV`
+      label: 'Do you have a suppressed immune system?',
+      info: `For example because of:
+- organ transplant
+- cancer
+- chemotherapy
+- taking cortisone tablets
+- HIV/AIDS
+- other reasons`
     }
   },
   components: {
     hotlineSearch: {
-      labelText: 'Postleitzahl eingeben',
-      buttonText: 'Gesundheitsamt suchen'
+      labelText: 'Enter postcode',
+      buttonText: 'Search health department'
     }
   }
 }

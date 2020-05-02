@@ -4,9 +4,10 @@
       <h1 ref="mainHeading" :class="$style.title" tabindex="-1">
         {{ $t('index.title') }}
       </h1>
-      <p :class="$style.textContent">
-        {{ $t('index.description') }}
-      </p>
+      <p
+        :class="$style.textContent"
+        v-html="$md.render($t('index.description'))"
+      />
       <b-button
         variant="outline-primary"
         pill
@@ -41,7 +42,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 .textContent {

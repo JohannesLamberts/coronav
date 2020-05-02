@@ -43,7 +43,7 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module'
   ],
@@ -59,18 +59,23 @@ export default {
       'nuxt-i18n',
       {
         baseUrl,
-        silentTranslationWarn: true,
         locales: [
           { code: 'de', iso: 'de-DE', name: 'Deutsch', file: 'de-DE.js' },
           { code: 'en', iso: 'en-US', name: 'English', file: 'en-EN.js' },
-          { code: 'ar', iso: 'ar', name: 'عربي', file: 'ar.js', dir: 'RTL' }
+          {
+            code: 'de-einfach',
+            iso: 'de-DE',
+            name: 'Einfache Sprache',
+            file: 'de-SIMPLE.js'
+          }
         ],
         defaultLocale: 'de',
         // seo is activated in layouts
         // https://nuxt-community.github.io/nuxt-i18n/seo.html#improving-performance
         seo: false,
         vueI18n: {
-          fallbackLocale: 'de'
+          fallbackLocale: 'de',
+          silentFallbackWarn: true
         },
         lazy: true,
         langDir: 'assets/locales/'
@@ -85,7 +90,8 @@ export default {
     bootstrapVueCSS: false
   },
   markdownit: {
-    injected: true
+    injected: true,
+    use: ['@/plugins/md-safe-links.js']
   },
   /*
    ** Build configuration
