@@ -4,7 +4,7 @@
       <h1 ref="mainHeading" :class="$style.title" tabindex="-1">
         {{ $t('index.title') }}
       </h1>
-      <p>
+      <p :class="$style.textContent">
         {{ $t('index.description') }}
       </p>
       <b-button
@@ -35,13 +35,17 @@ export default {
 }
 </script>
 
-<style module>
+<style lang="scss" module>
 .container {
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.textContent {
+  margin-bottom: 2rem;
 }
 
 .button {
