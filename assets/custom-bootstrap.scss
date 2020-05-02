@@ -34,11 +34,12 @@ $body-color: $gray-800;
 
 $link-color: #17b897;
 
-$font-family-sans-serif: 'Lato', Avenir, Roboto, 'Helvetica Neue', Helvetica,
-  Arial, sans-serif;
-$font-family-serif: 'Merriweather', Georgia, 'Times New Roman', Times, serif !default;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Quicksand:wght@400;500;700&display=swap');
+$font-family-content: 'Open Sans', Avenir, Roboto, 'Helvetica Neue', Helvetica,
+Arial, sans-serif;
+$font-family-headings: 'Quicksand', sans-serif;
 
-$headings-font-family: $font-family-serif;
+$headings-font-family: $font-family-headings;
 $headings-font-weight: 900;
 $headings-color: $gray-700;
 
