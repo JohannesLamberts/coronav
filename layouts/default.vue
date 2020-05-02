@@ -104,7 +104,7 @@ body {
 }
 
 .footer {
-  background-color: #0a558c;
+  background-color: #0a5287;
   position: fixed;
   bottom: 0;
   left: 0;
