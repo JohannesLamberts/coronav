@@ -2,8 +2,14 @@
   <div>
     <div :class="$style.wrapper">
       <header :class="$style.header">
-        <h1 :class="$style.logo">
-          <nuxt-link :class="$style.logoLink" to="/">CoroNav</nuxt-link>
+        <h1 class="h1" tabindex="-1">
+          <nuxt-link to="/" :title="$t('index.logoTitle')">
+            <img
+              src="@/assets/images/logo_coronav.png"
+              alt="CoroNav Logo"
+              :class="$style.logo"
+            />
+          </nuxt-link>
         </h1>
       </header>
       <main :class="$style.content">
@@ -79,36 +85,24 @@ body {
 }
 
 .header {
-  background-image: url('~assets/shapes/header.svg');
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0 48px;
+  padding: 0 20px;
 }
 
 .logo {
-  color: white;
-  font-size: 1rem;
-  margin: 0;
-}
-.logoLink {
-  color: white;
-}
-
-.logoLink:hover,
-.logoLink:focus,
-.logoLink:active {
-  color: white;
+  width: 180px;
 }
 
 .content {
   margin: 0 auto;
   width: 100vw;
   max-width: 40em;
-  padding: 20px;
-  padding-bottom: 48px;
+  padding: 0 20px;
+  padding-bottom: 36px;
 }
 
 .footer {
@@ -135,17 +129,10 @@ body {
     background-image: none;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 16px 0;
+    padding: 0 16px;
   }
   .logo {
-    background-image: url('~assets/shapes/header-large.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-size: 1.5rem;
     width: 100%;
-    text-align: center;
-    padding: 48px 32px;
   }
   .content {
     width: 60vw;
