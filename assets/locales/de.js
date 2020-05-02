@@ -12,6 +12,7 @@ export default {
   },
   index: {
     title: 'Corona-Virus',
+    logoTitle: 'Zur CoroNav Startseite',
     description: `Habe ich mich mit dem Corona-Virus angesteckt?
         Hier erfahren Sie, ob eine Infektion wahrscheinlich ist.
         Wir helfen Ihnen bei der Entscheidung, was dann zu tun ist.
