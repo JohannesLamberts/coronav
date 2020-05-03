@@ -164,7 +164,7 @@ gestellt. Er befindet sich derzeit in
 Entwicklung und soll als
 Ersteinschätzung und Entscheidungshilfe
 vor einem Anruf beim Arzt oder
-Gesundheitsamt dienen
+Gesundheitsamt dienen.
 Die Anwendung kann keine ärztliche
 Diagnose ersetzen. Bei akuten
 Symptomen oder Zweifeln wenden Sie

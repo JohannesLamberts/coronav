@@ -12,7 +12,7 @@ export default {
   nuxtI18n: {
     paths: {
       de: '/fragebogen/soll-ich-mich-auf-covid-19-testen-lassen',
-      'de-einfach': '/fragebogen/soll-ich-mich-auf-covid-19-testen-lassen'
+      'de-leicht': '/fragebogen/soll-ich-mich-auf-covid-19-testen-lassen'
     }
   },
   data() {
