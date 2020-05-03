@@ -11,7 +11,7 @@
         <p v-if="responseConfig.showHotlineSearch">
           <em>{{ $t('results.searchInfo') }}</em>
         </p>
-        <p v-html="$md.render(responseText.result)" />
+        <span v-html="$md.render(responseText.result)" />
       </b-alert>
       <p>{{ $t('results.todosLabel') }}</p>
       <ul>

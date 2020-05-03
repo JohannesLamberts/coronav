@@ -65,7 +65,7 @@ export default {
           {
             code: 'de-einfach',
             iso: 'de-DE',
-            name: 'Einfache Sprache',
+            name: 'Leichte Sprache',
             file: 'de-SIMPLE.js'
           }
         ],

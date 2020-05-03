@@ -19,6 +19,6 @@ export default {
     return {
       questionnaire
     }
-  },
+  }
 }
 </script>

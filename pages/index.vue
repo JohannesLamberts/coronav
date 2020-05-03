@@ -4,7 +4,7 @@
       <h1 ref="mainHeading" :class="$style.title" tabindex="-1">
         {{ $t('index.title') }}
       </h1>
-      <p
+      <span
         :class="$style.textContent"
         v-html="$md.render($t('index.description'))"
       />
