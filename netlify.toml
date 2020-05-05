@@ -3,3 +3,8 @@
   to = "https://coronav.de/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/fragebogen"
+  to = "/fragebogen/soll-ich-mich-auf-covid-19-testen-lassen"
+  status = 301

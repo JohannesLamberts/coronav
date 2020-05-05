@@ -3,7 +3,15 @@ questions:
     choices:
       - ident: ok
         variant: primary
-  - ident: symptoms
+  - ident: symptoms_1
+    choices:
+      - ident: yes
+      - ident: no
+  - ident: symptoms_2
+    choices:
+      - ident: yes
+      - ident: no
+  - ident: symptoms_3
     choices:
       - ident: yes
       - ident: no
@@ -19,7 +27,11 @@ questions:
     choices:
       - ident: yes
       - ident: no
-  - ident: patientHistoryRisk
+  - ident: patientDiagnoseRisk
+    choices:
+      - ident: yes
+      - ident: no
+  - ident: patientOrganRisk
     choices:
       - ident: yes
       - ident: no
@@ -31,10 +43,16 @@ questions:
       risk: true
 
 derived:
+  - ident: symptoms
+    matchers:
+      - symptoms_1: yes
+      - symptoms_2: yes
+      - symptoms_3: yes
   - ident: risk
     matchers:
       - ageRisk: yes
-      - patientHistoryRisk: yes
+      - patientDiagnoseRisk: yes
+      - patientOrganRisk: yes
       - patientImmuneRisk: yes
   - ident: contact
     matchers:
@@ -57,7 +75,7 @@ results:
 
 resultComputation:
   ident: symptoms
-  yes:
+  true:
     ident: contact
     true:
       ident: risk

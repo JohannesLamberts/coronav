@@ -1,4 +1,5 @@
-import de from './assets/locales/de'
+const baseUrl = 'https://coronav.de'
+const hostname = baseUrl
 
 export default {
   mode: 'universal',
@@ -32,7 +33,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/custom-bootstrap.scss'],
+  css: ['@/assets/styles/custom-bootstrap.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -42,7 +43,7 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module'
   ],
@@ -57,21 +58,27 @@ export default {
     [
       'nuxt-i18n',
       {
-        silentTranslationWarn: true,
+        baseUrl,
         locales: [
-          {
-            code: 'de',
-            iso: 'de-DE'
-          }
+          { code: 'de', iso: 'de-DE', name: 'Deutsch', file: 'de-DE.js' },
+          { code: 'en', iso: 'en-US', name: 'English', file: 'en-EN.js' }
+          // {
+          //   code: 'de-leicht',
+          //   iso: 'de-DE',
+          //   name: 'Leichte Sprache',
+          //   file: 'de-SIMPLE.js'
+          // }
         ],
         defaultLocale: 'de',
-        seo: true,
+        // seo is activated in layouts
+        // https://nuxt-community.github.io/nuxt-i18n/seo.html#improving-performance
+        seo: false,
         vueI18n: {
           fallbackLocale: 'de',
-          messages: {
-            de
-          }
-        }
+          silentFallbackWarn: true
+        },
+        lazy: true,
+        langDir: 'assets/locales/'
       }
     ],
     '@nuxtjs/robots',
@@ -83,7 +90,8 @@ export default {
     bootstrapVueCSS: false
   },
   markdownit: {
-    injected: true
+    injected: true,
+    use: ['@/plugins/md-safe-links.js']
   },
   /*
    ** Build configuration
@@ -101,7 +109,7 @@ export default {
     }
   },
   sitemap: {
-    hostname: 'https://coronav.de',
+    hostname,
     gzip: true
   }
 }

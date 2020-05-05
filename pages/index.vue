@@ -4,16 +4,17 @@
       <h1 ref="mainHeading" :class="$style.title" tabindex="-1">
         {{ $t('index.title') }}
       </h1>
-      <p :class="$style.textContent">
-        {{ $t('index.description') }}
-      </p>
+      <span
+        :class="$style.textContent"
+        v-html="$md.render($t('index.description'))"
+      />
       <b-button
         variant="outline-primary"
         pill
         block
         size="lg"
         :class="$style.button"
-        to="/fragebogen"
+        :to="localePath('questionaires-should-i-get-testet-for-covid-19')"
       >
         {{ $t('index.cta') }}
       </b-button>
@@ -41,7 +42,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 .textContent {

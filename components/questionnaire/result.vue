@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-align-locale">
     <h2 ref="heading" tabindex="-1" class="h5 mb-3">
       {{ $t('results.headline') }}
     </h2>
@@ -11,7 +11,7 @@
         <p v-if="responseConfig.showHotlineSearch">
           <em>{{ $t('results.searchInfo') }}</em>
         </p>
-        <p>{{ responseText.result }}</p>
+        <span v-html="$md.render(responseText.result)" />
       </b-alert>
       <p>{{ $t('results.todosLabel') }}</p>
       <ul>
