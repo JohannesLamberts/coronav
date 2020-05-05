@@ -61,13 +61,13 @@ export default {
         baseUrl,
         locales: [
           { code: 'de', iso: 'de-DE', name: 'Deutsch', file: 'de-DE.js' },
-          { code: 'en', iso: 'en-US', name: 'English', file: 'en-EN.js' },
-          {
-            code: 'de-leicht',
-            iso: 'de-DE',
-            name: 'Leichte Sprache',
-            file: 'de-SIMPLE.js'
-          }
+          { code: 'en', iso: 'en-US', name: 'English', file: 'en-EN.js' }
+          // {
+          //   code: 'de-leicht',
+          //   iso: 'de-DE',
+          //   name: 'Leichte Sprache',
+          //   file: 'de-SIMPLE.js'
+          // }
         ],
         defaultLocale: 'de',
         // seo is activated in layouts
