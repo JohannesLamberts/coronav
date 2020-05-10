@@ -55,7 +55,7 @@ in this respect. You can also check the criteria directly
   },
   results: {
     headline: 'Results',
-    todosLabel: 'This is what you should do:',
+    todosLabel: 'Please follow these rules:',
     searchInfo: 'Below you can search for your local health department.',
     additionalRessources: {
       label: 'You can find more information on the following pages:',
