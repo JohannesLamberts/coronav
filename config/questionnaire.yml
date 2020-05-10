@@ -70,7 +70,9 @@ results:
   - ident: 2_symptoms_withContact_noRisk
     showHotlineSearch: true
   - ident: 3_symptoms_withoutContact_risk
+    showHotlineSearch: true
   - ident: 3a_symptoms_withoutDirectContact_noRisk
+    showHotlineSearch: true
   - ident: 4_symptoms_withoutContact_noRisk
   - ident: 5_noFeatures_noRisk
   - ident: 6_noFeatures_risk

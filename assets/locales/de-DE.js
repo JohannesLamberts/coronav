@@ -1,6 +1,6 @@
 const generalTodos = [
   'Waschen Sie oft und gründliche Ihre Hände',
-  'Halten Sie 2m Abstand zu anderen Personen',
+  'Halten Sie 2 Meter Abstand zu anderen Personen',
   'Husten und niesen Sie nur in Ihre Armbeuge'
 ]
 
@@ -27,11 +27,11 @@ export default {
   index: {
     title: 'Coronavirus-Infektion?',
     logoTitle: 'Zur CoroNav Startseite',
-    description: `Hier erfahren Sie, ob bei Ihnen eine Infektion wahrscheinlich 
+    description: `Hier erfahren Sie, ob bei Ihnen eine Infektion wahrscheinlich
 ist, ob ein Test empfohlen wird und warum.
 
-Dieser Navigator leitet Sie sicher durch wenige Fragen. 
-Es kann geklärt werden: 
+Dieser Navigator leitet Sie sicher durch wenige Fragen.
+Es kann geklärt werden:
 - ob Sie die typischen Symptome einer Coronavirus-Infektion haben
 - ob sie zur Risikogruppe gehören
 - ob Sie als Kontaktperson eingestuft werden.
@@ -75,7 +75,7 @@ abrufen.`,
     },
     cases: {
       '1_symptoms_withContact_risk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt. 
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
 Ein Test wird empfohlen.**
 
 Warum?
@@ -90,7 +90,7 @@ Warum?
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt. 
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
 Ein Test wird empfohlen.**
 
 Warum?
@@ -112,8 +112,8 @@ Warum?
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
--Sie sollten vorsorglich Ihren Hausarzt anrufen
--Sie haben aufgrund von Alter oder Vorerkrankungen Im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
+- Sie sollten vorsorglich Ihren Hausarzt anrufen
+- Sie haben aufgrund von Alter oder Vorerkrankungen Im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: symptomTodos
       },
       '3a_symptoms_withoutDirectContact_noRisk': {
@@ -137,7 +137,7 @@ Ein Test wird derzeit nicht empfohlen.**
 Warum?
 - Sie hatten KEINEN Kontakt zu einer Infizierten Person
 
-Wenn sich Ihre Symptome verschlechtern, kontaktieren Sie bitte einen Arzt oder 
+Wenn sich Ihre Symptome verschlechtern, kontaktieren Sie bitte einen Arzt oder
 eine Ärztin. Sollte sich herausstellen, dass eine Kontaktperson positiv getestet
 wurde, melden Sich sich bitte umgehend beim Gesundheitsamt.
 
@@ -165,7 +165,7 @@ Warum?
 - Sie haben KEINE typischen Symptome.
 - Sie hatten KEINEN Kontakt zu einer infizierten Person.
 
-Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein 
+Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein
 erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomTodos
       },
@@ -179,7 +179,7 @@ Warum?
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
-Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein 
+Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein
 erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomDirectContactTodos
       },
@@ -212,7 +212,7 @@ und der Bundesregierung zur Verfügung
 gestellt. Er befindet sich derzeit in
 Entwicklung und soll als
 Ersteinschätzung und Entscheidungshilfe
-vor einem Anruf beim Arzt oder
+vor einem Arztbesuch oder Anruf beim
 Gesundheitsamt dienen.
 Die Anwendung kann keine ärztliche
 Diagnose ersetzen. Bei akuten
@@ -222,17 +222,17 @@ In dringenden Notfällen rufen Sie die 112
 an.`
     },
     symptoms_1: {
-      label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
+      label: 'Haben Sie eines oder beide der folgenden Symptome?',
       info: `- Husten
 - Atembeschwerden`
     },
     symptoms_2: {
-      label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
+      label: 'Haben Sie eines oder beide der folgenden Symptome?',
       info: `- Fieber
 - Halsschmerzen`
     },
     symptoms_3: {
-      label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
+      label: 'Haben Sie eines oder beide der folgenden Symptome?',
       info: `- reduzierter Geruchs- oder Geschmackssinn
 - allgemeines Krankheitsgefühl`
     },

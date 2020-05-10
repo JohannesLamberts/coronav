@@ -20,7 +20,7 @@ const noSymptomDirectContactTodos = [
 
 export default {
   index: {
-    title: 'Coronavirus-Infektion?',
+    title: 'Corona-Virus Infektion?',
     logoTitle: 'Zur CoroNav Startseite',
     description: `__Haben Sie sich mit dem Corona-Virus angesteckt?__
 
@@ -51,12 +51,12 @@ Aber: Dieser Fragebogen ist nicht so gut wie ein Arzt.
 
 Wenn es Ihnen nicht gut geht,
 
-rufen Sie einen Arzt an. 
+rufen Sie einen Arzt an.
 
 Bei Notfällen rufen Sie die Nummer 112 an`
     },
     symptoms_1: {
-      label: 'Krankheitszeichen',
+      label: 'Krankheits-Zeichen',
       info: `Haben Sie Husten?
 
 Haben Sie Probleme beim Atmen?
@@ -64,7 +64,7 @@ Haben Sie Probleme beim Atmen?
 Oder haben Sie beides?`
     },
     symptoms_2: {
-      label: 'Krankheitszeichen ',
+      label: 'Krankheits-Zeichen ',
       info: `Haben Sie Fieber?
 
 Haben Sie Hals-Schmerzen?
@@ -72,7 +72,7 @@ Haben Sie Hals-Schmerzen?
 Oder haben Sie beides?`
     },
     symptoms_3: {
-      label: 'Krankheitszeichen ',
+      label: 'Krankheits-Zeichen ',
       info: `Fühlen Sie sich krank?
 
 Können Sie weniger schmecken oder riechen?
@@ -82,7 +82,7 @@ Oder haben Sie beides?`
     workRiskContact: {
       label: 'Treffen Sie bei der Arbeit alte oder kranke Menschen?',
       info: `Dazu gehört auch Arbeit, für die Sie **kein** Geld bekommen.
-      
+
 Das nennt man ehrenamtliche Arbeit`
     },
     directContact: {
@@ -101,7 +101,7 @@ Das nennt man ehrenamtliche Arbeit`
       label: 'Sind Sie Raucher?'
     },
     patientDiagnoseRisk: {
-      label: 'Diagnosen',
+      label: 'Andere Krankheiten',
       info: `Haben Sie Blut-Hochdruck?
 
 Oder haben Sie Diabetes?
@@ -127,7 +127,7 @@ Das kann zum Beispiel so sein:
 - Bei Menschen, die Kortison-Tabletten nehmen
 - Bei der Krankheit HIV/AIDS.
 
-Ist das bei Ihnen so?      
+Ist das bei Ihnen so?
       `
     }
   },
@@ -169,7 +169,7 @@ wenn Sie das Corona-Virus bekommen.
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.** 
+        info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
 
 **Ein Test sollte bei Ihnen gemacht werden.**
 

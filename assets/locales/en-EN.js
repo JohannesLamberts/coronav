@@ -212,17 +212,17 @@ In case of acute symptoms or doubts, please consult a physician.
 For emergencies, call 112.`
     },
     symptoms_1: {
-      label: 'Do you have one or more of the following symptoms?',
+      label: 'Do you have one or both of the following symptoms?',
       info: `- cough
 - breathing difficulties`
     },
     symptoms_2: {
-      label: 'Do you have one or more of the following symptoms?',
+      label: 'Do you have one or both of the following symptoms?',
       info: `- fever
 - sore throat`
     },
     symptoms_3: {
-      label: 'Do you have one or more of the following symptoms?',
+      label: 'Do you have one or both of the following symptoms?',
       info: `- reduced sense of smell or taste
 - general feeling of sickness`
     },

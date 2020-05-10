@@ -18,7 +18,7 @@
     </div>
     <footer :class="$style.footer">
       <section :class="$style.footerImages">
-        <img src="@/assets/images/wirvsvirus_logo_1_footer.png" />
+        <img src="@/assets/images/wirvsvirus_logo_1.svg" />
       </section>
       <section :class="$style.footerLinks">
         <p>
