@@ -116,7 +116,7 @@ Why?
         todos: symptomTodos
       },
       '3a_symptoms_withoutDirectContact_noRisk': {
-        label: `**Please report to your local health department!
+        info: `**Please report to your local health department!
 Ask for a test.**
 
 Why?
@@ -235,8 +235,8 @@ course of a coronavirus infection during work or volunteer activities?
       label:
         'Have you had direct contact with a person who has tested positive for coronavirus in the past 14 days?',
       info: `You had direct contact if:
-- you live with this person in the same household OR
-- you had at least 15 minutes of personal contact with this person, for example in a conversation OR
+- you share a household with this person OR
+- you had at least 15 minutes of personal contact with this person, for example during a conversation OR
 - body fluids could have been transferred to you, e.g. by kissing, sneezing or coughing`
     },
     ageRisk: {
@@ -247,7 +247,7 @@ course of a coronavirus infection during work or volunteer activities?
     },
     patientDiagnoseRisk: {
       label: 'Has a doctor made one or more of the following diagnoses?',
-      info: `- hypertension
+      info: `- hypertension (high blood pressure)
 - diabetes
 - obesity`
     },
