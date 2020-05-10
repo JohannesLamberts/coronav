@@ -1,13 +1,13 @@
 const generalTodos = [
   'Waschen Sie oft und gut Ihre Hände',
-  'Bleiben Sie 2 Meter von anderenPersonen weg',
-  'Husten und niesen Sie nur in IhreArmbeuge'
+  'Bleiben Sie 2 Meter von anderen Personen weg',
+  'Husten und niesen Sie nur in Ihre Armbeuge'
 ]
 
 const symptomTodos = [
-  'Bleiben Sie bitte zuhause',
+  'Bleiben Sie bitte zu Hause',
   'Treffen Sie am besten keine anderen Personen',
-  'Wenn Sie das Haus verlassen müssen, tragen Sie einen Mund-Nasen-Schutz-Schutz',
+  'Wenn Sie das Haus verlassen müssen, tragen Sie einen Mund-Nasen-Schutz',
   ...generalTodos
 ]
 
@@ -87,7 +87,7 @@ Das nennt man ehrenamtliche Arbeit`
     },
     directContact: {
       label:
-        'Hatten Sie in den letzen 2 Wochen direkten Kontakt mit einer Person mit Coronavirus?',
+        'Hatten Sie in den letzen 2 Wochen direkten Kontakt mit einer Person mit Corona-Virus?',
       info: `Direkter Kontakt heißt:
 - Sie leben mit der Person zusammen
 - **Oder:** Sie waren 15 Minuten oder länger in der Nähe von der Person. Zum Beispiel in einem Gespräch
@@ -118,7 +118,7 @@ Oder sind Sie sehr dick?`
     },
     patientImmuneRisk: {
       label: 'Immunsystem',
-      info: `Bei einigen Menschen kann der Körper schlecht gegen eine Krankheit kämpfen
+      info: `Bei einigen Menschen kann der Körper schlecht gegen eine Krankheit kämpfen.
 
 Das kann zum Beispiel so sein:
 - Bei Menschen mit einem neuen Organ

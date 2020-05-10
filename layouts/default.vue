@@ -16,14 +16,36 @@
         <nuxt />
       </main>
     </div>
-    <page-footer :class="$style.footer" />
+    <footer :class="$style.footer">
+      <section :class="$style.footerImages">
+        <img src="@/assets/images/wirvsvirus_logo_1.png" />
+      </section>
+      <section :class="$style.footerLinks">
+        <p>
+          <nuxt-link
+            v-for="locale in $i18n.locales"
+            :key="locale.code"
+            :to="switchLocalePath(locale.code)"
+            >{{ locale.name }}</nuxt-link
+          >
+        </p>
+        <p>
+          <nuxt-link to="/impressum">{{ $t('impressum.title') }}</nuxt-link>
+        </p>
+      </section>
+    </footer>
   </div>
 </template>
 
 <script>
-import PageFooter from '@/components/pageFooter'
 export default {
-  components: { PageFooter },
+  computed: {
+    availableLocales() {
+      return this.$i18n.locales.filter(
+        (locale) => locale.code !== this.$i18n.locale
+      )
+    }
+  },
   head() {
     const i18nSeo = this.$nuxtI18nSeo()
     const localeConfig = this.$i18n.locales.find(
@@ -45,6 +67,7 @@ export default {
   display: grid;
   grid-template-rows: 90px 1fr;
   grid-gap: 16px;
+  flex-grow: 1;
 }
 
 .header {
@@ -66,12 +89,19 @@ export default {
   padding-bottom: 36px;
 }
 
-.footer {
-  margin-top: 48px;
+.footerImages {
+  text-align: center;
+  margin-top: 2rem;
+  img {
+    height: 100px;
+  }
+}
+
+.footerLinks {
+  margin-top: 2rem;
+  padding-top: 1rem;
   background-color: #0a558c;
-  grid-row: 3;
-  grid-column: 1;
-  min-height: 5rem;
+  min-height: 6rem;
   a {
     color: white;
     font-size: 0.8rem;
@@ -83,17 +113,17 @@ export default {
   }
 }
 
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+}
+
 @media (min-width: 768px) {
-  .wrapper {
-    display: flex;
-    flex-flow: column nowrap;
-    min-height: 100vh;
-  }
   .gridWrapper {
     grid-template-rows: auto 1fr;
     grid-template-columns: 200px minmax(540px, 50em);
     padding: 12px;
-    flex-grow: 1;
   }
   .header {
     align-items: flex-start;

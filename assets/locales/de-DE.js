@@ -5,7 +5,7 @@ const generalTodos = [
 ]
 
 const symptomTodos = [
-  'Bleiben Sie bitte zuhause',
+  'Bleiben Sie bitte zu Hause',
   'Vermeiden Sie direkten Personenkontakt',
   'Wenn Sie das Haus verlassen müssen, tragen Sie bitte einen Mund-Nasen-Schutz',
   ...generalTodos
@@ -42,12 +42,12 @@ Anschließend erhalten Sie:
 
 _Vielen Dank, dass Sie mithelfen Ärzte/Ärztinnen und Hotlines zu entlasten!_
 
-Die Testanordnung ist nach wie vor eine ärztliche ärztliche Entscheidung
+Die Testanordnung ist nach wie vor eine ärztliche Entscheidung
 und kann auch von Testkapazitäten vor Ort abhängen.
 Es besteht kein Anspruch auf einen Test.
 Das Robert Koch-Institut gibt Empfehlungen heraus wann ein Test sinnvoll ist.
 Der Fragebogen ist diesbezüglich immer auf dem aktuellsten Stand.
-Sie können die Kriterien zusätzlich zusätzlich direkt
+Sie können die Kriterien zusätzlich direkt
 [beim Robert Koch-Institut](https://www.rki.de/SharedDocs/FAQ/NCOV2019/gesamt.html)
 abrufen.`,
     cta: 'Starten'
