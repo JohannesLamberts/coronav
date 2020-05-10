@@ -57,7 +57,7 @@ abrufen.`,
   },
   results: {
     headline: 'Ergebnis',
-    todosLabel: 'Please follow these rules:',
+    todosLabel: 'Halten Sie sich bitte an diese Regeln:',
     searchInfo: 'Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.',
     additionalRessources: {
       label: 'Mehr Informationen finden Sie auf folgenden Seiten:',
@@ -108,7 +108,7 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
 Fragen Sie nach einem Test.**
 
 Warum?
-Sie haben typische Symptome
+- Sie haben typische Symptome
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
@@ -117,7 +117,7 @@ Sie haben typische Symptome
         todos: symptomTodos
       },
       '3a_symptoms_withoutDirectContact_noRisk': {
-        label: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
 Fragen Sie nach einem Test.**
 
 Warum?
@@ -137,7 +137,7 @@ Ein Test wird derzeit nicht empfohlen.**
 Warum?
 - Sie hatten KEINEN Kontakt zu einer Infizierten Person
 
-Wenn sich Ihre Symptomeverschlechtern, kontaktieren Sie bitte einen Arzt oder 
+Wenn sich Ihre Symptome verschlechtern, kontaktieren Sie bitte einen Arzt oder 
 eine Ärztin. Sollte sich herausstellen, dass eine Kontaktperson positiv getestet
 wurde, melden Sich sich bitte umgehend beim Gesundheitsamt.
 
@@ -158,8 +158,8 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        info: `__Sie müssen vorerst nicht beim Gesundheitsamt anrufen.
-Ein Test wird derzeit nicht empfohlen.__
+        info: `**Sie müssen vorerst nicht beim Gesundheitsamt anrufen.
+Ein Test wird derzeit nicht empfohlen.**
 
 Warum?
 - Sie haben KEINE typischen Symptome.
@@ -170,8 +170,8 @@ erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomTodos
       },
       '7_directContact_risk': {
-        info: `__Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!
-Fragen Sie nach einem Test.__
+        info: `**Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!
+Fragen Sie nach einem Test.**
 
 Warum?
 - Sie haben keine typischen Symptome
@@ -184,14 +184,14 @@ erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomDirectContactTodos
       },
       '8_directContact_noRisk': {
-        info: `__Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!
-Fragen Sie nach einem Test.__
+        info: `**Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!
+Fragen Sie nach einem Test.**
 
 Warum?
 - Sie haben keine typischen Symptome
 - Aber: Sie hatten Kontakt zu einer infizierten Person.
 
-Unten  können Sie nach Ihrem lokalen Gesundheitsamt suchen.
+*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
 Auch wenn Sie nicht zur Risikogruppe gehören,
 können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
