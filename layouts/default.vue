@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div :class="$style.wrapper">
+  <div :class="$style.wrapper">
+    <div :class="$style.gridWrapper">
       <header :class="$style.header">
         <h1 class="h1" tabindex="-1">
           <nuxt-link :to="localePath('/')" :title="$t('index.logoTitle')">
@@ -16,7 +16,7 @@
         <nuxt />
       </main>
     </div>
-    <page-footer />
+    <page-footer :class="$style.footer" />
   </div>
 </template>
 
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-.wrapper {
+.gridWrapper {
   display: grid;
   grid-template-rows: 90px 1fr;
   grid-gap: 16px;
@@ -66,11 +66,34 @@ export default {
   padding-bottom: 36px;
 }
 
+.footer {
+  margin-top: 48px;
+  background-color: #0a558c;
+  grid-row: 3;
+  grid-column: 1;
+  min-height: 5rem;
+  a {
+    color: white;
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
+  }
+  p {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+}
+
 @media (min-width: 768px) {
   .wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+  }
+  .gridWrapper {
     grid-template-rows: auto 1fr;
     grid-template-columns: 200px minmax(540px, 50em);
     padding: 12px;
+    flex-grow: 1;
   }
   .header {
     align-items: flex-start;
