@@ -30,9 +30,9 @@ export default {
     description: `Here you can find out whether you are likely to have an
 infection is whether a test is recommended and why.
 
-This navigator will guide you safely through a few questions. 
+This navigator will guide you safely through a few questions.
 
-It can be clarified: 
+It can be clarified:
 - whether you have the typical symptoms of a coronavirus infection
 - whether they belong to the risk group
 - whether you are classified as a contact person.
@@ -73,126 +73,126 @@ in this respect. You can also check the criteria directly
     },
     cases: {
       '1_symptoms_withContact_risk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt. 
-Ein Test wird empfohlen.**
+        info: `**Please report to your local health department!
+A test is recommended.**
 
-Warum?
-- Sie haben typische Symptome
-- Sie hatten Kontakt zu einer infizierten Person.
+Why?
+- You display typical symptoms.
+- You had contact with an infected person.
 
-*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
+*Below you can search for your local health authority.*
 
-- Sie sollten vorsorglich Ihren Hausarzt anrufen.
-- Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
+- Please call your general practitioner as a precautionary measure.
+- You have an increased risk of a more severe course of the disease due to age or previous conditions.
 `,
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt. 
-Ein Test wird empfohlen.**
+        info: `**Please report to your local health department!
+A test is recommended.**
 
-Warum?
-- Sie haben typische Symptome
-- Sie hatten Kontakt zu einer infizierten Person
+Why?
+- You display typical symptoms.
+- You had contact with an infected person.
 
-*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
+*Below you can search for your local health authority.*
 
-Auch wenn Sie nicht zur Risikogruppe gehören,
-können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
+Even if you do not belong to a risk group,
+you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
-Fragen Sie nach einem Test.**
+        info: `**Please report to your local health department!
+Ask for a test.**
 
-Warum?
-Sie haben typische Symptome
+Why?
+- You display typical symptoms.
 
-*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
+*Below you can search for your local health authority.*
 
--Sie sollten vorsorglich Ihren Hausarzt anrufen
--Sie haben aufgrund von Alter oder Vorerkrankungen Im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
+- As a precautionary measure you should call your general practitioner.
+- You have an increased risk of a more severe course of the disease due to age or previous conditions.
+`,
         todos: symptomTodos
       },
       '3a_symptoms_withoutDirectContact_noRisk': {
-        label: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
-Fragen Sie nach einem Test.**
+        label: `**Please report to your local health department!
+Ask for a test.**
 
-Warum?
-- Sie haben typische Symptome
-- Sie kommen mit Menschen der Risikogruppe in Kontakt.
+Why?
+- You display typical symptoms.
+- You come into contact with people belonging to a risk group.
 
-*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
+*Below you can search for your local health authority.*
 
-Auch wenn Sie nicht zur Risikogruppe gehören,
-können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
+Even if you do not belong to a risk group,
+you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.
-Ein Test wird derzeit nicht empfohlen.**
+        info: `**For the time being, you do NOT need to call the health department.
+A test is currently not recommended.**
 
-Warum?
-- Sie hatten KEINEN Kontakt zu einer Infizierten Person
+Why?
+- You did NOT have contact with an infected person.
 
-Wenn sich Ihre Symptomeverschlechtern, kontaktieren Sie bitte einen Arzt oder 
-eine Ärztin. Sollte sich herausstellen, dass eine Kontaktperson positiv getestet
-wurde, melden Sich sich bitte umgehend beim Gesundheitsamt.
+Please contact a doctor if your symptoms worsen. If a person you have had contact with is tested positive
+please contact your local health department immediately.
 
-Auch wenn Sie nicht zur Risikogruppe gehören,
-können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
+Even if you do not belong to a risk group,
+you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.
-Ein Test wird derzeit nicht empfohlen.**
+        info: `**For the time being, you do NOT need to call the health department.
+A test is currently not recommended.**
 
-Warum?
-- Sie haben KEINE typischen Symptome.
-- Sie hatten KEINEN Kontakt zu einer infizierten Person.
+Why?
+- You did NOT have contact with an infected person.
+- You do NOT display typical symptoms.
 
-Auch wenn Sie nicht zur Risikogruppe gehören,
-können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
+Even if you do not belong to a risk group,
+you can be or become a carrier. Protect yourself and others!`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        info: `__Sie müssen vorerst nicht beim Gesundheitsamt anrufen.
-Ein Test wird derzeit nicht empfohlen.__
+        info: `**For the time being, you do NOT need to call the health department.
+A test is currently not recommended.**
 
-Warum?
-- Sie haben KEINE typischen Symptome.
-- Sie hatten KEINEN Kontakt zu einer infizierten Person.
+Why?
+- You did NOT have contact with an infected person.
+- You do NOT display typical symptoms.
 
-Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein 
-erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
+You have an increased risk of a more severe course of the disease due to age or previous conditions.
+`,
         todos: noSymptomTodos
       },
       '7_directContact_risk': {
-        info: `__Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!
-Fragen Sie nach einem Test.__
+        info: `**Please report to your local health department!
+Ask for a test.**
 
-Warum?
-- Sie haben keine typischen Symptome
-- Aber: Sie hatten Kontakt zu einer infizierten Person.
+Why?
+- You do NOT display typical symptoms.
+- But: You did have contact with an infected person.
 
-*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
+*Below you can search for your local health authority.*
 
-Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein 
-erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
+You have an increased risk of a more severe course of the disease due to age or previous conditions.
+`,
         todos: noSymptomDirectContactTodos
       },
       '8_directContact_noRisk': {
-        info: `__Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!
-Fragen Sie nach einem Test.__
+        info: `**Please report to your local health department!
+Ask for a test.**
 
-Warum?
-- Sie haben keine typischen Symptome
-- Aber: Sie hatten Kontakt zu einer infizierten Person.
+Why?
+- You do NOT display typical symptoms.
+- But: You did have contact with an infected person.
 
-Unten  können Sie nach Ihrem lokalen Gesundheitsamt suchen.
+*Below you can search for your local health authority.*
 
-Auch wenn Sie nicht zur Risikogruppe gehören,
-können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
+Even if you do not belong to a risk group,
+you can be or become a carrier. Protect yourself and others!`,
         todos: noSymptomDirectContactTodos
       }
     }
@@ -206,8 +206,8 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
       info: `This navigator is provided on the basis of the latest scientific
 recommendations of the Robert Koch-Institut and the German government.
 It is currently in development and is intended to serve as an initial assessment
-and decision-making aid before calling a doctor or health authority. 
-The application cannot replace a medical diagnosis. 
+and decision-making aid before calling a doctor or health authority.
+The application cannot replace a medical diagnosis.
 In case of acute symptoms or doubts, please consult a physician.
 For emergencies, call 112.`
     },
@@ -227,7 +227,7 @@ For emergencies, call 112.`
 - general feeling of sickness`
     },
     workRiskContact: {
-      label: `Are you in contact with people who are at high risk for a severe 
+      label: `Are you in contact with people who are at high risk for a severe
 course of a coronavirus infection during work or volunteer activities?
 (e.g. in a hospital or elderly care)`
     },
@@ -248,7 +248,7 @@ course of a coronavirus infection during work or volunteer activities?
     patientDiagnoseRisk: {
       label: 'Has a doctor made one or more of the following diagnoses?',
       info: `- hypertension
-- diabetes 
+- diabetes
 - obesity`
     },
     patientOrganRisk: {
