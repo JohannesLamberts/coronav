@@ -109,7 +109,7 @@ Oder haben Sie Diabetes?
 Oder sind Sie sehr dick?`
     },
     patientOrganRisk: {
-      label: 'Haben Sie Krankheiten, die __nicht__ mehr heilen?',
+      label: 'Haben Sie Krankheiten, die nicht mehr heilen?',
       info: `Um diese Organe geht es:
 - Herz
 - Leber

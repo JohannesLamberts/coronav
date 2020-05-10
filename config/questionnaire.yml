@@ -86,14 +86,14 @@ resultComputation:
     true:
       ident: risk
       true: 1_symptoms_withContact_risk
-      default: 2_symptoms_withContact_noRisk
+      default:
+        ident: directContact
+        yes: 2_symptoms_withContact_noRisk
+        default: 3a_symptoms_withoutDirectContact_noRisk
     default:
       ident: risk
       true: 3_symptoms_withoutContact_risk
-      default:
-        ident: workRiskContact
-        yes: 3a_symptoms_withoutDirectContact_noRisk
-        default: 4_symptoms_withoutContact_noRisk
+      default: 4_symptoms_withoutContact_noRisk
   default:
     ident: directContact
     yes:
