@@ -11,7 +11,7 @@
     <b-button-group :class="$style.buttons">
       <b-button
         v-for="choice of config.choices"
-        :key="choice.ident"
+        :key="`${config.ident}-${choice.ident}`"
         :variant="choice.variant || 'secondary'"
         pill
         size="lg"
