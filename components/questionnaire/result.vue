@@ -5,13 +5,7 @@
     </h2>
     <div>
       <b-alert show class="my-4">
-        <p>
-          <strong>{{ responseText.label }}</strong>
-        </p>
-        <p v-if="responseConfig.showHotlineSearch">
-          <em>{{ $t('results.searchInfo') }}</em>
-        </p>
-        <span v-html="$md.render(responseText.result)" />
+        <span v-html="responseText.info && $md.render(responseText.info)" />
       </b-alert>
       <p>{{ $t('results.todosLabel') }}</p>
       <ul>

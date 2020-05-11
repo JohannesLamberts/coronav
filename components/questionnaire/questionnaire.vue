@@ -1,12 +1,15 @@
 <template>
-  <div :class="$style.wrapper">
-    <test-progress ref="testProgress" :max="totalSteps" :current="step" />
-    <question
-      v-if="!isComplete"
-      :config="currentQuestionConfig"
-      @decision="onDecision"
-    />
-    <result v-else :response-config="responseConfig" />
+  <div>
+    <questionnaire-development v-if="showDev" :config="config" />
+    <div v-else :class="$style.wrapper">
+      <test-progress ref="testProgress" :max="totalSteps" :current="step" />
+      <question
+        v-if="!isComplete"
+        :config="currentQuestionConfig"
+        @decision="onDecision"
+      />
+      <result v-else :response-config="responseConfig" />
+    </div>
   </div>
 </template>
 
@@ -19,10 +22,12 @@ import {
   computeResultIdent,
   shouldIncludeQuestion
 } from '@/utils/questionnaire'
+const QuestionnaireDevelopment = () =>
+  import('@/components/questionnaire/questionnaire-development')
 
 export default {
   name: 'Questionnaire',
-  components: { TestProgress, Question, Result },
+  components: { QuestionnaireDevelopment, TestProgress, Question, Result },
   props: {
     config: {
       type: Object,
@@ -32,7 +37,8 @@ export default {
   data() {
     return {
       step: 0,
-      choices: {}
+      choices: {},
+      showDev: false
     }
   },
   computed: {
@@ -78,6 +84,9 @@ export default {
         ({ ident }) => ident === this.responseIdent
       )
     }
+  },
+  mounted() {
+    this.showDev = this.$route.query.development
   },
   methods: {
     onDecision(choice) {

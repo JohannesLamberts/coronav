@@ -7,7 +7,7 @@ const generalTodos = [
 const symptomTodos = [
   'Please stay at home',
   'Avoid direct personal contact',
-  'When you leave the house please wear a face mask',
+  'When you leave the house please wear a mouth and nose protector',
   ...generalTodos
 ]
 
@@ -18,24 +18,6 @@ const noSymptomDirectContactTodos = [
   ...generalTodos
 ]
 
-const resultTexts = {
-  contactPublicHealthDepartment:
-    'Please report to your responsible health department!',
-  doNotContactPublicHealthDepartment:
-    'For now you do NOT have to report to the health department.',
-  suspectedCase: 'You are suspected of having a corona infection.',
-  noSuspectedCase:
-    'You are currently NOT suspected of having a corona infection.',
-  noRiskTakeCare: `Even if you do not belong to the risk group, you can be or
-become a carrier. Protect yourself and others!`,
-  riskInfo: `You have an increased risk of a more severe course of the disease
-due to age or previous illnesses in the event of an infection.`,
-  contactWithoutSymptoms: `You were in contact with an infected person.
-You are currently NOT suspected of having a corona infection.`,
-  contactDoctor: 'You should call your family doctor as a precaution.',
-  contactDoctorIfWorsens: 'If your symptoms worsen, please contact a doctor.'
-}
-
 export default {
   choices: {
     ok: 'Ok',
@@ -45,27 +27,27 @@ export default {
   index: {
     title: 'Coronavirus-Infection?',
     logoTitle: 'To the CoroNav homepage',
-    description: `Here you can find out whether an infection is likely. 
-This navigator will guide you safely through some questions.
+    description: `Here you can find out whether you are likely to have an
+infection is whether a test is recommended and why.
 
-It can be clarified: 
-- what symptoms you show
-- if this could actually be a coronavirus infection.
+This navigator will guide you safely through a few questions.
 
-Then you will receive:
-- a recommendation on how to proceed
-- Contact information to the health office in your region
+It can be clarified:
+- whether you have the typical symptoms of a coronavirus infection
+- whether they belong to the risk group
+- whether you are classified as a contact person.
 
-*Thank you very much for helping to relieve doctors and hotlines!*
+You will then receive:
+- a recommendation on how to proceed, and
+- Contact information for the health office in your region.
 
-Please note:
+*Thank you very much for helping to relieve the burden on doctors and hotlines!*
 
-A test is still ordered by the public health department or by doctors.
-
-The order is made according to criteria that change according to the current 
-developments of the pandemic. The current criteria are already taken into 
-account in the application. They can also be obtained directly 
-[from the Robert Koch-Institut](https://www.rki.de/SharedDocs/FAQ/NCOV2019/gesamt.html).`,
+The test order is still a doctor's decision and may also depend on on-site
+testing capacity. There is no right to a test. The Robert Koch-Institut gives
+recommendations when a test is useful. The questionnaire is always up to date
+in this respect. You can also check the criteria directly
+[at the Robert Koch-Institut](https://www.rki.de/SharedDocs/FAQ/NCOV2019/gesamt.html).`,
     cta: 'Start'
   },
   impressum: {
@@ -73,8 +55,8 @@ account in the application. They can also be obtained directly
   },
   results: {
     headline: 'Results',
-    todosLabel: 'This is what you should do:',
-    searchInfo: 'You can search for your local health department below.',
+    todosLabel: 'Please follow these rules:',
+    searchInfo: 'Below you can search for your local health department.',
     additionalRessources: {
       label: 'You can find more information on the following pages:',
       pages: [
@@ -91,57 +73,126 @@ account in the application. They can also be obtained directly
     },
     cases: {
       '1_symptoms_withContact_risk': {
-        label: `${resultTexts.contactPublicHealthDepartment}
-${resultTexts.suspectedCase}`,
-        result: `${resultTexts.contactDoctor} 
+        info: `**Please report to your local health department!
+A test is recommended.**
 
-${resultTexts.riskInfo}`,
+Why?
+- You display typical symptoms.
+- You had contact with an infected person.
+
+*Below you can search for your local health authority.*
+
+- Please call your general practitioner as a precautionary measure.
+- You have an increased risk of a more severe course of the disease due to age or previous conditions.
+`,
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        label: `${resultTexts.contactPublicHealthDepartment}
-${resultTexts.suspectedCase}`,
-        result: `${resultTexts.noRiskTakeCare}`,
+        info: `**Please report to your local health department!
+A test is recommended.**
+
+Why?
+- You display typical symptoms.
+- You had contact with an infected person.
+
+*Below you can search for your local health authority.*
+
+Even if you do not belong to a risk group,
+you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        label: `${resultTexts.doNotContactPublicHealthDepartment}
-${resultTexts.noSuspectedCase}`,
-        result: `${resultTexts.riskInfo}
+        info: `**Please report to your local health department!
+Ask for a test.**
 
-${resultTexts.contactDoctor}`,
+Why?
+- You display typical symptoms.
+
+*Below you can search for your local health authority.*
+
+- As a precautionary measure you should call your general practitioner.
+- You have an increased risk of a more severe course of the disease due to age or previous conditions.
+`,
+        todos: symptomTodos
+      },
+      '3a_symptoms_withoutDirectContact_noRisk': {
+        info: `**Please report to your local health department!
+Ask for a test.**
+
+Why?
+- You display typical symptoms.
+- You come into contact with people belonging to a risk group.
+
+*Below you can search for your local health authority.*
+
+Even if you do not belong to a risk group,
+you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        label: `${resultTexts.doNotContactPublicHealthDepartment}
-${resultTexts.noSuspectedCase}`,
-        result: `${resultTexts.contactDoctorIfWorsens}
+        info: `**For the time being, you do NOT need to call the health department.
+A test is currently not recommended.**
 
-${resultTexts.noRiskTakeCare}`,
+Why?
+- You did NOT have contact with an infected person.
+
+Please contact a doctor if your symptoms worsen. If a person you have had contact with is tested positive
+please contact your local health department immediately.
+
+Even if you do not belong to a risk group,
+you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        label: `${resultTexts.doNotContactPublicHealthDepartment} 
-${resultTexts.noSuspectedCase}`,
-        result: `${resultTexts.noRiskTakeCare}`,
+        info: `**For the time being, you do NOT need to call the health department.
+A test is currently not recommended.**
+
+Why?
+- You did NOT have contact with an infected person.
+- You do NOT display typical symptoms.
+
+Even if you do not belong to a risk group,
+you can be or become a carrier. Protect yourself and others!`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        label: `${resultTexts.doNotContactPublicHealthDepartment} 
-${resultTexts.noSuspectedCase}`,
-        result: `${resultTexts.riskInfo}`,
+        info: `**For the time being, you do NOT need to call the health department.
+A test is currently not recommended.**
+
+Why?
+- You did NOT have contact with an infected person.
+- You do NOT display typical symptoms.
+
+You have an increased risk of a more severe course of the disease due to age or previous conditions.
+`,
         todos: noSymptomTodos
       },
       '7_directContact_risk': {
-        label: `${resultTexts.contactPublicHealthDepartment}
-${resultTexts.contactWithoutSymptoms}`,
-        result: `${resultTexts.riskInfo}`,
+        info: `**Please report to your local health department!
+Ask for a test.**
+
+Why?
+- You do NOT display typical symptoms.
+- But: You did have contact with an infected person.
+
+*Below you can search for your local health authority.*
+
+You have an increased risk of a more severe course of the disease due to age or previous conditions.
+`,
         todos: noSymptomDirectContactTodos
       },
       '8_directContact_noRisk': {
-        label: `${resultTexts.contactPublicHealthDepartment}
-${resultTexts.contactWithoutSymptoms}`,
-        result: `${resultTexts.noRiskTakeCare}`,
+        info: `**Please report to your local health department!
+Ask for a test.**
+
+Why?
+- You do NOT display typical symptoms.
+- But: You did have contact with an infected person.
+
+*Below you can search for your local health authority.*
+
+Even if you do not belong to a risk group,
+you can be or become a carrier. Protect yourself and others!`,
         todos: noSymptomDirectContactTodos
       }
     }
@@ -155,31 +206,28 @@ ${resultTexts.contactWithoutSymptoms}`,
       info: `This navigator is provided on the basis of the latest scientific
 recommendations of the Robert Koch-Institut and the German government.
 It is currently in development and is intended to serve as an initial assessment
-and decision-making aid before calling a doctor or health authority. 
-The application cannot replace a medical diagnosis. 
+and decision-making aid before calling a doctor or health authority.
+The application cannot replace a medical diagnosis.
 In case of acute symptoms or doubts, please consult a physician.
 For emergencies, call 112.`
     },
     symptoms_1: {
-      label: 'Do you have one or more of the following symptoms?',
-      info: `- fever
-- cough
+      label: 'Do you have one or both of the following symptoms?',
+      info: `- cough
 - breathing difficulties`
     },
     symptoms_2: {
-      label: 'Do you have one or more of the following symptoms?',
-      info: `- runny nose
-- sore throat
-- headaches
-- general feeling of malaise`
+      label: 'Do you have one or both of the following symptoms?',
+      info: `- fever
+- sore throat`
     },
     symptoms_3: {
-      label: 'Do you have one or more of the following symptoms?',
-      info: `- diarrhoea
-- reduced sense of smell or taste`
+      label: 'Do you have one or both of the following symptoms?',
+      info: `- reduced sense of smell or taste
+- general feeling of sickness`
     },
     workRiskContact: {
-      label: `Are you in contact with people who are at high risk for a severe 
+      label: `Are you in contact with people who are at high risk for a severe
 course of a coronavirus infection during work or volunteer activities?
 (e.g. in a hospital or elderly care)`
     },
@@ -187,17 +235,20 @@ course of a coronavirus infection during work or volunteer activities?
       label:
         'Have you had direct contact with a person who has tested positive for coronavirus in the past 14 days?',
       info: `You had direct contact if:
-- you live with this person in the same household OR
-- you had at least 15 minutes of personal contact with this person, for example in a conversation OR
+- you share a household with this person OR
+- you had at least 15 minutes of personal contact with this person, for example during a conversation OR
 - body fluids could have been transferred to you, e.g. by kissing, sneezing or coughing`
     },
     ageRisk: {
       label: 'Are you age 50 or older?'
     },
+    smokeRisk: {
+      label: 'Are you a smoker?'
+    },
     patientDiagnoseRisk: {
       label: 'Has a doctor made one or more of the following diagnoses?',
-      info: `- hypertension
-- diabetes 
+      info: `- hypertension (high blood pressure)
+- diabetes
 - obesity`
     },
     patientOrganRisk: {

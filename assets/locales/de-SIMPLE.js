@@ -1,131 +1,139 @@
 const generalTodos = [
-  'Waschen Sie oft und gründliche Ihre Hände',
-  'Halten Sie 2m Abstand zu anderen Personen',
+  'Waschen Sie oft und gut Ihre Hände',
+  'Bleiben Sie 2 Meter von anderen Personen weg',
   'Husten und niesen Sie nur in Ihre Armbeuge'
 ]
 
 const symptomTodos = [
-  'Bleiben Sie bitte zuhause',
-  'Vermeiden Sie direkten Personenkontakt',
-  'Wenn Sie das Haus verlassen müssen, tragen Sie bitte einen Mundschutz',
+  'Bleiben Sie bitte zu Hause',
+  'Treffen Sie am besten keine anderen Personen',
+  'Wenn Sie das Haus verlassen müssen, tragen Sie einen Mund-Nasen-Schutz',
   ...generalTodos
 ]
 
-const noSymptomTodos = ['Bleiben Sie, wenn möglich, zuhause', ...generalTodos]
+const noSymptomTodos = ['Bleiben Sie zuhause, wenn Sie können', ...generalTodos]
 const noSymptomDirectContactTodos = [
-  'Bleiben Sie, wenn möglich, zuhause',
-  'Vermeiden Sie direkten Personenkontakt',
+  'Bleiben Sie zuhause, wenn Sie können',
+  'Treffen Sie am besten keine anderen Personen',
   ...generalTodos
 ]
-
-const resultTexts = {
-  contactPublicHealthDepartment: 'Bitte rufen Sie bei Ihrem Gesundheitsamt an.',
-  doNotContactPublicHealthDepartment:
-    'Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.',
-  suspectedCase: 'Es kann gut sein, dass Sie das Coronavirus haben.',
-  noSuspectedCase: 'Vermutlich haben Sie das Coronavirus nicht.',
-  noRiskTakeCare: `Auch wenn Sie nicht zur Risikogruppe gehören, können Sie 
-Überträger sein oder werden. Schützen Sie sich und andere!`,
-  riskInfo: `Wegen Ihres Alters oder Ihren Vorerkrankungen könnten Sie an dem
-Coronavirus schwerer krank werden.`,
-  contactWithoutSymptoms: `Sie hatten Kontakt zu einer infizierten Person. Derzeit besteht bei Ihnen KEIN
-erhöhter Verdacht auf eine CoronaInfektion.`,
-  contactDoctor: 'Sie sollten Ihren Hausarzt anrufen.',
-  contactDoctorIfWorsens:
-    'Wenn sich Ihre Symptome verschlechtern, kontaktieren Sie bitte einen Arzt.'
-}
 
 export default {
   index: {
-    title: 'Coronavirus-Infektion?',
+    title: 'Corona-Virus Infektion?',
     logoTitle: 'Zur CoroNav Startseite',
-    description: `Dies ist ein Fragebogen.
+    description: `__Haben Sie sich mit dem Corona-Virus angesteckt?__
 
-Er hilft Ihnen zu klären, ob Sie sich mit dem Coronavirus angesteckt haben könnten.
+__Sollten Sie einen Test machen lassen?__
 
-Wir sagen Ihnen, was Sie dann tun sollten.`
+Unser Fragebogen soll helfen, die Fragen zu beantworten.
+
+Füllen Sie den Fragebogen aus.
+
+Dann sagen wir Ihnen, was Sie tun können.
+
+Vielen Dank, dass Sie mithelfen.
+
+Ärzte und Ärztinnen haben dann weniger Arbeit!`
   },
   questions: {
     disclaimer: {
-      label: 'Disclaimer',
-      info: `Dies ist ein kostenloses Angebot.
+      label: 'Hinweis',
+      info: `Fachleute haben die Fragen ausgewählt.
 
-Es ist wissenschaftlich aktuell.
+Die Fachleute sind
+- von der Bundesregierung und
+- Forscher vom Robert Koch-Institut.
 
-Es richtet sich nach den Empfehlungen des Robert Koch-Instituts und der Bundesregierung.
+Wir arbeiten noch weiter an dem Fragebogen.
 
-Im Moment ist es in der Entwicklung.
+Aber: Dieser Fragebogen ist nicht so gut wie ein Arzt.
 
-Es soll bei der ersten Einschätzung helfen.
+Wenn es Ihnen nicht gut geht,
 
-Es soll eine Entscheidungshilfe sein.
+rufen Sie einen Arzt an.
 
-Es kann keinen Arzt ersetzen.
-
-Bei schlimmer Krankheit rufen Sie einen Arzt an.
-
-In Notfällen rufen Sie die Nummer 112 an. `
+Bei Notfällen rufen Sie die Nummer 112 an`
     },
     symptoms_1: {
-      label: 'Haben Sie eines oder mehrere dieser Krankheitszeichen? ',
-      info: `- Fieber
-- Husten
-- Atembeschwerden`
+      label: 'Krankheits-Zeichen',
+      info: `Haben Sie Husten?
+
+Haben Sie Probleme beim Atmen?
+
+Oder haben Sie beides?`
     },
     symptoms_2: {
-      label: 'Haben Sie eines oder mehrere dieser Krankheitszeichen? ',
-      info: `- Laufende Nase
-- Halsschmerzen
-- Kopfschmerzen`
+      label: 'Krankheits-Zeichen ',
+      info: `Haben Sie Fieber?
+
+Haben Sie Hals-Schmerzen?
+
+Oder haben Sie beides?`
     },
     symptoms_3: {
-      label: 'Haben Sie eines oder mehrere dieser Krankheitszeichen? ',
-      info: `- Durchfall
-- weniger schmecken, weniger riechen`
+      label: 'Krankheits-Zeichen ',
+      info: `Fühlen Sie sich krank?
+
+Können Sie weniger schmecken oder riechen?
+
+Oder haben Sie beides?`
     },
     workRiskContact: {
-      label: 'Kommen Sie öfter mit älteren oder kranken Menschen in Kontakt?'
+      label: 'Treffen Sie bei der Arbeit alte oder kranke Menschen?',
+      info: `Dazu gehört auch Arbeit, für die Sie **kein** Geld bekommen.
+
+Das nennt man ehrenamtliche Arbeit`
     },
     directContact: {
       label:
-        'Hatten Sie in den letzen 2 Wochen direkten Kontakt mit einer Person mit Coronavirus?',
+        'Hatten Sie in den letzen 2 Wochen direkten Kontakt mit einer Person mit Corona-Virus?',
       info: `Direkter Kontakt heißt:
-- Sie leben mit der Person zusammen ODER
-- Sie hatten mindestens 15 Minuten mit der Person persönlichen Kontakt. Zum Beispiel in einem Gespräch ODER
-- Diese Person hat Sie geküsst ODER
-- Diese Person hat Sie angehustet`
+- Sie leben mit der Person zusammen
+- **Oder:** Sie waren 15 Minuten oder länger in der Nähe von der Person. Zum Beispiel in einem Gespräch
+- **Oder:** Sie haben die Person geküsst ODER
+- **Oder:** Diese Person hat Sie angehustet oder angeniest`
     },
     ageRisk: {
       label: 'Sind Sie 50 Jahre oder älter?'
     },
+    smokeRisk: {
+      label: 'Sind Sie Raucher?'
+    },
     patientDiagnoseRisk: {
-      label: 'Haben Sie eine oder mehrere dieser Krankheiten?',
-      info: `- Bluthochdruck
-- Diabetes (Zuckerkrankheit)
-- Fettleibigkeit`
+      label: 'Andere Krankheiten',
+      info: `Haben Sie Blut-Hochdruck?
+
+Oder haben Sie Diabetes?
+
+Oder sind Sie sehr dick?`
     },
     patientOrganRisk: {
-      label: 'Haben Sie eine oder mehrere Krankheiten dieser Organe?',
-      info: `- Herz
+      label: 'Haben Sie Krankheiten, die nicht mehr heilen?',
+      info: `Um diese Organe geht es:
+- Herz
 - Leber
 - Niere
-- Magen-Darm`
+- Magen und Darm`
     },
     patientImmuneRisk: {
-      label: 'Haben Sie ein unterdrücktes Immunsystem?',
-      info: `zum Beispiel wegen:
-- Organtransplantation
-- Krebserkrankung
-- Chemotherapie
-- Einname von Kortison-Tabletten
-- HIV/AIDS
-- Andere Gründe`
+      label: 'Immunsystem',
+      info: `Bei einigen Menschen kann der Körper schlecht gegen eine Krankheit kämpfen.
+
+Das kann zum Beispiel so sein:
+- Bei Menschen mit einem neuen Organ
+- Bei der Krankheit Krebs
+- Bei einer Chemotherapie
+- Bei Menschen, die Kortison-Tabletten nehmen
+- Bei der Krankheit HIV/AIDS.
+
+Ist das bei Ihnen so?
+      `
     }
   },
   results: {
     headline: 'Ergebnis',
-    todosLabel: 'Das sollten Sie tun:',
-    searchInfo: 'Sie können unten nach Ihrem lokalen Gesundheitsamt suchen.',
+    todosLabel: 'Halten Sie sich bitte an diese Regeln:',
     additionalRessources: {
       label: 'Mehr Informationen finden Sie auf folgenden Seiten:',
       pages: [
@@ -142,57 +150,145 @@ In Notfällen rufen Sie die Nummer 112 an. `
     },
     cases: {
       '1_symptoms_withContact_risk': {
-        label: `${resultTexts.contactPublicHealthDepartment}
-${resultTexts.suspectedCase}`,
-        result: `${resultTexts.contactDoctor} 
+        info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
 
-${resultTexts.riskInfo}`,
+**Ein Test sollte bei Ihnen gemacht werden.**
+
+Warum?
+- Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
+- Sie hatten Kontakt mit einer Person mit dem Corona-Virus.
+
+*Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
+
+Rufen Sie am besten auch Ihren Hausarzt an.
+
+Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
+Darum haben Sie vielleicht mehr Probleme,<br />
+wenn Sie das Corona-Virus bekommen.
+`,
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        label: `${resultTexts.contactPublicHealthDepartment}
-${resultTexts.suspectedCase}`,
-        result: `${resultTexts.noRiskTakeCare}`,
+        info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
+
+**Ein Test sollte bei Ihnen gemacht werden.**
+
+Warum?
+- Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
+- Sie hatten Kontakt mit einer Person mit dem Corona-Virus.
+
+*Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
+
+Sie können andere Personen mit dem Corona-Virus anstecken.<br />
+Schützen Sie sich und andere.`,
         todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        label: `${resultTexts.doNotContactPublicHealthDepartment}
-${resultTexts.noSuspectedCase}`,
-        result: `${resultTexts.riskInfo}
+        info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
 
-${resultTexts.contactDoctor}`,
+**Fragen Sie nach einem Test.**
+
+Warum?<br />
+Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
+
+*Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
+
+Rufen Sie am besten Ihren Hausarzt an.
+
+Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
+Darum haben Sie vielleicht mehr Probleme,<br />
+wenn Sie das Corona-Virus bekommen.`,
+        todos: symptomTodos
+      },
+      '3a_symptoms_withoutDirectContact_noRisk': {
+        info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
+
+**Fragen Sie nach einem Test.**
+
+Warum?
+- Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
+- Sie haben Kontakt mit Menschen, für die Corona ein großes Problem sein kann.
+
+*Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
+
+Sie können andere Personen mit dem Corona-Virus anstecken.<br />
+Schützen Sie sich und andere.`,
         todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        label: `${resultTexts.doNotContactPublicHealthDepartment}
-${resultTexts.noSuspectedCase}`,
-        result: `${resultTexts.contactDoctorIfWorsens}
+        info: `**Sie müssen nicht beim Gesundheits-Amt anrufen.**
 
-${resultTexts.noRiskTakeCare}`,
+**Ein Test wird jetzt nicht empfohlen.**
+
+Warum?
+- Sie hatten **keinen** Kontakt mit einer Person mit dem Corona-Virus.
+
+Rufen Sie einen Arzt an, wenn es Ihnen schlechter geht.
+
+Vielleicht hatten Sie Kontakt mit einer Person,<br />
+die das Corona-Virus hat.<br />
+Rufen Sie dann das Gesundheits-Amt an.
+
+Sie können andere Personen mit dem Corona-Virus anstecken.<br />
+Schützen Sie sich und andere.`,
         todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        label: `${resultTexts.doNotContactPublicHealthDepartment} 
-${resultTexts.noSuspectedCase}`,
-        result: `${resultTexts.noRiskTakeCare}`,
+        info: `**Sie müssen nicht beim Gesundheits-Amt anrufen.**
+
+**Ein Test wird jetzt nicht empfohlen.**
+
+Warum?
+- Es gibt keine Anzeichen,<br />dass sie das Corona-Virus haben könnten.
+- Sie hatten **keinen** Kontakt mit einer Person mit dem Corona-Virus.
+
+Sie können andere Personen mit dem Corona-Virus anstecken.<br />
+Schützen Sie sich und andere.`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        label: `${resultTexts.doNotContactPublicHealthDepartment} 
-${resultTexts.noSuspectedCase}`,
-        result: `${resultTexts.riskInfo}`,
+        info: `**Sie müssen nicht beim Gesundheits-Amt anrufen.**
+
+**Ein Test wird jetzt nicht empfohlen.**
+
+Warum?
+- Es gibt keine Anzeichen,<br />dass sie das Corona-Virus haben könnten.
+- Sie hatten **keinen** Kontakt mit einer Person mit dem Corona-Virus.
+
+Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
+Darum haben Sie vielleicht mehr Probleme,<br />
+wenn Sie das Corona-Virus bekommen.`,
         todos: noSymptomTodos
       },
       '7_directContact_risk': {
-        label: `${resultTexts.contactPublicHealthDepartment}
-${resultTexts.contactWithoutSymptoms}`,
-        result: `${resultTexts.riskInfo}`,
+        info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
+
+**Fragen Sie nach einem Test.**
+
+Warum?
+- Es gibt keine Anzeichen,<br />dass sie das Corona-Virus haben könnten.
+- Aber Sie hatten direkten Kontakt mit einer Person mit dem Corona-Virus.
+
+*Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
+
+Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
+Darum haben Sie vielleicht mehr Probleme,<br />
+wenn Sie das Corona-Virus bekommen.`,
         todos: noSymptomDirectContactTodos
       },
       '8_directContact_noRisk': {
-        label: `${resultTexts.contactPublicHealthDepartment}
-${resultTexts.contactWithoutSymptoms}`,
-        result: `${resultTexts.noRiskTakeCare}`,
+        info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
+
+**Fragen Sie nach einem Test.**
+
+Warum?
+- Es gibt keine Anzeichen,<br />dass sie das Corona-Virus haben könnten.
+- Aber Sie hatten direkten Kontakt mit einer Person mit dem Corona-Virus.
+
+*Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
+
+Sie können andere Personen mit dem Corona-Virus anstecken.<br />
+Schützen Sie sich und andere.`,
         todos: noSymptomDirectContactTodos
       }
     }

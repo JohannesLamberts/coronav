@@ -19,7 +19,10 @@ html {
 
 body {
   background: hsl(210, 36%, 99%);
-  padding-bottom: 48px;
+}
+
+[tabindex='-1']:focus:not(.focus-visible) {
+  outline: 0 !important;
 }
 
 .button--green {

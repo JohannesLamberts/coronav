@@ -1,13 +1,13 @@
 const generalTodos = [
   'Waschen Sie oft und gründliche Ihre Hände',
-  'Halten Sie 2m Abstand zu anderen Personen',
+  'Halten Sie 2 Meter Abstand zu anderen Personen',
   'Husten und niesen Sie nur in Ihre Armbeuge'
 ]
 
 const symptomTodos = [
-  'Bleiben Sie bitte zuhause',
+  'Bleiben Sie bitte zu Hause',
   'Vermeiden Sie direkten Personenkontakt',
-  'Wenn Sie das Haus verlassen müssen, tragen Sie bitte einen Mundschutz',
+  'Wenn Sie das Haus verlassen müssen, tragen Sie bitte einen Mund-Nasen-Schutz',
   ...generalTodos
 ]
 
@@ -18,26 +18,6 @@ const noSymptomDirectContactTodos = [
   ...generalTodos
 ]
 
-const resultTexts = {
-  contactPublicHealthDepartment:
-    'Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.',
-  doNotContactPublicHealthDepartment:
-    'Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.',
-  suspectedCase:
-    'Bei Ihnen besteht erhöhter Verdacht auf eine Coronavirus-Infektion.',
-  noSuspectedCase:
-    'Derzeit besteht bei Ihnen KEIN erhöhter Verdacht auf eine Corona-Infektion.',
-  noRiskTakeCare: `Auch wenn Sie nicht zur Risikogruppe gehören, können Sie 
-Überträger sein oder werden. Schützen Sie sich und andere!`,
-  riskInfo: `Sie haben aufgrund von Alter oder Vorerkrankungen Im Falle
-einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
-  contactWithoutSymptoms: `Sie hatten Kontakt zu einer infizierten Person. Derzeit besteht bei Ihnen KEIN
-erhöhter Verdacht auf eine CoronaInfektion.`,
-  contactDoctor: 'Sie sollten vorsorglich Ihren Hausarzt anrufen.',
-  contactDoctorIfWorsens:
-    'Wenn sich Ihre Symptome verschlechtern, kontaktieren Sie bitte einen Arzt.'
-}
-
 export default {
   choices: {
     ok: 'Ok',
@@ -47,28 +27,28 @@ export default {
   index: {
     title: 'Coronavirus-Infektion?',
     logoTitle: 'Zur CoroNav Startseite',
-    description: `Hier erfahren Sie, ob eine Infektion wahrscheinlich ist.
-Dieser Navigator leitet Sie sicher durch einige Fragen.
+    description: `Hier erfahren Sie, ob bei Ihnen eine Infektion wahrscheinlich
+ist, ob ein Test empfohlen wird und warum.
 
-Es kann geklärt werden: 
-- welche Symptome Sie aufweisen
-- ob es sich tatsächlich um eine Coronavirus-Infektion handeln könnte.
+Dieser Navigator leitet Sie sicher durch wenige Fragen.
+Es kann geklärt werden:
+- ob Sie die typischen Symptome einer Coronavirus-Infektion haben
+- ob sie zur Risikogruppe gehören
+- ob Sie als Kontaktperson eingestuft werden.
 
 Anschließend erhalten Sie:
-- eine Empfehlung wie Sie weiter vorgehen sollten
+- eine Empfehlung, wie Sie weiter vorgehen sollten, und
 - Kontakt-Information zum Gesundheitsamt in Ihrer Region.
 
-*Vielen Dank, dass Sie mithelfen Ärzte und Hotlines zu entlasten!*
+_Vielen Dank, dass Sie mithelfen Ärzte/Ärztinnen und Hotlines zu entlasten!_
 
-Bitte beachten Sie:
-
-Ein Test wird nach wie vor vom Gesundheitsamt oder von ärztlicher Seite 
-angeordnet.
-
-Die Anordnung erfolgt nach Kriterien, die sich entsprechend der 
-aktuellen Entwicklungen der Pandemie ändern. Die aktuellen Kriterien 
-sind in der Anwendung bereits berücksichtigt. Sie können Sie zusätzlich 
-[direkt beim Robert Koch-Institut](https://www.rki.de/SharedDocs/FAQ/NCOV2019/gesamt.html) 
+Die Testanordnung ist nach wie vor eine ärztliche Entscheidung
+und kann auch von Testkapazitäten vor Ort abhängen.
+Es besteht kein Anspruch auf einen Test.
+Das Robert Koch-Institut gibt Empfehlungen heraus wann ein Test sinnvoll ist.
+Der Fragebogen ist diesbezüglich immer auf dem aktuellsten Stand.
+Sie können die Kriterien zusätzlich direkt
+[beim Robert Koch-Institut](https://www.rki.de/SharedDocs/FAQ/NCOV2019/gesamt.html)
 abrufen.`,
     cta: 'Starten'
   },
@@ -77,8 +57,8 @@ abrufen.`,
   },
   results: {
     headline: 'Ergebnis',
-    todosLabel: 'Das sollten Sie tun:',
-    searchInfo: 'Sie können unten nach Ihrem lokalen Gesundheitsamt suchen.',
+    todosLabel: 'Halten Sie sich bitte an diese Regeln:',
+    searchInfo: 'Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.',
     additionalRessources: {
       label: 'Mehr Informationen finden Sie auf folgenden Seiten:',
       pages: [
@@ -95,57 +75,126 @@ abrufen.`,
     },
     cases: {
       '1_symptoms_withContact_risk': {
-        label: `${resultTexts.contactPublicHealthDepartment}
-${resultTexts.suspectedCase}`,
-        result: `${resultTexts.contactDoctor} 
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
+Ein Test wird empfohlen.**
 
-${resultTexts.riskInfo}`,
+Warum?
+- Sie haben typische Symptome
+- Sie hatten Kontakt zu einer infizierten Person.
+
+*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
+
+- Sie sollten vorsorglich Ihren Hausarzt anrufen.
+- Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
+`,
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        label: `${resultTexts.contactPublicHealthDepartment}
-${resultTexts.suspectedCase}`,
-        result: `${resultTexts.noRiskTakeCare}`,
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
+Ein Test wird empfohlen.**
+
+Warum?
+- Sie haben typische Symptome
+- Sie hatten Kontakt zu einer infizierten Person
+
+*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
+
+Auch wenn Sie nicht zur Risikogruppe gehören,
+können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        label: `${resultTexts.doNotContactPublicHealthDepartment}
-${resultTexts.noSuspectedCase}`,
-        result: `${resultTexts.riskInfo}
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
+Fragen Sie nach einem Test.**
 
-${resultTexts.contactDoctor}`,
+Warum?
+- Sie haben typische Symptome
+
+*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
+
+- Sie sollten vorsorglich Ihren Hausarzt anrufen
+- Sie haben aufgrund von Alter oder Vorerkrankungen Im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
+        todos: symptomTodos
+      },
+      '3a_symptoms_withoutDirectContact_noRisk': {
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
+Fragen Sie nach einem Test.**
+
+Warum?
+- Sie haben typische Symptome
+- Sie kommen mit Menschen der Risikogruppe in Kontakt.
+
+*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
+
+Auch wenn Sie nicht zur Risikogruppe gehören,
+können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        label: `${resultTexts.doNotContactPublicHealthDepartment}
-${resultTexts.noSuspectedCase}`,
-        result: `${resultTexts.contactDoctorIfWorsens}
+        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.
+Ein Test wird derzeit nicht empfohlen.**
 
-${resultTexts.noRiskTakeCare}`,
+Warum?
+- Sie hatten KEINEN Kontakt zu einer Infizierten Person
+
+Wenn sich Ihre Symptome verschlechtern, kontaktieren Sie bitte einen Arzt oder
+eine Ärztin. Sollte sich herausstellen, dass eine Kontaktperson positiv getestet
+wurde, melden Sich sich bitte umgehend beim Gesundheitsamt.
+
+Auch wenn Sie nicht zur Risikogruppe gehören,
+können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        label: `${resultTexts.doNotContactPublicHealthDepartment} 
-${resultTexts.noSuspectedCase}`,
-        result: `${resultTexts.noRiskTakeCare}`,
+        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.
+Ein Test wird derzeit nicht empfohlen.**
+
+Warum?
+- Sie haben KEINE typischen Symptome.
+- Sie hatten KEINEN Kontakt zu einer infizierten Person.
+
+Auch wenn Sie nicht zur Risikogruppe gehören,
+können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        label: `${resultTexts.doNotContactPublicHealthDepartment} 
-${resultTexts.noSuspectedCase}`,
-        result: `${resultTexts.riskInfo}`,
+        info: `**Sie müssen vorerst nicht beim Gesundheitsamt anrufen.
+Ein Test wird derzeit nicht empfohlen.**
+
+Warum?
+- Sie haben KEINE typischen Symptome.
+- Sie hatten KEINEN Kontakt zu einer infizierten Person.
+
+Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein
+erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomTodos
       },
       '7_directContact_risk': {
-        label: `${resultTexts.contactPublicHealthDepartment}
-${resultTexts.contactWithoutSymptoms}`,
-        result: `${resultTexts.riskInfo}`,
+        info: `**Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!
+Fragen Sie nach einem Test.**
+
+Warum?
+- Sie haben keine typischen Symptome
+- Aber: Sie hatten Kontakt zu einer infizierten Person.
+
+*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
+
+Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein
+erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomDirectContactTodos
       },
       '8_directContact_noRisk': {
-        label: `${resultTexts.contactPublicHealthDepartment}
-${resultTexts.contactWithoutSymptoms}`,
-        result: `${resultTexts.noRiskTakeCare}`,
+        info: `**Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!
+Fragen Sie nach einem Test.**
+
+Warum?
+- Sie haben keine typischen Symptome
+- Aber: Sie hatten Kontakt zu einer infizierten Person.
+
+*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
+
+Auch wenn Sie nicht zur Risikogruppe gehören,
+können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: noSymptomDirectContactTodos
       }
     }
@@ -155,7 +204,7 @@ ${resultTexts.contactWithoutSymptoms}`,
   },
   questions: {
     disclaimer: {
-      label: 'Disclaimer',
+      label: 'Hinweis',
       info: `Dieser Navigator wird auf Basis
 aktuellster wissenschaftlicher
 Empfehlungen des Robert Koch-Instituts
@@ -163,32 +212,29 @@ und der Bundesregierung zur Verfügung
 gestellt. Er befindet sich derzeit in
 Entwicklung und soll als
 Ersteinschätzung und Entscheidungshilfe
-vor einem Anruf beim Arzt oder
+vor einem Arztbesuch oder Anruf beim
 Gesundheitsamt dienen.
 Die Anwendung kann keine ärztliche
 Diagnose ersetzen. Bei akuten
 Symptomen oder Zweifeln wenden Sie
-sich bitte an einen Arzt.
+sich bitte an einen Arzt oder eine Ärztin.
 In dringenden Notfällen rufen Sie die 112
 an.`
     },
     symptoms_1: {
-      label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
-      info: `- Fieber
-- Husten
+      label: 'Haben Sie eines oder beide der folgenden Symptome?',
+      info: `- Husten
 - Atembeschwerden`
     },
     symptoms_2: {
-      label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
-      info: `- Laufende Nase
-- Halsschmerzen
-- Kopfschmerzen
-- allgemeines Krankheitsgefühl`
+      label: 'Haben Sie eines oder beide der folgenden Symptome?',
+      info: `- Fieber
+- Halsschmerzen`
     },
     symptoms_3: {
-      label: 'Haben Sie eines oder mehrere der folgenden Symptome?',
-      info: `- Durchfall
-- reduzierter Geruchs- oder Geschmackssinn`
+      label: 'Haben Sie eines oder beide der folgenden Symptome?',
+      info: `- reduzierter Geruchs- oder Geschmackssinn
+- allgemeines Krankheitsgefühl`
     },
     workRiskContact: {
       label:
@@ -204,6 +250,9 @@ an.`
     },
     ageRisk: {
       label: 'Sind Sie 50 Jahre oder älter?'
+    },
+    smokeRisk: {
+      label: 'Sind Sie Raucher?'
     },
     patientDiagnoseRisk: {
       label:
