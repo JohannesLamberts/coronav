@@ -1,20 +1,20 @@
 const generalTodos = [
-  'Wash your hands often and thoroughly',
-  'Keep 2 metres away from other people',
-  'Only cough and sneeze into the crook of your arm'
+  'Wash your hands often and thoroughly.',
+  'Keep 2 metres away from other people.',
+  'Only cough and sneeze into the crook of your arm.'
 ]
 
 const symptomTodos = [
-  'Please stay at home',
-  'Avoid direct personal contact',
-  'When you leave the house please wear a mouth and nose protector',
+  'Please stay at home.',
+  'Avoid direct personal contact.',
+  'When you leave the house please wear a mouth and nose protector.',
   ...generalTodos
 ]
 
 const noSymptomTodos = ['Please stay at home, if possible', ...generalTodos]
 const noSymptomDirectContactTodos = [
-  'Please stay at home, if possible',
-  'Avoid direct personal contact',
+  'Please stay at home, if possible.',
+  'Avoid direct personal contact.',
   ...generalTodos
 ]
 
@@ -73,8 +73,9 @@ in this respect. You can also check the criteria directly
     },
     cases: {
       '1_symptoms_withContact_risk': {
-        info: `**Please report to your local health department!
-A test is recommended.**
+        info: `**Please report to your local health department!**
+
+**A test is recommended.**
 
 Why?
 - You display typical symptoms.
@@ -82,14 +83,17 @@ Why?
 
 *Below you can search for your local health authority.*
 
-- Please call your general practitioner as a precautionary measure.
+Please call your general practitioner as a precautionary measure.
+
+Why?
 - You have an increased risk of a more severe course of the disease due to age or previous conditions.
 `,
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        info: `**Please report to your local health department!
-A test is recommended.**
+        info: `**Please report to your local health department!**
+
+**A test is recommended.**
 
 Why?
 - You display typical symptoms.
@@ -102,22 +106,27 @@ you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        info: `**Please report to your local health department!
-Ask for a test.**
+        info: `**Please report to your local health department!**
+
+**Ask for a test.**
 
 Why?
 - You display typical symptoms.
+- You belong to a risk group.
 
 *Below you can search for your local health authority.*
 
-- As a precautionary measure you should call your general practitioner.
+As a precautionary measure you should call your general practitioner.
+
+Why?
 - You have an increased risk of a more severe course of the disease due to age or previous conditions.
 `,
         todos: symptomTodos
       },
       '3a_symptoms_withoutDirectContact_noRisk': {
-        info: `**Please report to your local health department!
-Ask for a test.**
+        info: `**Please report to your local health department!**
+
+**Ask for a test.**
 
 Why?
 - You display typical symptoms.
@@ -130,13 +139,17 @@ you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        info: `**For the time being, you do NOT need to call the health department.
-A test is currently not recommended.**
+        info: `**For the time being, you do NOT need to call the health department.****
+
+**However, a test is still recommended.**
+
+**Please consult your general practitioner regarding the test.**
 
 Why?
+- You display typical symptoms, BUT
 - You did NOT have contact with an infected person.
 
-Please contact a doctor if your symptoms worsen. If a person you have had contact with is tested positive
+If a person you have had contact with is tested positive
 please contact your local health department immediately.
 
 Even if you do not belong to a risk group,
@@ -144,8 +157,9 @@ you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        info: `**For the time being, you do NOT need to call the health department.
-A test is currently not recommended.**
+        info: `**For the time being, you do NOT need to call the health department.**
+
+**A test is currently not recommended.**
 
 Why?
 - You did NOT have contact with an infected person.
@@ -156,8 +170,9 @@ you can be or become a carrier. Protect yourself and others!`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        info: `**For the time being, you do NOT need to call the health department.
-A test is currently not recommended.**
+        info: `**For the time being, you do NOT need to call the health department.**
+
+**A test is currently not recommended.**
 
 Why?
 - You did NOT have contact with an infected person.
@@ -168,8 +183,9 @@ You have an increased risk of a more severe course of the disease due to age or 
         todos: noSymptomTodos
       },
       '7_directContact_risk': {
-        info: `**Please report to your local health department!
-Ask for a test.**
+        info: `**Please report to your local health department!**
+
+**Ask for a test.**
 
 Why?
 - You do NOT display typical symptoms.
@@ -182,8 +198,9 @@ You have an increased risk of a more severe course of the disease due to age or 
         todos: noSymptomDirectContactTodos
       },
       '8_directContact_noRisk': {
-        info: `**Please report to your local health department!
-Ask for a test.**
+        info: `**Please report to your local health department!**
+
+**Ask for a test.**
 
 Why?
 - You do NOT display typical symptoms.
@@ -203,13 +220,13 @@ you can be or become a carrier. Protect yourself and others!`,
   questions: {
     disclaimer: {
       label: 'Disclaimer',
-      info: `This navigator is provided on the basis of the latest scientific
+      info: `
+- This navigator is provided on the basis of the latest scientific
 recommendations of the Robert Koch-Institut and the German government.
-It is currently in development and is intended to serve as an initial assessment
+- It is currently in development and is intended to serve as an initial assessment
 and decision-making aid before calling a doctor or health authority.
-The application cannot replace a medical diagnosis.
-In case of acute symptoms or doubts, please consult a physician.
-For emergencies, call 112.`
+- In case of acute symptoms or doubts, please consult a physician.
+- For emergencies, call 112.`
     },
     symptoms_1: {
       label: 'Do you have one or both of the following symptoms?',

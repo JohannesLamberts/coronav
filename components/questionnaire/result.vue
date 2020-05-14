@@ -9,7 +9,11 @@
       </b-alert>
       <p>{{ $t('results.todosLabel') }}</p>
       <ul>
-        <li v-for="text of responseText.todos" :key="text">{{ text }}</li>
+        <li
+          v-for="text of responseText.todos"
+          :key="text"
+          v-html="text && $md.render(text)"
+        />
       </ul>
       <div v-if="responseConfig.showHotlineSearch">
         <hotline-search />

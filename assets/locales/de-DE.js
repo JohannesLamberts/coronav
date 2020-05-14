@@ -1,20 +1,20 @@
 const generalTodos = [
-  'Waschen Sie oft und gründliche Ihre Hände',
-  'Halten Sie 2 Meter Abstand zu anderen Personen',
-  'Husten und niesen Sie nur in Ihre Armbeuge'
+  'Waschen Sie oft und gründlich Ihre Hände.',
+  'Halten Sie 2 Meter Abstand zu anderen Personen.',
+  'Husten und niesen Sie nur in Ihre Armbeuge.'
 ]
 
 const symptomTodos = [
-  'Bleiben Sie bitte zu Hause',
-  'Vermeiden Sie direkten Personenkontakt',
-  'Wenn Sie das Haus verlassen müssen, tragen Sie bitte einen Mund-Nasen-Schutz',
+  'Bleiben Sie bitte zu Hause.',
+  'Vermeiden Sie direkten Personenkontakt.',
+  'Wenn Sie das Haus verlassen müssen, tragen Sie bitte einen Mund-Nasen-Schutz.',
   ...generalTodos
 ]
 
 const noSymptomTodos = ['Bleiben Sie, wenn möglich, zuhause', ...generalTodos]
 const noSymptomDirectContactTodos = [
-  'Bleiben Sie, wenn möglich, zuhause',
-  'Vermeiden Sie direkten Personenkontakt',
+  'Bleiben Sie, wenn möglich, zuhause.',
+  'Vermeiden Sie direkten Personenkontakt.',
   ...generalTodos
 ]
 
@@ -33,7 +33,7 @@ ist, ob ein Test empfohlen wird und warum.
 Dieser Navigator leitet Sie sicher durch wenige Fragen.
 Es kann geklärt werden:
 - ob Sie die typischen Symptome einer Coronavirus-Infektion haben
-- ob sie zur Risikogruppe gehören
+- ob Sie zur Risikogruppe gehören
 - ob Sie als Kontaktperson eingestuft werden.
 
 Anschließend erhalten Sie:
@@ -75,27 +75,31 @@ abrufen.`,
     },
     cases: {
       '1_symptoms_withContact_risk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
-Ein Test wird empfohlen.**
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
+
+**Ein Test wird empfohlen.**
 
 Warum?
-- Sie haben typische Symptome
+- Sie haben typische Symptome.
 - Sie hatten Kontakt zu einer infizierten Person.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
-- Sie sollten vorsorglich Ihren Hausarzt anrufen.
+Sie sollten vorsorglich Ihren Hausarzt anrufen.
+
+Warum?
 - Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
 `,
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
-Ein Test wird empfohlen.**
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
+
+**Ein Test wird empfohlen.**
 
 Warum?
-- Sie haben typische Symptome
-- Sie hatten Kontakt zu einer infizierten Person
+- Sie haben typische Symptome.
+- Sie hatten Kontakt zu einer infizierten Person.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
@@ -104,24 +108,29 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
-Fragen Sie nach einem Test.**
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
+
+**Fragen Sie nach einem Test.**
 
 Warum?
-- Sie haben typische Symptome
+- Sie haben typische Symptome.
+- Sie gehören zur Risikogruppe.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
-- Sie sollten vorsorglich Ihren Hausarzt anrufen
+Sie sollten vorsorglich Ihren Hausarzt anrufen.
+
+Warum?
 - Sie haben aufgrund von Alter oder Vorerkrankungen Im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: symptomTodos
       },
       '3a_symptoms_withoutDirectContact_noRisk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
-Fragen Sie nach einem Test.**
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
+
+**Fragen Sie nach einem Test.**
 
 Warum?
-- Sie haben typische Symptome
+- Sie haben typische Symptome.
 - Sie kommen mit Menschen der Risikogruppe in Kontakt.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
@@ -131,14 +140,17 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.
-Ein Test wird derzeit nicht empfohlen.**
+        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.**
+
+**Ein Test wird derzeit trotzdem empfohlen.**
+
+**Fragen Sie diesbezüglich Ihren Hausarzt.**
 
 Warum?
-- Sie hatten KEINEN Kontakt zu einer Infizierten Person
+- Sie haben typische Symptome, ABER
+- Sie hatten KEINEN Kontakt zu einer Infizierten Person.
 
-Wenn sich Ihre Symptome verschlechtern, kontaktieren Sie bitte einen Arzt oder
-eine Ärztin. Sollte sich herausstellen, dass eine Kontaktperson positiv getestet
+Sollte sich herausstellen, dass eine Kontaktperson positiv getestet
 wurde, melden Sich sich bitte umgehend beim Gesundheitsamt.
 
 Auch wenn Sie nicht zur Risikogruppe gehören,
@@ -146,8 +158,9 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.
-Ein Test wird derzeit nicht empfohlen.**
+        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.**
+
+**Ein Test wird derzeit nicht empfohlen.**
 
 Warum?
 - Sie haben KEINE typischen Symptome.
@@ -158,8 +171,9 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        info: `**Sie müssen vorerst nicht beim Gesundheitsamt anrufen.
-Ein Test wird derzeit nicht empfohlen.**
+        info: `**Sie müssen vorerst nicht beim Gesundheitsamt anrufen.**
+
+**Ein Test wird derzeit nicht empfohlen.**
 
 Warum?
 - Sie haben KEINE typischen Symptome.
@@ -170,11 +184,12 @@ erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomTodos
       },
       '7_directContact_risk': {
-        info: `**Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!
-Fragen Sie nach einem Test.**
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt!**
+
+**Fragen Sie nach einem Test.**
 
 Warum?
-- Sie haben keine typischen Symptome
+- Sie haben keine typischen Symptome.
 - Aber: Sie hatten Kontakt zu einer infizierten Person.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
@@ -184,11 +199,12 @@ erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomDirectContactTodos
       },
       '8_directContact_noRisk': {
-        info: `**Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!
-Fragen Sie nach einem Test.**
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt!**
+
+**Fragen Sie nach einem Test.**
 
 Warum?
-- Sie haben keine typischen Symptome
+- Sie haben keine typischen Symptome.
 - Aber: Sie hatten Kontakt zu einer infizierten Person.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
@@ -205,20 +221,21 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
   questions: {
     disclaimer: {
       label: 'Hinweis',
-      info: `Dieser Navigator wird auf Basis
+      info: `
+- Dieser Navigator wird auf Basis
 aktuellster wissenschaftlicher
 Empfehlungen des Robert Koch-Instituts
 und der Bundesregierung zur Verfügung
-gestellt. Er befindet sich derzeit in
+gestellt.
+- Er befindet sich derzeit in
 Entwicklung und soll als
 Ersteinschätzung und Entscheidungshilfe
 vor einem Arztbesuch oder Anruf beim
 Gesundheitsamt dienen.
-Die Anwendung kann keine ärztliche
-Diagnose ersetzen. Bei akuten
+- Bei akuten
 Symptomen oder Zweifeln wenden Sie
 sich bitte an einen Arzt oder eine Ärztin.
-In dringenden Notfällen rufen Sie die 112
+- In dringenden Notfällen rufen Sie die 112
 an.`
     },
     symptoms_1: {
