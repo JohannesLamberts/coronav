@@ -25,7 +25,7 @@ export default {
     no: 'Nein'
   },
   index: {
-    title: 'Coronavirus  Infektion? Test?',
+    title: 'Coronavirus-Infektion?',
     logoTitle: 'Zur CoroNav Startseite',
     description: `Hier erfahren Sie, ob bei Ihnen eine Infektion wahrscheinlich
 ist, ob ein Test empfohlen wird und warum.
