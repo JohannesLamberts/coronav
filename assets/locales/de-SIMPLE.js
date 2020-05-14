@@ -39,7 +39,7 @@ Vielen Dank, dass Sie mithelfen.
   questions: {
     disclaimer: {
       label: 'Hinweis',
-      info: `Fachleute haben die Fragen ausgewählt.
+      info: `Fachleute entscheiden, was in den Fragen stehen soll.
 
 Die Fachleute sind
 - von der Bundesregierung und
@@ -49,7 +49,7 @@ Wir arbeiten noch weiter an dem Fragebogen.
 
 Aber: Dieser Fragebogen ist **nicht** so gut wie ein Arzt.
 
-Wenn es Ihnen **nicht** gut geht,
+Wenn es Ihnen schlecht geht,
 
 rufen Sie einen Arzt an.
 
@@ -111,7 +111,7 @@ Oder sind Sie sehr dick?`
     },
     patientOrganRisk: {
       label: 'Haben Sie Krankheiten, die **nicht** mehr heilen?',
-      info: `Um diese Organe geht es:
+      info: `Um Krankheiten dieser Organe geht es:
 - Herz
 - Leber
 - Niere
@@ -163,6 +163,8 @@ Warum?
 
 Rufen Sie am besten auch Ihren Hausarzt an.
 
+Warum?
+
 Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
 Darum haben Sie vielleicht mehr Probleme,<br />
 wenn Sie das Corona-Virus bekommen.
@@ -196,6 +198,8 @@ Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
 
 Rufen Sie am besten Ihren Hausarzt an.
 
+Warum?
+
 Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
 Darum haben Sie vielleicht mehr Probleme,<br />
 wenn Sie das Corona-Virus bekommen.`,
@@ -219,14 +223,15 @@ Schützen Sie sich und andere.`,
       '4_symptoms_withoutContact_noRisk': {
         info: `**Sie müssen nicht beim Gesundheits-Amt anrufen.**
 
-**Ein Test wird jetzt nicht empfohlen.**
+**Ein Test wird jetzt trotzdem empfohlen.**
+
+**Rufen Sie bitte Ihren Hausarzt an.**
 
 Warum?
+- Sie haben typische Krankheitszeichen, ABER
 - Sie hatten **keinen** Kontakt mit einer Person mit dem Corona-Virus.
 
-Rufen Sie einen Arzt an, wenn es Ihnen schlechter geht.
-
-Vielleicht hatten Sie Kontakt mit einer Person,<br />
+Vielleicht hatten Sie doch Kontakt mit einer Person,<br />
 die das Corona-Virus hat.<br />
 Rufen Sie dann das Gesundheits-Amt an.
 

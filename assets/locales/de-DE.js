@@ -1,5 +1,5 @@
 const generalTodos = [
-  'Waschen Sie oft und gründliche Ihre Hände.',
+  'Waschen Sie oft und gründlich Ihre Hände.',
   'Halten Sie 2 Meter Abstand zu anderen Personen.',
   'Husten und niesen Sie nur in Ihre Armbeuge.'
 ]
@@ -25,7 +25,7 @@ export default {
     no: 'Nein'
   },
   index: {
-    title: 'Coronavirus-Infektion?',
+    title: 'Coronavirus  Infektion? Test?',
     logoTitle: 'Zur CoroNav Startseite',
     description: `Hier erfahren Sie, ob bei Ihnen eine Infektion wahrscheinlich
 ist, ob ein Test empfohlen wird und warum.
@@ -85,7 +85,9 @@ Warum?
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
-- Sie sollten vorsorglich Ihren Hausarzt anrufen.
+Sie sollten vorsorglich Ihren Hausarzt anrufen.
+
+Warum?
 - Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
 `,
         todos: symptomTodos
@@ -112,10 +114,13 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
 
 Warum?
 - Sie haben typische Symptome.
+- Sie gehören zur Risikogruppe.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
-- Sie sollten vorsorglich Ihren Hausarzt anrufen.
+Sie sollten vorsorglich Ihren Hausarzt anrufen.
+
+Warum?
 - Sie haben aufgrund von Alter oder Vorerkrankungen Im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: symptomTodos
       },
@@ -137,13 +142,15 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
       '4_symptoms_withoutContact_noRisk': {
         info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.**
 
-**Ein Test wird derzeit nicht empfohlen.**
+**Ein Test wird derzeit trotzdem empfohlen.**
+
+**Fragen Sie diesbezüglich Ihren Hausarzt.**
 
 Warum?
+- Sie haben typische Symptome, ABER
 - Sie hatten KEINEN Kontakt zu einer Infizierten Person.
 
-Wenn sich Ihre Symptome verschlechtern, kontaktieren Sie bitte einen Arzt oder
-eine Ärztin. Sollte sich herausstellen, dass eine Kontaktperson positiv getestet
+Sollte sich herausstellen, dass eine Kontaktperson positiv getestet
 wurde, melden Sich sich bitte umgehend beim Gesundheitsamt.
 
 Auch wenn Sie nicht zur Risikogruppe gehören,
@@ -214,20 +221,21 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
   questions: {
     disclaimer: {
       label: 'Hinweis',
-      info: `Dieser Navigator wird auf Basis
+      info: `
+- Dieser Navigator wird auf Basis
 aktuellster wissenschaftlicher
 Empfehlungen des Robert Koch-Instituts
 und der Bundesregierung zur Verfügung
-gestellt. Er befindet sich derzeit in
+gestellt.
+- Er befindet sich derzeit in
 Entwicklung und soll als
 Ersteinschätzung und Entscheidungshilfe
 vor einem Arztbesuch oder Anruf beim
 Gesundheitsamt dienen.
-Die Anwendung kann keine ärztliche
-Diagnose ersetzen. Bei akuten
+- Bei akuten
 Symptomen oder Zweifeln wenden Sie
 sich bitte an einen Arzt oder eine Ärztin.
-In dringenden Notfällen rufen Sie die 112
+- In dringenden Notfällen rufen Sie die 112
 an.`
     },
     symptoms_1: {
