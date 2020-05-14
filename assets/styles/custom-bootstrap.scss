@@ -35,8 +35,9 @@ $logo-color: #0a5287;
 
 $link-color: #17b897;
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Quicksand:wght@400;500;700&display=swap');
-$font-family-content: 'Open Sans', Avenir, Roboto, 'Helvetica Neue', Helvetica,
+$font-family-base: 'Lato', Avenir, Roboto, 'Helvetica Neue', Helvetica,
+Arial, sans-serif;
+$font-family-content: 'Lato', Avenir, Roboto, 'Helvetica Neue', Helvetica,
 Arial, sans-serif;
 $font-family-headings: 'Quicksand', sans-serif;
 

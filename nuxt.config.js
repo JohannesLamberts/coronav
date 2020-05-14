@@ -22,7 +22,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@900&display=swap'
+          'https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Quicksand:wght@400;500;700&display=swap'
       }
     ]
   },
