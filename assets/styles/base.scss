@@ -55,3 +55,7 @@ body {
 [dir='RTL'] .text-align-locale {
   text-align: right;
 }
+
+li p:last-child {
+  margin-bottom: 0;
+}
