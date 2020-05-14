@@ -245,7 +245,7 @@ Schützen Sie sich und andere.`,
 **Ein Test wird jetzt nicht empfohlen.**
 
 Warum?
-- Es gibt **keine** Anzeichen,<br />dass sie das Corona-Virus haben könnten.
+- Es gibt **keine** Anzeichen,<br />dass Sie das Corona-Virus haben könnten.
 - Sie hatten **keinen** Kontakt mit einer Person mit dem Corona-Virus.
 
 Sie können andere Personen mit dem Corona-Virus anstecken.<br />
@@ -258,7 +258,7 @@ Schützen Sie sich und andere.`,
 **Ein Test wird jetzt nicht empfohlen.**
 
 Warum?
-- Es gibt **keine** Anzeichen,<br />dass sie das Corona-Virus haben könnten.
+- Es gibt **keine** Anzeichen,<br />dass Sie das Corona-Virus haben könnten.
 - Sie hatten **keinen** Kontakt mit einer Person mit dem Corona-Virus.
 
 Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
@@ -272,7 +272,7 @@ wenn Sie das Corona-Virus bekommen.`,
 **Fragen Sie nach einem Test.**
 
 Warum?
-- Es gibt **keine** Anzeichen,<br />dass sie das Corona-Virus haben könnten.
+- Es gibt **keine** Anzeichen,<br />dass Sie das Corona-Virus haben könnten.
 - Aber Sie hatten direkten Kontakt mit einer Person mit dem Corona-Virus.
 
 *Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
@@ -288,7 +288,7 @@ wenn Sie das Corona-Virus bekommen.`,
 **Fragen Sie nach einem Test.**
 
 Warum?
-- Es gibt **keine** Anzeichen,<br />dass sie das Corona-Virus haben könnten.
+- Es gibt **keine** Anzeichen,<br />dass Sie das Corona-Virus haben könnten.
 - Aber Sie hatten direkten Kontakt mit einer Person mit dem Corona-Virus.
 
 *Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*

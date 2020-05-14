@@ -33,7 +33,7 @@ ist, ob ein Test empfohlen wird und warum.
 Dieser Navigator leitet Sie sicher durch wenige Fragen.
 Es kann geklärt werden:
 - ob Sie die typischen Symptome einer Coronavirus-Infektion haben
-- ob sie zur Risikogruppe gehören
+- ob Sie zur Risikogruppe gehören
 - ob Sie als Kontaktperson eingestuft werden.
 
 Anschließend erhalten Sie:
@@ -184,7 +184,7 @@ erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomTodos
       },
       '7_directContact_risk': {
-        info: `**Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!**
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt!**
 
 **Fragen Sie nach einem Test.**
 
@@ -199,7 +199,7 @@ erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomDirectContactTodos
       },
       '8_directContact_noRisk': {
-        info: `**Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!**
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt!**
 
 **Fragen Sie nach einem Test.**
 
