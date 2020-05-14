@@ -1,20 +1,20 @@
 const generalTodos = [
-  'Waschen Sie oft und gründliche Ihre Hände',
-  'Halten Sie 2 Meter Abstand zu anderen Personen',
-  'Husten und niesen Sie nur in Ihre Armbeuge'
+  'Waschen Sie oft und gründliche Ihre Hände.',
+  'Halten Sie 2 Meter Abstand zu anderen Personen.',
+  'Husten und niesen Sie nur in Ihre Armbeuge.'
 ]
 
 const symptomTodos = [
-  'Bleiben Sie bitte zu Hause',
-  'Vermeiden Sie direkten Personenkontakt',
-  'Wenn Sie das Haus verlassen müssen, tragen Sie bitte einen Mund-Nasen-Schutz',
+  'Bleiben Sie bitte zu Hause.',
+  'Vermeiden Sie direkten Personenkontakt.',
+  'Wenn Sie das Haus verlassen müssen, tragen Sie bitte einen Mund-Nasen-Schutz.',
   ...generalTodos
 ]
 
 const noSymptomTodos = ['Bleiben Sie, wenn möglich, zuhause', ...generalTodos]
 const noSymptomDirectContactTodos = [
-  'Bleiben Sie, wenn möglich, zuhause',
-  'Vermeiden Sie direkten Personenkontakt',
+  'Bleiben Sie, wenn möglich, zuhause.',
+  'Vermeiden Sie direkten Personenkontakt.',
   ...generalTodos
 ]
 
@@ -75,11 +75,12 @@ abrufen.`,
     },
     cases: {
       '1_symptoms_withContact_risk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
-Ein Test wird empfohlen.**
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
+
+**Ein Test wird empfohlen.**
 
 Warum?
-- Sie haben typische Symptome
+- Sie haben typische Symptome.
 - Sie hatten Kontakt zu einer infizierten Person.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
@@ -90,12 +91,13 @@ Warum?
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
-Ein Test wird empfohlen.**
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
+
+**Ein Test wird empfohlen.**
 
 Warum?
-- Sie haben typische Symptome
-- Sie hatten Kontakt zu einer infizierten Person
+- Sie haben typische Symptome.
+- Sie hatten Kontakt zu einer infizierten Person.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
@@ -104,24 +106,26 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
-Fragen Sie nach einem Test.**
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
+
+**Fragen Sie nach einem Test.**
 
 Warum?
-- Sie haben typische Symptome
+- Sie haben typische Symptome.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
-- Sie sollten vorsorglich Ihren Hausarzt anrufen
+- Sie sollten vorsorglich Ihren Hausarzt anrufen.
 - Sie haben aufgrund von Alter oder Vorerkrankungen Im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: symptomTodos
       },
       '3a_symptoms_withoutDirectContact_noRisk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.
-Fragen Sie nach einem Test.**
+        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
+
+**Fragen Sie nach einem Test.**
 
 Warum?
-- Sie haben typische Symptome
+- Sie haben typische Symptome.
 - Sie kommen mit Menschen der Risikogruppe in Kontakt.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
@@ -131,11 +135,12 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.
-Ein Test wird derzeit nicht empfohlen.**
+        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.**
+
+**Ein Test wird derzeit nicht empfohlen.**
 
 Warum?
-- Sie hatten KEINEN Kontakt zu einer Infizierten Person
+- Sie hatten KEINEN Kontakt zu einer Infizierten Person.
 
 Wenn sich Ihre Symptome verschlechtern, kontaktieren Sie bitte einen Arzt oder
 eine Ärztin. Sollte sich herausstellen, dass eine Kontaktperson positiv getestet
@@ -146,8 +151,9 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.
-Ein Test wird derzeit nicht empfohlen.**
+        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.**
+
+**Ein Test wird derzeit nicht empfohlen.**
 
 Warum?
 - Sie haben KEINE typischen Symptome.
@@ -158,8 +164,9 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        info: `**Sie müssen vorerst nicht beim Gesundheitsamt anrufen.
-Ein Test wird derzeit nicht empfohlen.**
+        info: `**Sie müssen vorerst nicht beim Gesundheitsamt anrufen.**
+
+**Ein Test wird derzeit nicht empfohlen.**
 
 Warum?
 - Sie haben KEINE typischen Symptome.
@@ -170,11 +177,12 @@ erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomTodos
       },
       '7_directContact_risk': {
-        info: `**Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!
-Fragen Sie nach einem Test.**
+        info: `**Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!**
+
+**Fragen Sie nach einem Test.**
 
 Warum?
-- Sie haben keine typischen Symptome
+- Sie haben keine typischen Symptome.
 - Aber: Sie hatten Kontakt zu einer infizierten Person.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
@@ -184,11 +192,12 @@ erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomDirectContactTodos
       },
       '8_directContact_noRisk': {
-        info: `**Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!
-Fragen Sie nach einem Test.**
+        info: `**Bitte melden sie sich bei Ihrem zuständigen Gesundheitsamt!**
+
+**Fragen Sie nach einem Test.**
 
 Warum?
-- Sie haben keine typischen Symptome
+- Sie haben keine typischen Symptome.
 - Aber: Sie hatten Kontakt zu einer infizierten Person.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*

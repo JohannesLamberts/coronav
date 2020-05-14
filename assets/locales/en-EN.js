@@ -1,20 +1,20 @@
 const generalTodos = [
-  'Wash your hands often and thoroughly',
-  'Keep 2 metres away from other people',
-  'Only cough and sneeze into the crook of your arm'
+  'Wash your hands often and thoroughly.',
+  'Keep 2 metres away from other people.',
+  'Only cough and sneeze into the crook of your arm.'
 ]
 
 const symptomTodos = [
-  'Please stay at home',
-  'Avoid direct personal contact',
-  'When you leave the house please wear a mouth and nose protector',
+  'Please stay at home.',
+  'Avoid direct personal contact.',
+  'When you leave the house please wear a mouth and nose protector.',
   ...generalTodos
 ]
 
 const noSymptomTodos = ['Please stay at home, if possible', ...generalTodos]
 const noSymptomDirectContactTodos = [
-  'Please stay at home, if possible',
-  'Avoid direct personal contact',
+  'Please stay at home, if possible.',
+  'Avoid direct personal contact.',
   ...generalTodos
 ]
 

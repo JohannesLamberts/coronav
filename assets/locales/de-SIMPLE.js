@@ -1,20 +1,20 @@
 const generalTodos = [
-  'Waschen Sie oft und gut Ihre Hände',
-  'Bleiben Sie 2 Meter von anderen Personen weg',
-  'Husten und niesen Sie nur in Ihre Armbeuge'
+  'Waschen Sie oft und gut Ihre Hände.',
+  'Bleiben Sie 2 Meter von anderen Personen weg.',
+  'Husten und niesen Sie nur in Ihre Armbeuge.'
 ]
 
 const symptomTodos = [
-  'Bleiben Sie bitte zu Hause',
-  'Treffen Sie am besten keine anderen Personen',
-  'Wenn Sie das Haus verlassen müssen, tragen Sie einen Mund-Nasen-Schutz',
+  'Bleiben Sie bitte zu Hause.',
+  'Treffen Sie am besten **keine** anderen Personen.',
+  'Wenn Sie das Haus verlassen müssen, tragen Sie einen Mund-Nasen-Schutz.',
   ...generalTodos
 ]
 
 const noSymptomTodos = ['Bleiben Sie zuhause, wenn Sie können', ...generalTodos]
 const noSymptomDirectContactTodos = [
-  'Bleiben Sie zuhause, wenn Sie können',
-  'Treffen Sie am besten keine anderen Personen',
+  'Bleiben Sie zuhause, wenn Sie können.',
+  'Treffen Sie am besten **keine** anderen Personen.',
   ...generalTodos
 ]
 
@@ -47,9 +47,9 @@ Die Fachleute sind
 
 Wir arbeiten noch weiter an dem Fragebogen.
 
-Aber: Dieser Fragebogen ist nicht so gut wie ein Arzt.
+Aber: Dieser Fragebogen ist **nicht** so gut wie ein Arzt.
 
-Wenn es Ihnen nicht gut geht,
+Wenn es Ihnen **nicht** gut geht,
 
 rufen Sie einen Arzt an.
 
@@ -77,22 +77,23 @@ Oder haben Sie beides?`
 
 Können Sie weniger schmecken oder riechen?
 
-Oder haben Sie beides?`
+Oder beides?`
     },
     workRiskContact: {
       label: 'Treffen Sie bei der Arbeit alte oder kranke Menschen?',
       info: `Dazu gehört auch Arbeit, für die Sie **kein** Geld bekommen.
 
-Das nennt man ehrenamtliche Arbeit`
+Das nennt man ehrenamtliche Arbeit.`
     },
     directContact: {
       label:
         'Hatten Sie in den letzen 2 Wochen direkten Kontakt mit einer Person mit Corona-Virus?',
       info: `Direkter Kontakt heißt:
 - Sie leben mit der Person zusammen
-- **Oder:** Sie waren 15 Minuten oder länger in der Nähe von der Person. Zum Beispiel in einem Gespräch
-- **Oder:** Sie haben die Person geküsst ODER
-- **Oder:** Diese Person hat Sie angehustet oder angeniest`
+- **Oder:** Sie waren 15 Minuten oder länger in der Nähe von der Person. <br/>
+Zum Beispiel in einem Gespräch.
+- **Oder:** Sie haben die Person geküsst.
+- **Oder:** Diese Person hat Sie angehustet oder angeniest.`
     },
     ageRisk: {
       label: 'Sind Sie 50 Jahre oder älter?'
@@ -109,7 +110,7 @@ Oder haben Sie Diabetes?
 Oder sind Sie sehr dick?`
     },
     patientOrganRisk: {
-      label: 'Haben Sie Krankheiten, die nicht mehr heilen?',
+      label: 'Haben Sie Krankheiten, die **nicht** mehr heilen?',
       info: `Um diese Organe geht es:
 - Herz
 - Leber
@@ -239,7 +240,7 @@ Schützen Sie sich und andere.`,
 **Ein Test wird jetzt nicht empfohlen.**
 
 Warum?
-- Es gibt keine Anzeichen,<br />dass sie das Corona-Virus haben könnten.
+- Es gibt **keine** Anzeichen,<br />dass sie das Corona-Virus haben könnten.
 - Sie hatten **keinen** Kontakt mit einer Person mit dem Corona-Virus.
 
 Sie können andere Personen mit dem Corona-Virus anstecken.<br />
@@ -252,7 +253,7 @@ Schützen Sie sich und andere.`,
 **Ein Test wird jetzt nicht empfohlen.**
 
 Warum?
-- Es gibt keine Anzeichen,<br />dass sie das Corona-Virus haben könnten.
+- Es gibt **keine** Anzeichen,<br />dass sie das Corona-Virus haben könnten.
 - Sie hatten **keinen** Kontakt mit einer Person mit dem Corona-Virus.
 
 Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
@@ -266,7 +267,7 @@ wenn Sie das Corona-Virus bekommen.`,
 **Fragen Sie nach einem Test.**
 
 Warum?
-- Es gibt keine Anzeichen,<br />dass sie das Corona-Virus haben könnten.
+- Es gibt **keine** Anzeichen,<br />dass sie das Corona-Virus haben könnten.
 - Aber Sie hatten direkten Kontakt mit einer Person mit dem Corona-Virus.
 
 *Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
@@ -282,7 +283,7 @@ wenn Sie das Corona-Virus bekommen.`,
 **Fragen Sie nach einem Test.**
 
 Warum?
-- Es gibt keine Anzeichen,<br />dass sie das Corona-Virus haben könnten.
+- Es gibt **keine** Anzeichen,<br />dass sie das Corona-Virus haben könnten.
 - Aber Sie hatten direkten Kontakt mit einer Person mit dem Corona-Virus.
 
 *Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
