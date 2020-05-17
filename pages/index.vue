@@ -28,7 +28,7 @@
             <b-card>
               <b-card-title>Coronavirus-Antikörpertest?</b-card-title>
               <b-card-text>
-                Bald erfahren Sie hier:zum Beispiel: ob ein Antikörpertest bei
+                Bald erfahren Sie hier zum Beispiel ob ein Antikörpertest bei
                 Ihnen empfohlen wird und warum.
               </b-card-text>
               <b-btn variant="secondary" pill block>weiter</b-btn>
@@ -39,7 +39,7 @@
               <b-card-title>Coronavirus-Impfung?</b-card-title>
               <b-card-text>
                 Wenn es einen zugelassenen Impfstoff gibt, erfahren Sie hier zum
-                Beispiel: ob und wann eine Impfung bei Ihnen empfohlen wird.
+                Beispiel ob und wann eine Impfung bei Ihnen empfohlen wird.
               </b-card-text>
               <b-btn variant="secondary" pill block>weiter</b-btn>
             </b-card>

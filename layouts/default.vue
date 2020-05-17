@@ -1,29 +1,27 @@
 <template>
   <div :class="$style.wrapper">
-    <div :class="$style.centered">
-      <header :class="$style.header">
-        <h1 class="h1" tabindex="-1">
-          <nuxt-link :to="localePath('/')" :title="$t('index.logoTitle')">
-            <img
-              src="@/assets/images/logo_coronav.png"
-              alt="CoroNav Logo"
-              :class="$style.logo"
-            />
-          </nuxt-link>
-        </h1>
-        <nav>
-          <nuxt-link
-            v-for="locale in $i18n.locales"
-            :key="locale.code"
-            :to="switchLocalePath(locale.code)"
-            >{{ locale.name }}</nuxt-link
-          >
-        </nav>
-      </header>
-      <main :class="$style.content">
-        <nuxt />
-      </main>
-    </div>
+    <header :class="$style.header">
+      <h1 class="h1" tabindex="-1">
+        <nuxt-link :to="localePath('/')" :title="$t('index.logoTitle')">
+          <img
+            src="@/assets/images/logo_coronav.png"
+            alt="CoroNav Logo"
+            :class="$style.logo"
+          />
+        </nuxt-link>
+      </h1>
+      <nav>
+        <nuxt-link
+          v-for="locale in $i18n.locales"
+          :key="locale.code"
+          :to="switchLocalePath(locale.code)"
+          >{{ locale.name }}</nuxt-link
+        >
+      </nav>
+    </header>
+    <main :class="$style.content">
+      <nuxt />
+    </main>
     <footer :class="$style.footer">
       <section :class="$style.footerImages">
         <img src="@/assets/images/wirvsvirus_logo_1.svg" />
@@ -81,6 +79,7 @@ export default {
   max-width: 40em;
   padding: 0 20px;
   padding-bottom: 36px;
+  flex-grow: 1;
 }
 
 .footerImages {
