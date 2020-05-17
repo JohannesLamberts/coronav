@@ -369,7 +369,7 @@ Es muss sichergestellt sein, dass der Test nur Antikörper gegen das neuartige C
 
 **Aktuell steht noch kein Impfstoff gegen das Coronavirus zur Verfügung!**
 
-Sobald es einen Impfstoff geben wird UND offizielle Empfehlungen von Verantwortlichen Institutenherausgegeben werden,
+Sobald es einen Impfstoff geben wird UND offizielle Empfehlungen von Verantwortlichen Instituten herausgegeben werden,
 wird es hier einen Navigator geben.
 
 Dieser könnte Sie dann sicher durch wenige Fragen leiten und zum Beispiel klären:
