@@ -94,6 +94,13 @@ export default {
     html: true,
     use: ['@/plugins/md-safe-links.js']
   },
+  pwa: {
+    manifest: {
+      name: 'CoroNav',
+      description:
+        'Hier erfahren Sie, ob bei Ihnen eine Coronavirus-Infektion wahrscheinlich ist, ob ein Test empfohlen wird und warum.'
+    }
+  },
   /*
    ** Build configuration
    */
