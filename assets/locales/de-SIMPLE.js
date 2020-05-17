@@ -19,6 +19,7 @@ const noSymptomDirectContactTodos = [
 ]
 
 export default {
+  moreInformation: 'Mehr Informationen',
   index: {
     title: 'Corona-Virus Infektion?',
     logoTitle: 'Zur CoroNav Startseite',
@@ -305,6 +306,99 @@ Sie können andere Personen mit dem Corona-Virus anstecken.<br />
 Schützen Sie sich und andere.`,
         todos: noSymptomDirectContactTodos
       }
+    }
+  },
+  infection: {
+    indexCard: {
+      title: 'Corona-Virus Krankheit?',
+      description: `Hier sagen wie Ihnen, ob sie das Corona-Virus haben könnten. Ob ein Test gemacht werden sollte und warum.`,
+      buttonLabel: 'weiter'
+    }
+  },
+  antibodyTest: {
+    indexCard: {
+      title: 'Corona-Virus Antikörpertest?',
+      description: `Bald sagen wir Ihnen hier zum Beispiel ob sie einen Antikörpertest brauchen und warum.`,
+      buttonLabel: 'weiter'
+    },
+    index: `# Antikörpertests
+
+wenn der Körper sich mit dem Corona-Virus angesteckt hat,<br />
+baut er Abwehr-Stoffe dagegen.
+
+Diese Abwehr-Stoffe heißen Antikörper.
+
+Man kann Sie im Blut finden.
+
+Das heißt dann Antikörper-Test.
+
+Bald gibt es hier einen Fragebogen.<br />Der soll helfen Fragen zu beantworten.
+
+Zum Beispiel diese Fragen:
+
+Sollte ein Antikörpertest bei Ihnen gemacht werden?<br />
+Wo könnten Sie einen Antikörpertest machen? `,
+    info: `# Antikörpertests - Information
+
+Im Moment sollen Antikörper-Tests nur für die Forschung sein.
+
+Warum?
+
+Mit dem Antikörper-Test kann man nicht feststellen,<br />
+ob sie jetzt das Corona-Virus haben.
+
+Alle Regeln bleiben gleich!
+
+zum Beispiel die Regeln:
+- Abstand halten
+- Hände waschen
+
+Man könnte Antikörpertest selber kaufen.
+
+ABER: Diese Tests soll man nicht benutzen!`
+  },
+  vaccination: {
+    indexCard: {
+      title: 'Corona-Virus Impfung?',
+      description: `Wenn es eine Impfung gibt, sagen wir Ihnen hier zum Beispiel ob Sie eine Impfung brauchen oder wann Sie eine Impfung brauchen`,
+      buttonLabel: 'weiter'
+    },
+    index: `# Impfung
+
+Damit ein Körper eine Krankheit nicht bekommt, gibt es Impfungen.
+
+Dafür braucht man Imfpstoffe.<br />
+die werden dann dem Körper gegeben.
+
+Bei vielen Krankheiten gibt es schon Imfpstoffe.
+
+**Jetzt gibt es noch keinen Impfstoff gegen das Corona-Virus.**
+
+Wenn es einen Impfstoff gibt, <br />
+helfen wir Ihnen hier Frage zu beantworten.
+
+Zum Beispiel diese Fragen:
+- Brauche ich eine Impfung?
+- Wo könnte ich eine Impfung bekommen?`,
+    info: `# Impfung - Information
+
+Auf der ganzen Welt forscht man am Impfstoff.
+
+Es müssen noch viele Test gemacht werden.
+
+Wenn es einen Impfstoff gibt,<br />
+wird es am Anfang nur wenig geben.
+
+Wahrscheinlich sagen die Forscher dann,<br />
+welche Gruppen als erstes geimpft werden. `
+  },
+  components: {
+    navbar: {
+      languageDropdownText: 'Sprache'
+    },
+    hotlineSearch: {
+      labelText: 'Postleitzahl eingeben',
+      buttonText: 'Gesundheitsamt suchen'
     }
   }
 }

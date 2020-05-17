@@ -24,6 +24,7 @@ export default {
     yes: 'Yes',
     no: 'No'
   },
+  moreInformation: 'More information',
   index: {
     title: 'Coronavirus-Infection?',
     logoTitle: 'To the CoroNav homepage',
@@ -291,6 +292,11 @@ course of a coronavirus infection during work or volunteer activities?
     }
   },
   components: {
+    components: {
+      navbar: {
+        languageDropdownText: 'Language'
+      }
+    },
     hotlineSearch: {
       labelText: 'Enter postcode',
       buttonText: 'Search health department'

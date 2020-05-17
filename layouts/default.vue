@@ -1,34 +1,16 @@
 <template>
   <div :class="$style.wrapper">
-    <div :class="$style.gridWrapper">
-      <header :class="$style.header">
-        <h1 class="h1" tabindex="-1">
-          <nuxt-link :to="localePath('/')" :title="$t('index.logoTitle')">
-            <img
-              src="@/assets/images/logo_coronav.png"
-              alt="CoroNav Logo"
-              :class="$style.logo"
-            />
-          </nuxt-link>
-        </h1>
-      </header>
-      <main :class="$style.content">
-        <nuxt />
-      </main>
-    </div>
+    <header :class="$style.header">
+      <navbar />
+    </header>
+    <main :class="$style.content">
+      <nuxt />
+    </main>
     <footer :class="$style.footer">
       <section :class="$style.footerImages">
         <img src="@/assets/images/wirvsvirus_logo_1.svg" />
       </section>
       <section :class="$style.footerLinks">
-        <p>
-          <nuxt-link
-            v-for="locale in $i18n.locales"
-            :key="locale.code"
-            :to="switchLocalePath(locale.code)"
-            >{{ locale.name }}</nuxt-link
-          >
-        </p>
         <p>
           <nuxt-link to="/impressum">{{ $t('impressum.title') }}</nuxt-link>
         </p>
@@ -38,14 +20,9 @@
 </template>
 
 <script>
+import Navbar from '../components/layout/navbar'
 export default {
-  computed: {
-    availableLocales() {
-      return this.$i18n.locales.filter(
-        (locale) => locale.code !== this.$i18n.locale
-      )
-    }
-  },
+  components: { Navbar },
   head() {
     const i18nSeo = this.$nuxtI18nSeo()
     const localeConfig = this.$i18n.locales.find(
@@ -63,45 +40,34 @@ export default {
 </script>
 
 <style lang="scss" module>
-.gridWrapper {
-  display: grid;
-  grid-template-rows: 90px 1fr;
-  grid-gap: 16px;
-  flex-grow: 1;
-}
-
 .header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 0 20px;
-}
-
-.logo {
-  width: 180px;
+  margin-bottom: 1rem;
 }
 
 .content {
   margin: 0 auto;
   width: 100vw;
   max-width: 40em;
-  padding: 0 20px;
-  padding-bottom: 36px;
+  padding: 0 20px 20px 20px;
+  flex-grow: 1;
 }
 
 .footerImages {
   text-align: center;
-  margin-top: 2rem;
   img {
     height: 100px;
   }
 }
 
 .footerLinks {
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding-top: 1rem;
   background-color: #0a558c;
-  min-height: 6rem;
+  min-height: 4rem;
   a {
     color: white;
     font-size: 0.8rem;
@@ -120,19 +86,12 @@ export default {
 }
 
 @media (min-width: 768px) {
-  .gridWrapper {
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 200px minmax(540px, 50em);
-    padding: 12px;
-  }
   .header {
     align-items: flex-start;
     justify-content: flex-start;
     padding: 0 16px;
   }
-  .logo {
-    width: 100%;
-  }
+
   .content {
     width: 60vw;
     grid-row: 2;

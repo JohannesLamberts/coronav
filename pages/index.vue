@@ -4,20 +4,21 @@
       <h1 ref="mainHeading" :class="$style.title" tabindex="-1">
         {{ $t('index.title') }}
       </h1>
-      <span
-        :class="$style.textContent"
-        v-html="$md.render($t('index.description'))"
-      />
-      <b-button
-        variant="outline-primary"
-        pill
-        block
-        size="lg"
-        :class="$style.button"
-        :to="localePath('questionaires-should-i-get-testet-for-covid-19')"
-      >
-        {{ $t('index.cta') }}
-      </b-button>
+      <b-container>
+        <b-row>
+          <b-col v-for="card of cards" :key="card.ident" cols="12" class="mb-4">
+            <b-card>
+              <b-card-title>{{ card.i18n.title }}</b-card-title>
+              <b-card-text>
+                {{ card.i18n.description }}
+              </b-card-text>
+              <b-btn variant="secondary" pill block :to="card.to">{{
+                card.i18n.buttonLabel
+              }}</b-btn>
+            </b-card>
+          </b-col>
+        </b-row>
+      </b-container>
     </div>
   </div>
 </template>
@@ -25,6 +26,33 @@
 <script>
 export default {
   name: 'Index',
+  data() {
+    return {
+      cardPaths: [
+        {
+          i18n: 'infection',
+          nav: 'questionaires-should-i-get-testet-for-covid-19'
+        },
+        {
+          i18n: 'antibodyTest',
+          nav: 'antibody-test'
+        },
+        {
+          i18n: 'vaccination',
+          nav: 'vaccination'
+        }
+      ]
+    }
+  },
+  computed: {
+    cards() {
+      return this.cardPaths.map(({ i18n, nav }) => ({
+        ident: nav,
+        i18n: this.$t(`${i18n}.indexCard`),
+        to: this.localePath(nav)
+      }))
+    }
+  },
   mounted() {
     this.focusMainHeading()
   },
@@ -46,11 +74,6 @@ export default {
 
 .textContent {
   margin-bottom: 2rem;
-}
-
-.button {
-  max-width: 10em;
-  margin: 0 auto;
 }
 
 .title {
