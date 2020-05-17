@@ -317,7 +317,7 @@ Schützen Sie sich und andere.`,
   },
   antibodyTest: {
     indexCard: {
-      title: 'Coronavirus-Antikörpertest?',
+      title: 'Corona-Virus Antikörpertest?',
       description: `Bald sagen wir Ihnen hier zum Beispiel ob sie einen Antikörpertest brauchen und warum.`,
       buttonLabel: 'weiter'
     },
@@ -359,7 +359,7 @@ ABER: Diese Tests soll man nicht benutzen!`
   },
   vaccination: {
     indexCard: {
-      title: 'Coronavirus-Impfung?',
+      title: 'Corona-Virus Impfung?',
       description: `Wenn es eine Impfung gibt, sagen wir Ihnen hier zum Beispiel ob Sie eine Impfung brauchen oder wann Sie eine Impfung brauchen`,
       buttonLabel: 'weiter'
     },
