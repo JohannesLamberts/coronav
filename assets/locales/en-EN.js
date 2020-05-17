@@ -24,6 +24,7 @@ export default {
     yes: 'Yes',
     no: 'No'
   },
+  moreInformation: 'More information',
   index: {
     title: 'Coronavirus-Infection?',
     logoTitle: 'To the CoroNav homepage',

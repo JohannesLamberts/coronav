@@ -6,42 +6,15 @@
       </h1>
       <b-container>
         <b-row>
-          <b-col cols="12" class="mb-4">
+          <b-col v-for="card of cards" :key="card.ident" cols="12" class="mb-4">
             <b-card>
-              <b-card-title>Coronavirus-Infektion?</b-card-title>
+              <b-card-title>{{ card.i18n.title }}</b-card-title>
               <b-card-text>
-                Hier erfahren Sie, ob bei Ihnen eine Infektion wahrscheinlich
-                ist, ob ein Test empfohlen wird und warum.
+                {{ card.i18n.description }}
               </b-card-text>
-              <b-btn
-                variant="secondary"
-                pill
-                block
-                :to="
-                  localePath('questionaires-should-i-get-testet-for-covid-19')
-                "
-                >weiter</b-btn
-              >
-            </b-card>
-          </b-col>
-          <b-col cols="12" class="mb-4">
-            <b-card>
-              <b-card-title>Coronavirus-Antikörpertest?</b-card-title>
-              <b-card-text>
-                Bald erfahren Sie hier zum Beispiel ob ein Antikörpertest bei
-                Ihnen empfohlen wird und warum.
-              </b-card-text>
-              <b-btn variant="secondary" pill block>weiter</b-btn>
-            </b-card>
-          </b-col>
-          <b-col cols="12">
-            <b-card>
-              <b-card-title>Coronavirus-Impfung?</b-card-title>
-              <b-card-text>
-                Wenn es einen zugelassenen Impfstoff gibt, erfahren Sie hier zum
-                Beispiel ob und wann eine Impfung bei Ihnen empfohlen wird.
-              </b-card-text>
-              <b-btn variant="secondary" pill block>weiter</b-btn>
+              <b-btn variant="secondary" pill block :to="card.to">{{
+                card.i18n.buttonLabel
+              }}</b-btn>
             </b-card>
           </b-col>
         </b-row>
@@ -53,6 +26,33 @@
 <script>
 export default {
   name: 'Index',
+  data() {
+    return {
+      cardPaths: [
+        {
+          i18n: 'infection',
+          nav: 'questionaires-should-i-get-testet-for-covid-19'
+        },
+        {
+          i18n: 'antibodyTest',
+          nav: 'antibody-test'
+        },
+        {
+          i18n: 'vaccination',
+          nav: 'vaccination'
+        }
+      ]
+    }
+  },
+  computed: {
+    cards() {
+      return this.cardPaths.map(({ i18n, nav }) => ({
+        ident: nav,
+        i18n: this.$t(`${i18n}.indexCard`),
+        to: this.localePath(nav)
+      }))
+    }
+  },
   mounted() {
     this.focusMainHeading()
   },
