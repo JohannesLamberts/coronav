@@ -135,6 +135,14 @@ Ist das bei Ihnen so?
   results: {
     headline: 'Ergebnis',
     todosLabel: 'Halten Sie sich bitte an diese Regeln:',
+    feedback: {
+      showFeedback: 'true',
+      label: 'Ihre Meinung ist uns wichtig!',
+      info:
+        'Ihr Feedback hilft uns dabei, CoroNav zu verbessern! \n Wir freuen uns auf Ihre Rückmeldung in ',
+      linkText: 'diesem Formular.',
+      linkTitle: 'Feedback Formular'
+    },
     additionalRessources: {
       label: 'Mehr Informationen finden Sie auf folgenden Seiten:',
       pages: [

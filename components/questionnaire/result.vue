@@ -18,6 +18,19 @@
       <div v-if="responseConfig.showHotlineSearch">
         <hotline-search />
       </div>
+      <div v-if="$t('results.feedback.showFeedback') === 'true'">
+        <h4 class="h5">{{ $t('results.feedback.label') }}</h4>
+        <p>
+          {{ $t('results.feedback.info') }}
+          <a
+            href="https://simonmessmer951.typeform.com/to/LlNR9N"
+            target="_blank"
+            :title="$t('results.feedback.linkTitle')"
+          >
+            {{ $t('results.feedback.linkText') }}
+          </a>
+        </p>
+      </div>
       <h4 class="h5">
         {{ $t('results.additionalRessources.label') }}
       </h4>
