@@ -4,20 +4,48 @@
       <h1 ref="mainHeading" :class="$style.title" tabindex="-1">
         {{ $t('index.title') }}
       </h1>
-      <span
-        :class="$style.textContent"
-        v-html="$md.render($t('index.description'))"
-      />
-      <b-button
-        variant="outline-primary"
-        pill
-        block
-        size="lg"
-        :class="$style.button"
-        :to="localePath('questionaires-should-i-get-testet-for-covid-19')"
-      >
-        {{ $t('index.cta') }}
-      </b-button>
+      <b-container>
+        <b-row>
+          <b-col cols="12" class="mb-4">
+            <b-card>
+              <b-card-title>Coronavirus-Infektion?</b-card-title>
+              <b-card-text>
+                Hier erfahren Sie, ob bei Ihnen eine Infektion wahrscheinlich
+                ist, ob ein Test empfohlen wird und warum.
+              </b-card-text>
+              <b-btn
+                variant="secondary"
+                pill
+                block
+                :to="
+                  localePath('questionaires-should-i-get-testet-for-covid-19')
+                "
+                >weiter</b-btn
+              >
+            </b-card>
+          </b-col>
+          <b-col cols="12" class="mb-4">
+            <b-card>
+              <b-card-title>Coronavirus-Antikörpertest?</b-card-title>
+              <b-card-text>
+                Bald erfahren Sie hier:zum Beispiel: ob ein Antikörpertest bei
+                Ihnen empfohlen wird und warum.
+              </b-card-text>
+              <b-btn variant="secondary" pill block>weiter</b-btn>
+            </b-card>
+          </b-col>
+          <b-col cols="12">
+            <b-card>
+              <b-card-title>Coronavirus-Impfung?</b-card-title>
+              <b-card-text>
+                Wenn es einen zugelassenen Impfstoff gibt, erfahren Sie hier zum
+                Beispiel: ob und wann eine Impfung bei Ihnen empfohlen wird.
+              </b-card-text>
+              <b-btn variant="secondary" pill block>weiter</b-btn>
+            </b-card>
+          </b-col>
+        </b-row>
+      </b-container>
     </div>
   </div>
 </template>
@@ -46,11 +74,6 @@ export default {
 
 .textContent {
   margin-bottom: 2rem;
-}
-
-.button {
-  max-width: 10em;
-  margin: 0 auto;
 }
 
 .title {

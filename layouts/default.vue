@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.wrapper">
-    <div :class="$style.gridWrapper">
+    <div :class="$style.centered">
       <header :class="$style.header">
         <h1 class="h1" tabindex="-1">
           <nuxt-link :to="localePath('/')" :title="$t('index.logoTitle')">
@@ -11,6 +11,14 @@
             />
           </nuxt-link>
         </h1>
+        <nav>
+          <nuxt-link
+            v-for="locale in $i18n.locales"
+            :key="locale.code"
+            :to="switchLocalePath(locale.code)"
+            >{{ locale.name }}</nuxt-link
+          >
+        </nav>
       </header>
       <main :class="$style.content">
         <nuxt />
@@ -21,14 +29,6 @@
         <img src="@/assets/images/wirvsvirus_logo_1.svg" />
       </section>
       <section :class="$style.footerLinks">
-        <p>
-          <nuxt-link
-            v-for="locale in $i18n.locales"
-            :key="locale.code"
-            :to="switchLocalePath(locale.code)"
-            >{{ locale.name }}</nuxt-link
-          >
-        </p>
         <p>
           <nuxt-link to="/impressum">{{ $t('impressum.title') }}</nuxt-link>
         </p>
@@ -63,18 +63,12 @@ export default {
 </script>
 
 <style lang="scss" module>
-.gridWrapper {
-  display: grid;
-  grid-template-rows: 90px 1fr;
-  grid-gap: 16px;
-  flex-grow: 1;
-}
-
 .header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 0 20px;
+  margin-bottom: 2rem;
 }
 
 .logo {
@@ -120,19 +114,12 @@ export default {
 }
 
 @media (min-width: 768px) {
-  .gridWrapper {
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 200px minmax(540px, 50em);
-    padding: 12px;
-  }
   .header {
     align-items: flex-start;
     justify-content: flex-start;
     padding: 0 16px;
   }
-  .logo {
-    width: 100%;
-  }
+
   .content {
     width: 60vw;
     grid-row: 2;
