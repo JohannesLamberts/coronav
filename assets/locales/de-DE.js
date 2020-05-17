@@ -59,6 +59,14 @@ abrufen.`,
     headline: 'Ergebnis',
     todosLabel: 'Halten Sie sich bitte an diese Regeln:',
     searchInfo: 'Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.',
+    feedback: {
+      showFeedback: 'true',
+      label: 'Ihre Meinung ist uns wichtig!',
+      info:
+        'Ihr Feedback hilft uns dabei, CoroNav zu verbessern! \n Wir freuen uns auf Ihre Rückmeldung in ',
+      linkText: 'diesem Formular.',
+      linkTitle: 'Feedback Formular'
+    },
     additionalRessources: {
       label: 'Mehr Informationen finden Sie auf folgenden Seiten:',
       pages: [
