@@ -66,7 +66,7 @@ export default {
   align-items: center;
   justify-content: flex-start;
   padding: 0 20px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .logo {
@@ -77,24 +77,22 @@ export default {
   margin: 0 auto;
   width: 100vw;
   max-width: 40em;
-  padding: 0 20px;
-  padding-bottom: 36px;
+  padding: 0 20px 20px 20px;
   flex-grow: 1;
 }
 
 .footerImages {
   text-align: center;
-  margin-top: 2rem;
   img {
     height: 100px;
   }
 }
 
 .footerLinks {
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding-top: 1rem;
   background-color: #0a558c;
-  min-height: 6rem;
+  min-height: 4rem;
   a {
     color: white;
     font-size: 0.8rem;
