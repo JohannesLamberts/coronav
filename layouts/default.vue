@@ -1,23 +1,7 @@
 <template>
   <div :class="$style.wrapper">
     <header :class="$style.header">
-      <h1 class="h1" tabindex="-1">
-        <nuxt-link :to="localePath('/')" :title="$t('index.logoTitle')">
-          <img
-            src="@/assets/images/logo_coronav.png"
-            alt="CoroNav Logo"
-            :class="$style.logo"
-          />
-        </nuxt-link>
-      </h1>
-      <nav>
-        <nuxt-link
-          v-for="locale in $i18n.locales"
-          :key="locale.code"
-          :to="switchLocalePath(locale.code)"
-          >{{ locale.name }}</nuxt-link
-        >
-      </nav>
+      <navbar />
     </header>
     <main :class="$style.content">
       <nuxt />
@@ -36,14 +20,9 @@
 </template>
 
 <script>
+import Navbar from '../components/layout/navbar'
 export default {
-  computed: {
-    availableLocales() {
-      return this.$i18n.locales.filter(
-        (locale) => locale.code !== this.$i18n.locale
-      )
-    }
-  },
+  components: { Navbar },
   head() {
     const i18nSeo = this.$nuxtI18nSeo()
     const localeConfig = this.$i18n.locales.find(
@@ -67,10 +46,6 @@ export default {
   justify-content: flex-start;
   padding: 0 20px;
   margin-bottom: 1rem;
-}
-
-.logo {
-  width: 180px;
 }
 
 .content {

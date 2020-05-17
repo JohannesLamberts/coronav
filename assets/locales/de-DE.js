@@ -307,6 +307,9 @@ an.`
     }
   },
   components: {
+    navbar: {
+      languageDropdownText: 'Sprache'
+    },
     hotlineSearch: {
       labelText: 'Postleitzahl eingeben',
       buttonText: 'Gesundheitsamt suchen'
@@ -325,7 +328,7 @@ an.`
       description: `Bald erfahren Sie hier zum Beispiel ob ein Antikörpertest bei Ihnen empfohlen wird und warum.`,
       buttonLabel: 'weiter'
     },
-    index: `# Antikörpertests 
+    index: `# Antikörpertests
 
 **Aktuell werden Antikörper-Tests nur im Zusammenhang mit der Epidemie-Forschung empfohlen.**
 
@@ -342,17 +345,17 @@ Dieser könnte Sie dann sicher durch wenige Fragen leiten und zum Beispiel klär
     info: `# Antikörpertests - Information
 
 Etwa zehn Tage nach Ansteckung mit dem Coronavirus tauchen im Blut verschiedene Antikörper auf, mit denen das Immunsystem auf das Virus reagiert.
-  
+
 Diese Antikörper können mithilfe von Bluttests im Labor festgestellt werden. Das dauert ca. 1-3 Tage.
- 
+
 Aktuell werden Schnell-Tests entwickelt, die diese Antikörper sicher nachweisen können, ohne dass eine Blutprobe in ein Labor geschickt werden muss.
- 
+
 Auf dem freien Markt sind derzeit einige dieser angeblichen Schnelltest erhältlich.
- 
+
 Es wird jedoch dringend davon abgeraten sich auf diese Testergebnisse zu verlassen!
- 
+
 Es muss sichergestellt sein, dass der Test nur Antikörper gegen das neuartige Coronavirus, nicht gegen andere Coronaviren nachweist (Kreuzreaktionen).
- 
+
 
 *Quelle: RKI, BMG, BZgA, WHO*`
   },
@@ -369,7 +372,7 @@ Es muss sichergestellt sein, dass der Test nur Antikörper gegen das neuartige C
 Sobald es einen Impfstoff geben wird UND offizielle Empfehlungen von Verantwortlichen Institutenherausgegeben werden,
 wird es hier einen Navigator geben.
 
-Dieser könnte Sie dann sicher durch wenige Fragen leiten und zum Beispiel klären: 
+Dieser könnte Sie dann sicher durch wenige Fragen leiten und zum Beispiel klären:
 - Wäre bei Ihnen eine Impfung zu empfehlen?
 - Wann könnten Sie sich impfen lassen?
 - Wo könnten Sie sich impfen lassen?`,

@@ -321,7 +321,7 @@ Schützen Sie sich und andere.`,
       description: `Bald sagen wir Ihnen hier zum Beispiel ob sie einen Antikörpertest brauchen und warum.`,
       buttonLabel: 'weiter'
     },
-    index: `# Antikörpertests 
+    index: `# Antikörpertests
 
 wenn der Körper sich mit dem Corona-Virus angesteckt hat,<br />
 baut er Abwehr-Stoffe dagegen.
@@ -391,5 +391,14 @@ wird es am Anfang nur wenig geben.
 
 Wahrscheinlich sagen die Forscher dann,<br />
 welche Gruppen als erstes geimpft werden. `
+  },
+  components: {
+    navbar: {
+      languageDropdownText: 'Sprache'
+    },
+    hotlineSearch: {
+      labelText: 'Postleitzahl eingeben',
+      buttonText: 'Gesundheitsamt suchen'
+    }
   }
 }
