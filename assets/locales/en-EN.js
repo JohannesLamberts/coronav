@@ -291,6 +291,9 @@ course of a coronavirus infection during work or volunteer activities?
     }
   },
   components: {
+    navbar: {
+      languageDropdownText: 'Language'
+    },
     hotlineSearch: {
       labelText: 'Enter postcode',
       buttonText: 'Search health department'
