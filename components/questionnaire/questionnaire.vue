@@ -8,7 +8,12 @@
         :config="currentQuestionConfig"
         @decision="onDecision"
       />
-      <result v-else :response-config="responseConfig" />
+      <component
+        :is="resultComponent"
+        v-else
+        :results="choicesWithDerived"
+        :response-config="responseConfig"
+      />
     </div>
   </div>
 </template>
@@ -27,7 +32,8 @@ const QuestionnaireDevelopment = () =>
 
 export default {
   name: 'Questionnaire',
-  components: { QuestionnaireDevelopment, TestProgress, Question, Result },
+  injectModels: ['Partner'],
+  components: { QuestionnaireDevelopment, TestProgress, Question },
   props: {
     config: {
       type: Object,
@@ -42,6 +48,9 @@ export default {
     }
   },
   computed: {
+    resultComponent() {
+      return this.Partner.config?.resultComponent || Result
+    },
     questions() {
       return this.config.questions.filter((questionConfig) =>
         shouldIncludeQuestion(

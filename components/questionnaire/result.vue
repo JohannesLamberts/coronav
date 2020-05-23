@@ -7,16 +7,6 @@
       <b-alert show class="my-4">
         <span v-html="responseText.info && $md.render(responseText.info)" />
       </b-alert>
-      <b-btn
-        v-if="appContext.partner"
-        color="primary"
-        rel="noopener noreferrer"
-        :href="
-          `${appContext.partner.resultCallbackUrl}?locale=${this.$i18n.locale}&result=${responseConfig.ident}`
-        "
-      >
-        Zurück zu {{ appContext.partner.name }}
-      </b-btn>
       <p>{{ $t('results.todosLabel') }}</p>
       <ul>
         <li
@@ -63,7 +53,7 @@ import HotlineSearch from '../hotline-search'
 
 export default {
   name: 'QuestionnaireResult',
-  inject: ['appContext'],
+  injectModels: ['Partner'],
   components: { HotlineSearch },
   props: {
     responseConfig: {

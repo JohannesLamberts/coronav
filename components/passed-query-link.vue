@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'PassedQueryLink',
-  inject: ['appContext'],
+  injectModels: ['Navigation'],
   props: {
     to: {
       type: String,
@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     toWithQuery() {
-      return this.appContext.routeWithPassedQuery(this.to)
+      return this.Navigation.toWithContext(this.to)
     }
   }
 }

@@ -3,6 +3,12 @@ const hostname = baseUrl
 
 export default {
   mode: 'universal',
+  render: {
+    bundleRenderer: {
+      // always reuse context to match prod & dev behaviour
+      runInNewContext: false
+    }
+  },
   /*
    ** Headers of the page
    */
@@ -37,7 +43,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/reactive-provide'],
+  plugins: ['@/plugins/vue-states'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -119,5 +125,13 @@ export default {
   sitemap: {
     hostname,
     gzip: true
+  },
+  polyfill: {
+    features: [
+      {
+        require: 'url-polyfill',
+        detect: () => 'URL' in window
+      }
+    ]
   }
 }

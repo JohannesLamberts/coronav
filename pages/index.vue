@@ -15,7 +15,7 @@
         size="lg"
         :class="$style.button"
         :to="
-          appContext.routeWithPassedQuery(
+          Navigation.toWithContext(
             localePath('questionaires-should-i-get-testet-for-covid-19')
           )
         "
@@ -29,7 +29,7 @@
 <script>
 export default {
   name: 'Index',
-  inject: ['appContext'],
+  injectModels: ['Navigation'],
   mounted() {
     this.focusMainHeading()
   },

@@ -20,46 +20,14 @@
 <script>
 import Navbar from '../components/layout/navbar'
 import PassedQueryLink from '@/components/passed-query-link'
-import { getPartnerByRoute } from '@/utils/partners'
 
 export default {
   components: { PassedQueryLink, Navbar },
-  reactiveProvide: {
-    name: 'appContext',
-    include: ['routeWithPassedQuery', 'partner']
-  },
-  data() {
-    return { isMounted: false }
-  },
-  computed: {
-    passedRouterQuery() {
-      return {
-        partner_id: this.$route.query.partner_id
-      }
-    },
-    partner() {
-      // do not use query data until completely mounted
-      // to avoid SSR errors
-      if (!this.isMounted) {
-        return null
-      }
-      return getPartnerByRoute(this.$route)
-    }
-  },
+  injectModels: ['Partner'],
   mounted() {
-    this.isMounted = true
-  },
-  methods: {
-    routeWithPassedQuery(to) {
-      const { normalizedTo } = this.$router.resolve(to)
-      return {
-        ...normalizedTo,
-        query: {
-          ...this.passedRouterQuery,
-          ...normalizedTo.query
-        }
-      }
-    }
+    // do not use query data until completely mounted
+    // to avoid SSR errors
+    this.Partner.activate()
   },
   head() {
     const i18nSeo = this.$nuxtI18nSeo()

@@ -12,10 +12,10 @@
           :class="$style.logo"
         />
         <img
-          v-if="appContext.partner"
+          v-if="Partner.config"
           :class="$style.partnerLogo"
-          :src="appContext.partner.logo"
-          :alt="appContext.partner.name"
+          :src="Partner.config.logo"
+          :alt="Partner.config.name"
         />
       </passed-query-link>
     </h1>
@@ -29,7 +29,7 @@
       <b-dropdown-item
         v-for="locale in $i18n.locales"
         :key="locale.code"
-        :to="appContext.routeWithPassedQuery(switchLocalePath(locale.code))"
+        :to="Navigation.toWithContext(switchLocalePath(locale.code))"
       >
         {{ locale.name }}
       </b-dropdown-item>
@@ -43,7 +43,7 @@ import PassedQueryLink from '@/components/passed-query-link'
 export default {
   name: 'Navbar',
   components: { PassedQueryLink },
-  inject: ['appContext']
+  injectModels: ['Partner', 'Navigation']
 }
 </script>
 
