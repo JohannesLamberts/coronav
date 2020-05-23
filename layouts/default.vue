@@ -10,15 +10,41 @@
       <img src="@/assets/images/wirvsvirus_logo_1.svg" />
     </section>
     <footer :class="$style.footer">
-      <nuxt-link to="/impressum">{{ $t('impressum.title') }}</nuxt-link>
+      <passed-query-link to="/impressum">{{
+        $t('impressum.title')
+      }}</passed-query-link>
     </footer>
   </div>
 </template>
 
 <script>
 import Navbar from '../components/layout/navbar'
+import PassedQueryLink from '@/components/passed-query-link'
 export default {
-  components: { Navbar },
+  components: { PassedQueryLink, Navbar },
+  reactiveProvide: {
+    name: 'appContext',
+    include: ['routeWithPassedQuery']
+  },
+  computed: {
+    passedRouterQuery() {
+      return {
+        partner_id: this.$route.query.partner_id
+      }
+    }
+  },
+  methods: {
+    routeWithPassedQuery(to) {
+      const { normalizedTo } = this.$router.resolve(to)
+      return {
+        ...normalizedTo,
+        query: {
+          ...this.passedRouterQuery,
+          ...normalizedTo.query
+        }
+      }
+    }
+  },
   head() {
     const i18nSeo = this.$nuxtI18nSeo()
     const localeConfig = this.$i18n.locales.find(

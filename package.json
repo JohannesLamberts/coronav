@@ -27,7 +27,8 @@
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.14.0",
     "nuxt": "^2.12.2",
-    "nuxt-i18n": "^6.11.0"
+    "nuxt-i18n": "^6.11.0",
+    "vue-reactive-provide": "^0.3.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",

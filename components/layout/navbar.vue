@@ -1,13 +1,13 @@
 <template>
   <b-nav :class="$style.navbar">
     <h1 class="h1" tabindex="-1">
-      <nuxt-link :to="localePath('/')" :title="$t('index.logoTitle')">
+      <passed-query-link :to="localePath('/')" :title="$t('index.logoTitle')">
         <img
           src="@/assets/images/logo_coronav.png"
           alt="CoroNav Logo"
           :class="$style.logo"
         />
-      </nuxt-link>
+      </passed-query-link>
     </h1>
     <b-nav-item-dropdown
       right
@@ -19,7 +19,7 @@
       <b-dropdown-item
         v-for="locale in $i18n.locales"
         :key="locale.code"
-        :to="switchLocalePath(locale.code)"
+        :to="appContext.routeWithPassedQuery(switchLocalePath(locale.code))"
       >
         {{ locale.name }}
       </b-dropdown-item>
@@ -28,8 +28,11 @@
 </template>
 
 <script>
+import PassedQueryLink from '@/components/passed-query-link'
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  components: { PassedQueryLink },
+  inject: ['appContext']
 }
 </script>
 
