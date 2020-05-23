@@ -306,6 +306,9 @@ an.`
     }
   },
   components: {
+    navbar: {
+      languageDropdownText: 'Sprache'
+    },
     hotlineSearch: {
       labelText: 'Postleitzahl eingeben',
       buttonText: 'Gesundheitsamt suchen'
