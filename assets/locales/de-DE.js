@@ -307,7 +307,6 @@ an.`
   },
   components: {
     navbar: {
-      languageDropdownText: 'Sprache',
       toggleNavbarLabel: 'Navigation'
     },
     hotlineSearch: {
