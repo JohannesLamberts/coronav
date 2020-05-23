@@ -307,7 +307,7 @@ an.`
   },
   components: {
     navbar: {
-      languageDropdownText: 'Sprache'
+      toggleNavbarLabel: 'Navigation'
     },
     hotlineSearch: {
       labelText: 'Postleitzahl eingeben',
