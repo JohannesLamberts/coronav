@@ -30,12 +30,12 @@ export default {
       return this.partnerById(partnerId)
     },
     navigationQueryContext() {
-      const { partner } = this
-      if (!partner) {
+      const { config } = this
+      if (!config) {
         return
       }
       return {
-        [PARTNER_QUERY_PARAM]: partner.id
+        [PARTNER_QUERY_PARAM]: config.id
       }
     }
   }
