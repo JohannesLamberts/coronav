@@ -292,7 +292,7 @@ course of a coronavirus infection during work or volunteer activities?
   },
   components: {
     navbar: {
-      languageDropdownText: 'Language'
+      toggleNavbarLabel: 'Toggle navigation'
     },
     hotlineSearch: {
       labelText: 'Enter postcode',
