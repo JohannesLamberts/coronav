@@ -84,11 +84,6 @@ export default {
   display: flex;
   flex-flow: column nowrap;
   min-height: 100vh;
-  & > * {
-    flex-shrink: 0;
-    flex-grow: 1;
-    flex-basis: 25%;
-  }
 }
 
 // mobile screens
