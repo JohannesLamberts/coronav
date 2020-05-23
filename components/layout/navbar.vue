@@ -1,11 +1,21 @@
 <template>
   <b-nav :class="$style.navbar">
-    <h1 class="h1" tabindex="-1">
-      <passed-query-link :to="localePath('/')" :title="$t('index.logoTitle')">
+    <h1 class="h1" tabindex="-1" :class="$style.logoWrapperH1">
+      <passed-query-link
+        :class="$style.logoWrapper"
+        :to="localePath('/')"
+        :title="$t('index.logoTitle')"
+      >
         <img
           src="@/assets/images/logo_coronav.png"
           alt="CoroNav Logo"
           :class="$style.logo"
+        />
+        <img
+          v-if="appContext.partner"
+          :class="$style.partnerLogo"
+          :src="appContext.partner.logo"
+          :alt="appContext.partner.name"
         />
       </passed-query-link>
     </h1>
@@ -29,6 +39,7 @@
 
 <script>
 import PassedQueryLink from '@/components/passed-query-link'
+
 export default {
   name: 'Navbar',
   components: { PassedQueryLink },
@@ -52,5 +63,27 @@ $logo-width: 180px;
 
 .logo {
   width: $logo-width;
+}
+
+.logoWrapperH1 {
+  display: flex;
+}
+
+.logoWrapper {
+  font-weight: normal;
+  /*font-size: 2rem;*/
+  text-decoration: none !important;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  img {
+    height: 40px;
+  }
+}
+
+.partnerLogo {
+  margin-left: 0.7rem;
 }
 </style>
