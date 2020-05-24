@@ -161,32 +161,35 @@ Ist das bei Ihnen so?
       '1_symptoms_withContact_risk': {
         info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
 
+Warum?
+- Sie hatten Kontakt mit einer Person mit dem Corona-Virus.
+
 **Ein Test sollte bei Ihnen gemacht werden.**
+
+**Bitte rufen Sie Ihren Hausarzt an.**
 
 Warum?
 - Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
-- Sie hatten Kontakt mit einer Person mit dem Corona-Virus.
-
-*Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
-
-Rufen Sie am besten auch Ihren Hausarzt an.
-
-Warum?
-
-Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
+- Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
 Darum haben Sie vielleicht mehr Probleme,<br />
 wenn Sie das Corona-Virus bekommen.
+
+*Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
 `,
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
         info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
 
+Warum?
+- Sie hatten Kontakt mit einer Person mit dem Corona-Virus.
+
 **Ein Test sollte bei Ihnen gemacht werden.**
+
+**Bitte rufen Sie Ihren Hausarzt an.**
 
 Warum?
 - Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
-- Sie hatten Kontakt mit einer Person mit dem Corona-Virus.
 
 *Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
 
@@ -195,62 +198,45 @@ Schützen Sie sich und andere.`,
         todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
+        info: `**Ein Test wird bei Ihnen empfohlen.**
 
-**Fragen Sie nach einem Test.**
-
-Warum?<br />
-Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
-
-*Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
-
-Rufen Sie am besten Ihren Hausarzt an.
+**Bitte rufen Sie Ihren Hausarzt an.**
 
 Warum?
-
-Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
+- Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
+- Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
 Darum haben Sie vielleicht mehr Probleme,<br />
-wenn Sie das Corona-Virus bekommen.`,
+wenn Sie das Corona-Virus bekommen.
+`,
         todos: symptomTodos
       },
       '3a_symptoms_withoutDirectContact_noRisk': {
-        info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
+        info: `**Ein Test wird bei Ihnen empfohlen.**
 
-**Fragen Sie nach einem Test.**
+**Bitte rufen Sie Ihren Hausarzt an.**
 
 Warum?
 - Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
 - Sie haben Kontakt mit Menschen, für die Corona ein großes Problem sein kann.
-
-*Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
 
 Sie können andere Personen mit dem Corona-Virus anstecken.<br />
 Schützen Sie sich und andere.`,
         todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        info: `**Sie müssen nicht beim Gesundheits-Amt anrufen.**
+        info: `**Ein Test wird bei Ihnen empfohlen.**
 
-**Ein Test wird jetzt trotzdem empfohlen.**
-
-**Rufen Sie bitte Ihren Hausarzt an.**
+**Bitte rufen Sie Ihren Hausarzt an.**
 
 Warum?
-- Sie haben typische Krankheitszeichen, ABER
-- Sie hatten **keinen** Kontakt mit einer Person mit dem Corona-Virus.
-
-Vielleicht hatten Sie doch Kontakt mit einer Person,<br />
-die das Corona-Virus hat.<br />
-Rufen Sie dann das Gesundheits-Amt an.
+- Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
 
 Sie können andere Personen mit dem Corona-Virus anstecken.<br />
 Schützen Sie sich und andere.`,
         todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        info: `**Sie müssen nicht beim Gesundheits-Amt anrufen.**
-
-**Ein Test wird jetzt nicht empfohlen.**
+        info: `**Ein Test muss jetzt nicht gemacht werden.**
 
 Warum?
 - Es gibt **keine** Anzeichen,<br />dass Sie das Corona-Virus haben könnten.
@@ -261,9 +247,7 @@ Schützen Sie sich und andere.`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        info: `**Sie müssen nicht beim Gesundheits-Amt anrufen.**
-
-**Ein Test wird jetzt nicht empfohlen.**
+        info: `**Ein Test muss jetzt nicht gemacht werden.**
 
 Warum?
 - Es gibt **keine** Anzeichen,<br />dass Sie das Corona-Virus haben könnten.

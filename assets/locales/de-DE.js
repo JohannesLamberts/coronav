@@ -85,29 +85,34 @@ abrufen.`,
       '1_symptoms_withContact_risk': {
         info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
 
+Warum?
+- Sie hatten Kontakt zu einer infizierten Person.
+
 **Ein Test wird empfohlen.**
+
+**Bitte rufen Sie Ihren Hausarzt an.**
 
 Warum?
 - Sie haben typische Symptome.
-- Sie hatten Kontakt zu einer infizierten Person.
+- Sie haben aufgrund von Alter oder Vorerkrankungen ein
+erhöhtes Risiko für einen schwereren Krankheitsverlauf.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
-
-Sie sollten vorsorglich Ihren Hausarzt anrufen.
-
-Warum?
-- Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
 `,
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
         info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
 
+Warum?
+- Sie hatten Kontakt zu einer infizierten Person.
+
 **Ein Test wird empfohlen.**
+
+**Bitte rufen Sie Ihren Hausarzt an.**
 
 Warum?
 - Sie haben typische Symptome.
-- Sie hatten Kontakt zu einer infizierten Person.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
@@ -116,59 +121,44 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
+        info: `**Ein Test wird empfohlen.**
 
-**Fragen Sie nach einem Test.**
+**Bitte rufen Sie Ihren Hausarzt an.**
 
 Warum?
 - Sie haben typische Symptome.
-- Sie gehören zur Risikogruppe.
-
-*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
-
-Sie sollten vorsorglich Ihren Hausarzt anrufen.
-
-Warum?
-- Sie haben aufgrund von Alter oder Vorerkrankungen Im Falle einer Infektion ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
+- Sie gehören aufgrund von Alter oder Vorerkrankungen zur Risikogruppe.
+Im Falle einer Infektion haben Sie ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
+`,
         todos: symptomTodos
       },
       '3a_symptoms_withoutDirectContact_noRisk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
+        info: `**Ein Test wird empfohlen.**
 
-**Fragen Sie nach einem Test.**
+**Bitte rufen Sie Ihren Hausarzt an.**
 
 Warum?
 - Sie haben typische Symptome.
 - Sie kommen mit Menschen der Risikogruppe in Kontakt.
-
-*Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
 Auch wenn Sie nicht zur Risikogruppe gehören,
 können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.**
+        info: `**Ein Test wird empfohlen.**
 
-**Ein Test wird derzeit trotzdem empfohlen.**
-
-**Fragen Sie diesbezüglich Ihren Hausarzt.**
+**Bitte rufen Sie Ihren Hausarzt an.**
 
 Warum?
-- Sie haben typische Symptome, ABER
-- Sie hatten KEINEN Kontakt zu einer Infizierten Person.
-
-Sollte sich herausstellen, dass eine Kontaktperson positiv getestet
-wurde, melden Sich sich bitte umgehend beim Gesundheitsamt.
+- Sie haben typische Symptome.
 
 Auch wenn Sie nicht zur Risikogruppe gehören,
 können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        info: `**Sie müssen vorerst NICHT beim Gesundheitsamt anrufen.**
-
-**Ein Test wird derzeit nicht empfohlen.**
+        info: `**Ein Test wird derzeit nicht empfohlen.**
 
 Warum?
 - Sie haben KEINE typischen Symptome.
@@ -179,9 +169,7 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        info: `**Sie müssen vorerst nicht beim Gesundheitsamt anrufen.**
-
-**Ein Test wird derzeit nicht empfohlen.**
+        info: `**Ein Test wird derzeit nicht empfohlen.**
 
 Warum?
 - Sie haben KEINE typischen Symptome.
@@ -197,7 +185,7 @@ erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
 **Fragen Sie nach einem Test.**
 
 Warum?
-- Sie haben keine typischen Symptome.
+- Sie haben KEINE typischen Symptome.
 - Aber: Sie hatten Kontakt zu einer infizierten Person.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
@@ -212,7 +200,7 @@ erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
 **Fragen Sie nach einem Test.**
 
 Warum?
-- Sie haben keine typischen Symptome.
+- Sie haben KEINE typischen Symptome.
 - Aber: Sie hatten Kontakt zu einer infizierten Person.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
