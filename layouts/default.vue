@@ -7,17 +7,7 @@
       <nuxt />
     </main>
     <section :class="$style.footerImages">
-      <a
-        href="https://wirvsvirus.org/projekte/"
-        title="WirVsVirus Projekte"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <img
-          src="@/assets/images/wirvsvirus_logo_1.svg"
-          alt="WirVsVirus Projekt"
-        />
-      </a>
+      <img src="@/assets/images/wirvsvirus_logo_1.svg" />
     </section>
     <footer :class="$style.footer">
       <passed-query-link to="/impressum">{{
@@ -49,16 +39,7 @@ export default {
       htmlAttrs: {
         dir: localeConfig.dir || 'LTR',
         ...i18nSeo.htmlAttrs
-      },
-      meta: [
-        ...i18nSeo.meta,
-        {
-          content: this.$t('meta.description'),
-          hid: 'description',
-          name: 'description',
-          property: 'description'
-        }
-      ]
+      }
     }
   }
 }

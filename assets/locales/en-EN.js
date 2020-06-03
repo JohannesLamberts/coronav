@@ -19,10 +19,6 @@ const noSymptomDirectContactTodos = [
 ]
 
 export default {
-  meta: {
-    description:
-      'Here you can find out whether you are likely to have a Coronavirus-Infection and whether a test is recommended and why.'
-  },
   choices: {
     ok: 'Ok',
     yes: 'Yes',
@@ -32,7 +28,7 @@ export default {
     title: 'Coronavirus-Infection?',
     logoTitle: 'To the CoroNav homepage',
     description: `Here you can find out whether you are likely to have an
-infection and whether a test is recommended and why.
+infection is whether a test is recommended and why.
 
 This navigator will guide you safely through a few questions.
 
