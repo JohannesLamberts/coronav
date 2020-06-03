@@ -29,7 +29,9 @@
     "bootstrap-vue": "^2.14.0",
     "nuxt": "^2.12.2",
     "nuxt-canonical": "^1.0.3",
-    "nuxt-i18n": "^6.11.0"
+    "nuxt-i18n": "^6.11.0",
+    "nuxt-polyfill": "^1.0.3",
+    "url-polyfill": "^1.1.9"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
