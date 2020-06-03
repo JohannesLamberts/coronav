@@ -88,7 +88,8 @@ export default {
       }
     ],
     '@nuxtjs/robots',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    ['nuxt-canonical', { baseUrl: 'https://coronav.de' }]
   ],
   bootstrapVue: {
     icons: true, // Install the IconsPlugin (in addition to BootStrapVue plugin

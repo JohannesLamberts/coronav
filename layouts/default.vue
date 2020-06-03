@@ -49,7 +49,16 @@ export default {
       htmlAttrs: {
         dir: localeConfig.dir || 'LTR',
         ...i18nSeo.htmlAttrs
-      }
+      },
+      meta: [
+        ...i18nSeo.meta,
+        {
+          content: this.$t('meta.description'),
+          hid: 'description',
+          name: 'description',
+          property: 'description'
+        }
+      ]
     }
   }
 }

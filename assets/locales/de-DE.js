@@ -19,6 +19,10 @@ const noSymptomDirectContactTodos = [
 ]
 
 export default {
+  meta: {
+    description:
+      'Hier erfahren Sie, ob bei Ihnen eine Coronavirus-Infektion wahrscheinlich ist, ob ein Test empfohlen wird und warum.'
+  },
   choices: {
     ok: 'Ok',
     yes: 'Ja',
