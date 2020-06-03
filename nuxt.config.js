@@ -83,7 +83,8 @@ export default {
     ],
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
-    ['nuxt-canonical', { baseUrl: 'https://coronav.de' }]
+    ['nuxt-canonical', { baseUrl: 'https://coronav.de' }],
+    'nuxt-polyfill'
   ],
   bootstrapVue: {
     icons: true, // Install the IconsPlugin (in addition to BootStrapVue plugin
@@ -121,5 +122,13 @@ export default {
     hostname,
     gzip: true,
     trailingSlash: true
+  },
+  polyfill: {
+    features: [
+      {
+        require: 'url-polyfill',
+        detect: () => 'URL' in window
+      }
+    ]
   }
 }
