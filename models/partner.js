@@ -37,6 +37,12 @@ export default {
       return {
         [PARTNER_QUERY_PARAM]: config.id
       }
+    },
+    callback() {
+      if (!this.config) {
+        throw new Error('No partner active')
+      }
+      return this.config.url
     }
   }
 }

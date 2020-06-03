@@ -61,6 +61,16 @@ in this respect. You can also check the criteria directly
     headline: 'Results',
     todosLabel: 'Please follow these rules:',
     searchInfo: 'Below you can search for your local health department.',
+    hotlineSearch: {
+      label: 'Health department search'
+    },
+    partner: {
+      label: 'Partner: {name}',
+      info: 'You will be forwarded to the page of our partner ({url}).',
+      buttonLabel: {
+        'digitales-wartezimmer': 'To the Digital Waiting Room'
+      }
+    },
     feedback: {
       showFeedback: 'false'
     },

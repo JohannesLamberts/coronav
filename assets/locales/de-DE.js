@@ -63,6 +63,16 @@ abrufen.`,
     headline: 'Ergebnis',
     todosLabel: 'Halten Sie sich bitte an diese Regeln:',
     searchInfo: 'Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.',
+    hotlineSearch: {
+      label: 'Gesundheitsamt Suche'
+    },
+    partner: {
+      label: 'Partner: {name}',
+      info: 'Sie werden auf die Seite unseres Partners weitergeleitet ({url}).',
+      buttonLabel: {
+        'digitales-wartezimmer': 'Zum Digitalen Wartezimmer'
+      }
+    },
     feedback: {
       showFeedback: 'true',
       label: 'Ihre Meinung ist uns wichtig!',

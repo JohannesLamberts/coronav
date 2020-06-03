@@ -5,11 +5,10 @@
       :placeholder="$t('components.hotlineSearch.labelText')"
       type="text"
       :class="$style.input"
-      @keypress.enter="goToRkiPLZTool"
     />
     <b-button
       type="button"
-      variant="primary"
+      variant="secondary"
       :href="to"
       target="_blank"
       rel="noreferrer noopener"

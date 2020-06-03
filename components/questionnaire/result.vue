@@ -16,7 +16,24 @@
         />
       </ul>
       <div v-if="responseConfig.showHotlineSearch">
+        <h4 class="h5">{{ $t('results.hotlineSearch.label') }}</h4>
         <hotline-search />
+      </div>
+      <div v-if="Partner.config">
+        <h4 class="h5">{{ $t('results.partner.label', Partner.config) }}</h4>
+        <span v-html="$md.render($t('results.partner.info', Partner.config))" />
+        <p>
+          <b-button
+            type="button"
+            variant="secondary"
+            target="_blank"
+            rel="noopener"
+            :href="Partner.callback"
+            >{{
+              $t(`results.partner.buttonLabel.${Partner.config.id}`)
+            }}</b-button
+          >
+        </p>
       </div>
       <div v-if="$t('results.feedback.showFeedback') === 'true'">
         <h4 class="h5">{{ $t('results.feedback.label') }}</h4>
@@ -54,6 +71,7 @@ import HotlineSearch from '../hotline-search'
 export default {
   name: 'QuestionnaireResult',
   components: { HotlineSearch },
+  injectModels: ['Partner'],
   props: {
     responseConfig: {
       type: Object,
