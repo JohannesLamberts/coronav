@@ -28,6 +28,7 @@
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.14.0",
     "nuxt": "^2.12.2",
+    "nuxt-canonical": "^1.0.3",
     "nuxt-i18n": "^6.11.0"
   },
   "devDependencies": {

@@ -51,7 +51,8 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     // '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
+    '@nuxtjs/pwa'
   ],
   /*
    ** Nuxt.js modules
@@ -60,7 +61,6 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
     '@nuxtjs/markdownit',
-    '@nuxtjs/pwa',
     [
       'nuxt-i18n',
       {
@@ -88,7 +88,8 @@ export default {
       }
     ],
     '@nuxtjs/robots',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    ['nuxt-canonical', { baseUrl: 'https://coronav.de' }]
   ],
   bootstrapVue: {
     icons: true, // Install the IconsPlugin (in addition to BootStrapVue plugin
