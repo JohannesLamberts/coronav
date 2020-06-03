@@ -7,7 +7,17 @@
       <nuxt />
     </main>
     <section :class="$style.footerImages">
-      <img src="@/assets/images/wirvsvirus_logo_1.svg" />
+      <a
+        href="https://wirvsvirus.org/projekte/"
+        title="WirVsVirus Projekte"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          src="@/assets/images/wirvsvirus_logo_1.svg"
+          alt="WirVsVirus Projekt"
+        />
+      </a>
     </section>
     <footer :class="$style.footer">
       <passed-query-link to="/impressum">{{
