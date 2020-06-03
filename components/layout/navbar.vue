@@ -1,9 +1,10 @@
 <template>
-  <b-nav :class="$style.navbar">
-    <h1 class="h1" tabindex="-1" :class="$style.logoWrapperH1">
-      <passed-query-link
-        :class="$style.logoWrapper"
-        :to="localePath('/')"
+  <b-navbar :class="$style.navbar" toggleable="md">
+    <div :class="$style.navbarBrand">
+      <b-navbar-brand
+        tabindex="-1"
+        tag="h1"
+        :to="Navigation.toWithContext(localePath('/'))"
         :title="$t('index.logoTitle')"
       >
         <img
@@ -11,62 +12,108 @@
           alt="CoroNav Logo"
           :class="$style.logo"
         />
+      </b-navbar-brand>
+      <a
+        v-if="Partner.config"
+        :href="Partner.config.url"
+        :title="Partner.config.name"
+        target="_blank"
+        rel="noopener"
+      >
         <img
-          v-if="Partner.config"
           :class="$style.partnerLogo"
           :src="Partner.config.logo"
           :alt="Partner.config.name"
         />
-      </passed-query-link>
-    </h1>
-    <b-nav-item-dropdown
-      right
-      :text="$t('components.navbar.languageDropdownText')"
-      variant="primary"
-      :class="$style.languageDropdown"
-      class="m-2"
-    >
-      <b-dropdown-item
-        v-for="locale in $i18n.locales"
-        :key="locale.code"
-        :to="Navigation.toWithContext(switchLocalePath(locale.code))"
-      >
-        {{ locale.name }}
-      </b-dropdown-item>
-    </b-nav-item-dropdown>
-  </b-nav>
+      </a>
+    </div>
+    <b-navbar-toggle
+      target="nav-collapse"
+      :class="$style.navbarToggle"
+      :variant="'primary'"
+      :label="$t('components.navbar.toggleNavbarLabel')"
+    />
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav :class="$style.navbarNav">
+        <b-nav-item
+          v-for="locale in $i18n.locales"
+          :key="locale.code"
+          :to="Navigation.toWithContext(switchLocalePath(locale.code))"
+          :class="$style.navItem"
+        >
+          <img
+            :class="$style.localeIcons"
+            :src="localeIcons[locale.code]"
+            :alt="locale.name"
+          />
+          {{ locale.name }}
+        </b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
 </template>
 
 <script>
-import PassedQueryLink from '@/components/passed-query-link'
-
 export default {
   name: 'Navbar',
-  components: { PassedQueryLink },
-  injectModels: ['Partner', 'Navigation']
+  injectModels: ['Partner', 'Navigation'],
+  computed: {
+    localeIcons() {
+      return this.$i18n.locales.reduce((acc, { code }) => {
+        acc[code] = require(`@/assets/images/icon-${code}.png`)
+        return acc
+      }, {})
+    }
+  }
 }
 </script>
 
 <style lang="scss" module>
-$logo-width: 180px;
+$navbarHeight: 44px;
 
 .navbar {
   display: grid;
-  grid-template-columns: $logo-width auto 1fr;
+  grid-template-columns: auto auto 3.5rem [toggle-end];
+  grid-template-rows: $navbarHeight;
   width: 100%;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+
+  .navbarToggle {
+    grid-column-end: toggle-end;
+    border-color: transparent;
+    padding: 0;
+  }
 }
 
-.languageDropdown {
-  grid-column-start: 4;
-  grid-column-end: 4;
+.navbarBrand {
+  padding: 0;
+  font-size: inherit;
+
+  img {
+    height: $navbarHeight;
+  }
 }
 
-.logo {
-  width: $logo-width;
+.navbarNav {
+  width: 100%;
+  justify-content: flex-end;
 }
 
-.logoWrapperH1 {
-  display: flex;
+.localeIcons {
+  width: 1.5rem;
+  height: 1.5rem;
+  top: -2px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    grid-template-columns: auto 1fr;
+  }
 }
 
 .logoWrapper {
@@ -81,9 +128,5 @@ $logo-width: 180px;
   img {
     height: 40px;
   }
-}
-
-.partnerLogo {
-  margin-left: 0.7rem;
 }
 </style>

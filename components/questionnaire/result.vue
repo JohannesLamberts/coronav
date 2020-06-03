@@ -53,7 +53,6 @@ import HotlineSearch from '../hotline-search'
 
 export default {
   name: 'QuestionnaireResult',
-  injectModels: ['Partner'],
   components: { HotlineSearch },
   props: {
     responseConfig: {

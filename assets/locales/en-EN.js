@@ -78,110 +78,99 @@ in this respect. You can also check the criteria directly
       '1_symptoms_withContact_risk': {
         info: `**Please report to your local health department!**
 
+Why?
+- You had contact with an infected person.
+
 **A test is recommended.**
+
+**Please call your general practitioner.**
 
 Why?
 - You display typical symptoms.
-- You had contact with an infected person.
+- You have an increased risk of a more severe course
+of the disease due to age or previous conditions.
 
-*Below you can search for your local health authority.*
+*Below you can search for your local health department.*
 
-Please call your general practitioner as a precautionary measure.
-
-Why?
-- You have an increased risk of a more severe course of the disease due to age or previous conditions.
 `,
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
         info: `**Please report to your local health department!**
 
+Why?
+- You had contact with an infected person.
+
 **A test is recommended.**
+
+**Please call your general practitioner.**
 
 Why?
 - You display typical symptoms.
-- You had contact with an infected person.
 
-*Below you can search for your local health authority.*
+*Below you can search for your local health department.*
 
 Even if you do not belong to a risk group,
 you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        info: `**Please report to your local health department!**
+        info: `**A test is recommended.**
 
-**Ask for a test.**
+**Please call your general practitioner.**
 
 Why?
 - You display typical symptoms.
-- You belong to a risk group.
-
-*Below you can search for your local health authority.*
-
-As a precautionary measure you should call your general practitioner.
-
-Why?
-- You have an increased risk of a more severe course of the disease due to age or previous conditions.
+- You belong to a risk group and have an increased risk
+of a more severe course of the disease due to age or previous conditions.
 `,
         todos: symptomTodos
       },
       '3a_symptoms_withoutDirectContact_noRisk': {
-        info: `**Please report to your local health department!**
+        info: `**A test is recommended.**
 
-**Ask for a test.**
+**Please call your general practitioner.**
 
 Why?
 - You display typical symptoms.
 - You come into contact with people belonging to a risk group.
-
-*Below you can search for your local health authority.*
 
 Even if you do not belong to a risk group,
 you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        info: `**For the time being, you do NOT need to call the health department.****
+        info: `**A test is recommended.**
 
-**However, a test is still recommended.**
-
-**Please consult your general practitioner regarding the test.**
+**Please call your general practitioner.**
 
 Why?
-- You display typical symptoms, BUT
-- You did NOT have contact with an infected person.
-
-If a person you have had contact with is tested positive
-please contact your local health department immediately.
+- You display typical symptoms
 
 Even if you do not belong to a risk group,
 you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        info: `**For the time being, you do NOT need to call the health department.**
-
-**A test is currently not recommended.**
+        info: `**A test is currently not recommended.**
 
 Why?
-- You did NOT have contact with an infected person.
 - You do NOT display typical symptoms.
+- You did NOT have contact with an infected person.
 
 Even if you do not belong to a risk group,
 you can be or become a carrier. Protect yourself and others!`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        info: `**For the time being, you do NOT need to call the health department.**
-
-**A test is currently not recommended.**
+        info: `**A test is currently not recommended.**
 
 Why?
-- You did NOT have contact with an infected person.
 - You do NOT display typical symptoms.
+- You did NOT have contact with an infected person.
 
-You have an increased risk of a more severe course of the disease due to age or previous conditions.
+You have an increased risk of a more severe course
+of the disease due to age or previous conditions.
 `,
         todos: noSymptomTodos
       },
@@ -194,7 +183,7 @@ Why?
 - You do NOT display typical symptoms.
 - But: You did have contact with an infected person.
 
-*Below you can search for your local health authority.*
+*Below you can search for your local health department.*
 
 You have an increased risk of a more severe course of the disease due to age or previous conditions.
 `,
@@ -209,7 +198,7 @@ Why?
 - You do NOT display typical symptoms.
 - But: You did have contact with an infected person.
 
-*Below you can search for your local health authority.*
+*Below you can search for your local health department.*
 
 Even if you do not belong to a risk group,
 you can be or become a carrier. Protect yourself and others!`,
@@ -292,7 +281,7 @@ course of a coronavirus infection during work or volunteer activities?
   },
   components: {
     navbar: {
-      languageDropdownText: 'Language'
+      toggleNavbarLabel: 'Toggle navigation'
     },
     hotlineSearch: {
       labelText: 'Enter postcode',

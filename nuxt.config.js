@@ -124,7 +124,8 @@ export default {
   },
   sitemap: {
     hostname,
-    gzip: true
+    gzip: true,
+    trailingSlash: true
   },
   polyfill: {
     features: [

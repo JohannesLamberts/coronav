@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link v-bind="$props" :to="toWithQuery">
+  <nuxt-link v-bind="$props" :to="toWithContext">
     <slot />
   </nuxt-link>
 </template>
@@ -15,7 +15,7 @@ export default {
     }
   },
   computed: {
-    toWithQuery() {
+    toWithContext() {
       return this.Navigation.toWithContext(this.to)
     }
   }
