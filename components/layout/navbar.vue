@@ -7,11 +7,7 @@
         :to="Navigation.toWithContext(localePath('/'))"
         :title="$t('index.logoTitle')"
       >
-        <img
-          src="@/assets/images/logo_coronav.png"
-          alt="CoroNav Logo"
-          :class="$style.logo"
-        />
+        <img src="@/assets/images/logo_coronav.png" alt="CoroNav Logo" />
       </b-navbar-brand>
       <a
         v-if="Partner.config"
@@ -20,11 +16,7 @@
         target="_blank"
         rel="noopener"
       >
-        <img
-          :class="$style.partnerLogo"
-          :src="Partner.config.logo"
-          :alt="Partner.config.name"
-        />
+        <img :src="Partner.config.logo" :alt="Partner.config.name" />
       </a>
     </div>
     <b-navbar-toggle
@@ -113,20 +105,6 @@ $navbarHeight: 44px;
 @media (min-width: 768px) {
   .navbar {
     grid-template-columns: auto 1fr;
-  }
-}
-
-.logoWrapper {
-  font-weight: normal;
-  /*font-size: 2rem;*/
-  text-decoration: none !important;
-
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-
-  img {
-    height: 40px;
   }
 }
 </style>
