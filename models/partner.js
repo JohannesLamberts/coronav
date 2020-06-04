@@ -39,10 +39,7 @@ export default {
       }
     },
     callback() {
-      if (!this.config) {
-        throw new Error('No partner active')
-      }
-      return this.config.url
+      return this.config.callbackUrl
     }
   }
 }
