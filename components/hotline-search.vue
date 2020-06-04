@@ -5,15 +5,11 @@
       :placeholder="$t('components.hotlineSearch.labelText')"
       type="text"
       :class="$style.input"
+      @keypress.enter="goToRkiPLZTool"
     />
-    <b-button
-      type="button"
-      variant="secondary"
-      :href="to"
-      target="_blank"
-      rel="noreferrer noopener"
-      >{{ $t('components.hotlineSearch.buttonText') }}</b-button
-    >
+    <b-button type="button" variant="secondary" @click="goToRkiPLZTool">{{
+      $t('components.hotlineSearch.buttonText')
+    }}</b-button>
   </b-form-group>
 </template>
 
@@ -27,9 +23,10 @@ export default {
       zipCode: ''
     }
   },
-  computed: {
-    to() {
-      return URIS.rkiPLZTool + this.zipCode
+  methods: {
+    goToRkiPLZTool() {
+      const url = URIS.rkiPLZTool + this.zipCode
+      window.open(url, '_blank', 'noopener')
     }
   }
 }
