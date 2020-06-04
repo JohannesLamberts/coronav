@@ -20,16 +20,28 @@
       </a>
     </section>
     <footer :class="$style.footer">
-      <nuxt-link to="/impressum">{{ $t('impressum.title') }}</nuxt-link>
-      <nuxt-link to="/datenschutz">{{ $t('privacy.title') }}</nuxt-link>
+      <passed-query-link to="/impressum">{{
+        $t('impressum.title')
+      }}</passed-query-link>
+      <passed-query-link to="/datenschutz">{{
+        $t('privacy.title')
+      }}</passed-query-link>
     </footer>
   </div>
 </template>
 
 <script>
 import Navbar from '../components/layout/navbar'
+import PassedQueryLink from '@/components/passed-query-link'
+
 export default {
-  components: { Navbar },
+  components: { PassedQueryLink, Navbar },
+  injectModels: ['Partner'],
+  mounted() {
+    // do not use query data until completely mounted
+    // to avoid SSR errors
+    this.Partner.activate()
+  },
   head() {
     const i18nSeo = this.$nuxtI18nSeo()
     const localeConfig = this.$i18n.locales.find(

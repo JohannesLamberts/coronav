@@ -5,16 +5,11 @@
       :placeholder="$t('components.hotlineSearch.labelText')"
       type="text"
       :class="$style.input"
-      size="lg"
       @keypress.enter="goToRkiPLZTool"
     />
-    <b-button
-      type="button"
-      size="lg"
-      variant="primary"
-      @click="goToRkiPLZTool"
-      >{{ $t('components.hotlineSearch.buttonText') }}</b-button
-    >
+    <b-button type="button" variant="secondary" @click="goToRkiPLZTool">{{
+      $t('components.hotlineSearch.buttonText')
+    }}</b-button>
   </b-form-group>
 </template>
 

@@ -14,7 +14,11 @@
         block
         size="lg"
         :class="$style.button"
-        :to="localePath('questionaires-should-i-get-testet-for-covid-19')"
+        :to="
+          Navigation.toWithContext(
+            localePath('questionaires-should-i-get-testet-for-covid-19')
+          )
+        "
       >
         {{ $t('index.cta') }}
       </b-button>
@@ -25,6 +29,7 @@
 <script>
 export default {
   name: 'Index',
+  injectModels: ['Navigation'],
   mounted() {
     this.focusMainHeading()
   },

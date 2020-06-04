@@ -1,18 +1,24 @@
 <template>
   <b-navbar :class="$style.navbar" toggleable="md">
-    <b-navbar-brand
-      tabindex="-1"
-      tag="h1"
-      :class="$style.navbarBrand"
-      :to="localePath('/')"
-      :title="$t('index.logoTitle')"
-    >
-      <img
-        src="@/assets/images/logo_coronav.png"
-        alt="CoroNav Logo"
-        :class="$style.logo"
-      />
-    </b-navbar-brand>
+    <div :class="$style.navbarBrand">
+      <b-navbar-brand
+        tabindex="-1"
+        tag="h1"
+        :to="Navigation.toWithContext(localePath('/'))"
+        :title="$t('index.logoTitle')"
+      >
+        <img src="@/assets/images/logo_coronav.png" alt="CoroNav Logo" />
+      </b-navbar-brand>
+      <a
+        v-if="Partner.config"
+        :href="Partner.config.url"
+        :title="Partner.config.name"
+        target="_blank"
+        rel="noopener"
+      >
+        <img :src="Partner.config.logo" :alt="Partner.config.name" />
+      </a>
+    </div>
     <b-navbar-toggle
       target="nav-collapse"
       :class="$style.navbarToggle"
@@ -24,7 +30,7 @@
         <b-nav-item
           v-for="locale in $i18n.locales"
           :key="locale.code"
-          :to="switchLocalePath(locale.code)"
+          :to="Navigation.toWithContext(switchLocalePath(locale.code))"
           :class="$style.navItem"
         >
           <img
@@ -42,6 +48,7 @@
 <script>
 export default {
   name: 'Navbar',
+  injectModels: ['Partner', 'Navigation'],
   computed: {
     localeIcons() {
       return this.$i18n.locales.reduce((acc, { code }) => {
@@ -54,11 +61,12 @@ export default {
 </script>
 
 <style lang="scss" module>
-$logo-width: 180px;
+$navbarHeight: 44px;
 
 .navbar {
   display: grid;
-  grid-template-columns: $logo-width auto 3.5rem [toggle-end];
+  grid-template-columns: auto auto 3.5rem [toggle-end];
+  grid-template-rows: $navbarHeight;
   width: 100%;
   padding: 0;
 
@@ -76,6 +84,10 @@ $logo-width: 180px;
 .navbarBrand {
   padding: 0;
   font-size: inherit;
+
+  img {
+    height: $navbarHeight;
+  }
 }
 
 .navbarNav {
@@ -90,13 +102,9 @@ $logo-width: 180px;
   position: relative;
 }
 
-.logo {
-  width: $logo-width;
-}
-
 @media (min-width: 768px) {
   .navbar {
-    grid-template-columns: $logo-width 1fr;
+    grid-template-columns: auto 1fr;
   }
 }
 </style>
