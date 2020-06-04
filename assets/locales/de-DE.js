@@ -59,6 +59,9 @@ abrufen.`,
   impressum: {
     title: 'Impressum'
   },
+  privacy: {
+    title: 'Datenschutz'
+  },
   results: {
     headline: 'Ergebnis',
     todosLabel: 'Halten Sie sich bitte an diese Regeln:',

@@ -57,6 +57,9 @@ in this respect. You can also check the criteria directly
   impressum: {
     title: 'Imprint'
   },
+  privacy: {
+    title: 'Privacy'
+  },
   results: {
     headline: 'Results',
     todosLabel: 'Please follow these rules:',

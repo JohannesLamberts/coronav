@@ -21,6 +21,7 @@
     </section>
     <footer :class="$style.footer">
       <nuxt-link to="/impressum">{{ $t('impressum.title') }}</nuxt-link>
+      <nuxt-link to="/datenschutz">{{ $t('privacy.title') }}</nuxt-link>
     </footer>
   </div>
 </template>
