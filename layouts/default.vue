@@ -23,6 +23,9 @@
       <passed-query-link to="/impressum">{{
         $t('impressum.title')
       }}</passed-query-link>
+      <passed-query-link to="/datenschutz">{{
+        $t('privacy.title')
+      }}</passed-query-link>
     </footer>
   </div>
 </template>
