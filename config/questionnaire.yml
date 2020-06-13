@@ -7,11 +7,23 @@ questions:
     choices:
       - ident: yes
       - ident: no
+  - ident: symptoms_1b
+    choices:
+      - ident: yes
+      - ident: no
   - ident: symptoms_2
     choices:
       - ident: yes
       - ident: no
+  - ident: symptoms_2b
+    choices:
+      - ident: yes
+      - ident: no
   - ident: symptoms_3
+    choices:
+      - ident: yes
+      - ident: no
+  - ident: symptoms_3b
     choices:
       - ident: yes
       - ident: no
@@ -52,6 +64,9 @@ derived:
       - symptoms_1: yes
       - symptoms_2: yes
       - symptoms_3: yes
+      - symptoms_1b: yes
+      - symptoms_2b: yes
+      - symptoms_3b: yes
   - ident: risk
     matchers:
       - ageRisk: yes
