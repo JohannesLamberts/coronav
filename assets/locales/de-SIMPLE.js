@@ -56,28 +56,22 @@ rufen Sie einen Arzt an.
 Bei Notfällen rufen Sie die Nummer 112 an`
     },
     symptoms_1: {
-      label: 'Krankheits-Zeichen',
-      info: `Haben Sie Husten?
-
-Haben Sie Probleme beim Atmen?
-
-Oder haben Sie beides?`
+      label: 'Haben Sie Husten?'
+    },
+    symptoms_1b: {
+      label: 'Haben sie Probleme beim Atmen?'
     },
     symptoms_2: {
-      label: 'Krankheits-Zeichen ',
-      info: `Haben Sie Fieber?
-
-Haben Sie Hals-Schmerzen?
-
-Oder haben Sie beides?`
+      label: 'Haben Sie Fieber?'
+    },
+    symptoms_2b: {
+      label: 'Haben Sie Hals-Schmerzen?'
     },
     symptoms_3: {
-      label: 'Krankheits-Zeichen ',
-      info: `Fühlen Sie sich krank?
-
-Können Sie weniger schmecken oder riechen?
-
-Oder beides?`
+      label: 'Können Sie weniger schmecken oder riechen?'
+    },
+    symptoms_3b: {
+      label: 'Fühlen Sie sich krank?'
     },
     workRiskContact: {
       label: 'Treffen Sie bei der Arbeit alte oder kranke Menschen?',
@@ -159,37 +153,31 @@ Ist das bei Ihnen so?
     },
     cases: {
       '1_symptoms_withContact_risk': {
-        info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
+        info: `**1. Ein Test sollte bei Ihnen gemacht werden.**<br />**Bitte rufen Sie Ihren Hausarzt an.**
 
-Warum?
-- Sie hatten Kontakt mit einer Person mit dem Corona-Virus.
-
-**Ein Test sollte bei Ihnen gemacht werden.**
-
-**Bitte rufen Sie Ihren Hausarzt an.**
-
-Warum?
+Warum? 
 - Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
-- Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
-Darum haben Sie vielleicht mehr Probleme,<br />
-wenn Sie das Corona-Virus bekommen.
+- Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />Darum haben Sie vielleicht mehr Probleme, <br />wenn Sie das Corona-Virus bekommen.
+
+**2. Bitte rufen Sie auch an beim Gesundheits-Amt in Ihrer Nähe.**
+
+Warum?
+- Sie hatten direkten Kontakt mit einer Person mit dem Corona-Virus.
 
 *Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
 `,
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
+        info: `**1. Ein Test sollte bei Ihnen gemacht werden.**<br />**Bitte rufen Sie Ihren Hausarzt an.**
 
-Warum?
-- Sie hatten Kontakt mit einer Person mit dem Corona-Virus.
-
-**Ein Test sollte bei Ihnen gemacht werden.**
-
-**Bitte rufen Sie Ihren Hausarzt an.**
-
-Warum?
+Warum? 
 - Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
+
+**2. Bitte rufen Sie auch an beim Gesundheits-Amt in Ihrer Nähe.**
+
+Warum?
+- Sie hatten direkten Kontakt mit einer Person mit dem Corona-Virus.
 
 *Unten können Sie das Gesundheits-Amt in Ihrer Nähe suchen.*
 
@@ -198,15 +186,15 @@ Schützen Sie sich und andere.`,
         todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        info: `**Ein Test wird bei Ihnen empfohlen.**
+        info: `**1. Ein Test wird bei Ihnen empfohlen.**<br />**Bitte rufen Sie Ihren Hausarzt an.**
 
-**Bitte rufen Sie Ihren Hausarzt an.**
-
-Warum?
+Warum? 
 - Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
-- Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
-Darum haben Sie vielleicht mehr Probleme,<br />
-wenn Sie das Corona-Virus bekommen.
+- Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />Darum haben Sie vielleicht mehr Probleme, <br />wenn Sie das Corona-Virus bekommen.
+
+**2. Sie hatten _keinen_ direkten Kontakt zu einer Person mit Corona-Virus.**
+
+Das bedeutet: <br />Sie müssen **nicht** beim Gesundheitsamt anrufen.
 `,
         todos: symptomTodos
       },
@@ -219,39 +207,51 @@ Warum?
 - Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
 - Sie haben Kontakt mit Menschen, für die Corona ein großes Problem sein kann.
 
+**2. Sie hatten _keinen_ direkten Kontakt zu einer Person mit Corona-Virus.**
+
+Das bedeutet: <br />Sie müssen **nicht** beim Gesundheitsamt anrufen.
+
 Sie können andere Personen mit dem Corona-Virus anstecken.<br />
 Schützen Sie sich und andere.`,
         todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        info: `**Ein Test wird bei Ihnen empfohlen.**
+        info: `**1. Ein Test wird bei Ihnen empfohlen.**<br />**Bitte rufen Sie Ihren Hausarzt an.**
 
-**Bitte rufen Sie Ihren Hausarzt an.**
-
-Warum?
+Warum? 
 - Es gibt Anzeichen, dass Sie das Corona-Virus haben könnten.
+
+**2. Sie hatten _keinen_ direkten Kontakt zu einer Person mit Corona-Virus.**
+
+Das bedeutet: <br />Sie müssen **nicht** beim Gesundheitsamt anrufen.
 
 Sie können andere Personen mit dem Corona-Virus anstecken.<br />
 Schützen Sie sich und andere.`,
         todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        info: `**Ein Test muss jetzt nicht gemacht werden.**
+        info: `**Ein Test muss jetzt _nicht_ gemacht werden.**
 
 Warum?
 - Es gibt **keine** Anzeichen,<br />dass Sie das Corona-Virus haben könnten.
-- Sie hatten **keinen** Kontakt mit einer Person mit dem Corona-Virus.
+
+**2. Sie hatten _keinen_ direkten Kontakt zu einer Person mit Corona-Virus.**
+
+Das bedeutet: <br />Sie müssen **nicht** beim Gesundheitsamt anrufen.
 
 Sie können andere Personen mit dem Corona-Virus anstecken.<br />
 Schützen Sie sich und andere.`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        info: `**Ein Test muss jetzt nicht gemacht werden.**
+        info: `**Ein Test muss jetzt _nicht_ gemacht werden.**
 
 Warum?
 - Es gibt **keine** Anzeichen,<br />dass Sie das Corona-Virus haben könnten.
-- Sie hatten **keinen** Kontakt mit einer Person mit dem Corona-Virus.
+
+**2. Sie hatten _keinen_ direkten Kontakt zu einer Person mit Corona-Virus.**
+
+Das bedeutet: <br />Sie müssen **nicht** beim Gesundheitsamt anrufen.
 
 Sie sind 50 Jahre oder älter **oder** haben schon andere Krankheiten.<br />
 Darum haben Sie vielleicht mehr Probleme,<br />
@@ -260,8 +260,6 @@ wenn Sie das Corona-Virus bekommen.`,
       },
       '7_directContact_risk': {
         info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
-
-**Fragen Sie nach einem Test.**
 
 Warum?
 - Es gibt **keine** Anzeichen,<br />dass Sie das Corona-Virus haben könnten.
@@ -276,8 +274,6 @@ wenn Sie das Corona-Virus bekommen.`,
       },
       '8_directContact_noRisk': {
         info: `**Bitte rufen Sie an beim Gesundheits-Amt in Ihrer Nähe.**
-
-**Fragen Sie nach einem Test.**
 
 Warum?
 - Es gibt **keine** Anzeichen,<br />dass Sie das Corona-Virus haben könnten.

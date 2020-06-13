@@ -29,10 +29,11 @@ export default {
     no: 'Nein'
   },
   index: {
-    title: 'Coronavirus-Infektion?',
+    title: 'Coronavirus Navigator',
     logoTitle: 'Zur CoroNav Startseite',
-    description: `Hier erfahren Sie, ob bei Ihnen eine Infektion wahrscheinlich
-ist, ob ein Test empfohlen wird und warum.
+    description: `Wann sollte ich mich testen lassen?
+Gelte ich als Kontaktperson?
+Hier bekommen Sie gezielte Antworten!
 
 Dieser Navigator leitet Sie sicher durch wenige Fragen.
 Es kann geklärt werden:
@@ -100,36 +101,31 @@ abrufen.`,
     },
     cases: {
       '1_symptoms_withContact_risk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
+        info: `**1. Ein Test wird empfohlen. Bitte rufen Sie Ihren Hausarzt an.** 
+        
+Warum?
+- Sie haben mindestens 1 typisches Symptom
+- Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
+
+**2. Falls sich das Gesundheitsamt noch nicht bei Ihnen gemeldet hat, rufen Sie bitte auch dort an!**
 
 Warum?
-- Sie hatten Kontakt zu einer infizierten Person.
-
-**Ein Test wird empfohlen.**
-
-**Bitte rufen Sie Ihren Hausarzt an.**
-
-Warum?
-- Sie haben typische Symptome.
-- Sie haben aufgrund von Alter oder Vorerkrankungen ein
-erhöhtes Risiko für einen schwereren Krankheitsverlauf.
+- Sie werden als Kontaktperson mit „höherem Infektionsrisiko“ (Kategorie I) eingestuft.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 `,
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt.**
+        info: `**1. Ein Test wird empfohlen. Bitte rufen Sie Ihren Hausarzt an.** 
+        
+Warum?
+- Sie haben mindestens 1 typisches Symptom
+
+**2. Falls sich das Gesundheitsamt noch nicht bei Ihnen gemeldet hat, rufen Sie bitte auch dort an!**
 
 Warum?
-- Sie hatten Kontakt zu einer infizierten Person.
-
-**Ein Test wird empfohlen.**
-
-**Bitte rufen Sie Ihren Hausarzt an.**
-
-Warum?
-- Sie haben typische Symptome.
+- Sie werden als Kontaktperson mit „höherem Infektionsrisiko“ (Kategorie I) eingestuft.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
@@ -138,72 +134,81 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        info: `**Ein Test wird empfohlen.**
-
-**Bitte rufen Sie Ihren Hausarzt an.**
-
+        info: `**1. Ein Test wird empfohlen. Bitte rufen Sie Ihren Hausarzt an.** 
+        
 Warum?
-- Sie haben typische Symptome.
-- Sie gehören aufgrund von Alter oder Vorerkrankungen zur Risikogruppe.
-Im Falle einer Infektion haben Sie ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
+- Sie haben mindestens 1 typisches Symptom
+- Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
+
+**2. Sie werden _nicht_ als Kontaktperson mit „höherem Infektionsrisiko“ (Kategorie I) eingestuft.**
+
+Das bedeutet: Sie müssen sich vorerst nicht beim Gesundheitsamt melden.
 `,
         todos: symptomTodos
       },
       '3a_symptoms_withoutDirectContact_noRisk': {
-        info: `**Ein Test wird empfohlen.**
-
-**Bitte rufen Sie Ihren Hausarzt an.**
-
+        info: `**1. Ein Test wird empfohlen. Bitte rufen Sie Ihren Hausarzt an.** 
+        
 Warum?
-- Sie haben typische Symptome.
-- Sie kommen mit Menschen der Risikogruppe in Kontakt.
+- Sie haben mindestens 1 typisches Symptom
+- Sie kommen mit Menschen der Risikogruppe in Kontakt
+
+**2. Sie werden _nicht_ als Kontaktperson mit „höherem Infektionsrisiko“ (Kategorie I) eingestuft.**
+
+Das bedeutet: Sie müssen sich vorerst nicht beim Gesundheitsamt melden.
 
 Auch wenn Sie nicht zur Risikogruppe gehören,
 können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        info: `**Ein Test wird empfohlen.**
-
-**Bitte rufen Sie Ihren Hausarzt an.**
-
+        info: `**1. Ein Test wird empfohlen. Bitte rufen Sie Ihren Hausarzt an.** 
+        
 Warum?
-- Sie haben typische Symptome.
+- Sie haben mindestens 1 typisches Symptom
+
+**2. Sie werden _nicht_ als Kontaktperson mit „höherem Infektionsrisiko“ (Kategorie I) eingestuft.**
+
+Das bedeutet: Sie müssen sich vorerst nicht beim Gesundheitsamt melden.
 
 Auch wenn Sie nicht zur Risikogruppe gehören,
 können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        info: `**Ein Test wird derzeit nicht empfohlen.**
+        info: `**1. Ein Test wird derzeit nicht empfohlen.**
 
 Warum?
-- Sie haben KEINE typischen Symptome.
-- Sie hatten KEINEN Kontakt zu einer infizierten Person.
+- Sie haben **keine** typischen Symptome.
+
+**2. Sie werden _nicht_ als Kontaktperson mit „höherem Infektionsrisiko“ (Kategorie I) eingestuft.**
+
+Das bedeutet: Sie müssen sich vorerst nicht beim Gesundheitsamt melden.
 
 Auch wenn Sie nicht zur Risikogruppe gehören,
 können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        info: `**Ein Test wird derzeit nicht empfohlen.**
+        info: `**1. Ein Test wird derzeit nicht empfohlen.**
 
 Warum?
-- Sie haben KEINE typischen Symptome.
-- Sie hatten KEINEN Kontakt zu einer infizierten Person.
+- Sie haben **keine** typischen Symptome.
+
+**2. Sie werden _nicht_ als Kontaktperson mit „höherem Infektionsrisiko“ (Kategorie I) eingestuft.**
+
+Das bedeutet: Sie müssen sich vorerst nicht beim Gesundheitsamt melden.
 
 Sie haben aufgrund von Alter oder Vorerkrankungen im Falle einer Infektion ein
 erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomTodos
       },
       '7_directContact_risk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt!**
-
-**Fragen Sie nach einem Test.**
+        info: `**Falls sich das Gesundheitsamt noch nicht bei Ihnen gemeldet hat, rufen Sie bitte dort an!**
 
 Warum?
-- Sie haben KEINE typischen Symptome.
-- Aber: Sie hatten Kontakt zu einer infizierten Person.
+- Sie haben **keine** typischen Symptome.
+- Aber: Sie werden als Kontaktperson mit „höherem Infektionsrisiko“ (Kategorie I) eingestuft.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
@@ -212,13 +217,11 @@ erhöhtes Risiko für einen schwereren Krankheitsverlauf.`,
         todos: noSymptomDirectContactTodos
       },
       '8_directContact_noRisk': {
-        info: `**Bitte melden Sie sich bei Ihrem zuständigen Gesundheitsamt!**
-
-**Fragen Sie nach einem Test.**
+        info: `**Falls sich das Gesundheitsamt noch nicht bei Ihnen gemeldet hat, rufen Sie bitte dort an!**
 
 Warum?
-- Sie haben KEINE typischen Symptome.
-- Aber: Sie hatten Kontakt zu einer infizierten Person.
+- Sie haben **keine** typischen Symptome.
+- Aber: Sie werden als Kontaktperson mit „höherem Infektionsrisiko“ (Kategorie I) eingestuft.
 
 *Unten können Sie nach Ihrem lokalen Gesundheitsamt suchen.*
 
@@ -252,19 +255,22 @@ sich bitte an einen Arzt oder eine Ärztin.
 an.`
     },
     symptoms_1: {
-      label: 'Haben Sie eines oder beide der folgenden Symptome?',
-      info: `- Husten
-- Atembeschwerden`
+      label: 'Haben Sie Husten?'
+    },
+    symptoms_1b: {
+      label: 'Haben Sie Atemprobleme?'
     },
     symptoms_2: {
-      label: 'Haben Sie eines oder beide der folgenden Symptome?',
-      info: `- Fieber
-- Halsschmerzen`
+      label: 'Haben Sie Fieber oder erhöhte Temperatur?'
+    },
+    symptoms_2b: {
+      label: 'Haben Sie Halsschmerzen?'
     },
     symptoms_3: {
-      label: 'Haben Sie eines oder beide der folgenden Symptome?',
-      info: `- reduzierter Geruchs- oder Geschmackssinn
-- allgemeines Krankheitsgefühl`
+      label: 'Haben Sie einen reduzierten Geruchs- oder Geschmackssinn bemerkt?'
+    },
+    symptoms_3b: {
+      label: 'Haben Sie ein allgemeines Krankheitsgefühl?'
     },
     workRiskContact: {
       label:

@@ -29,10 +29,11 @@ export default {
     no: 'No'
   },
   index: {
-    title: 'Coronavirus-Infection?',
+    title: 'Coronavirus Navigator',
     logoTitle: 'To the CoroNav homepage',
-    description: `Here you can find out whether you are likely to have an
-infection and whether a test is recommended and why.
+    description: `When should I get tested?
+Do I count as a contact person?
+Here you can get specific answers!
 
 This navigator will guide you safely through a few questions.
 
@@ -93,19 +94,17 @@ in this respect. You can also check the criteria directly
     },
     cases: {
       '1_symptoms_withContact_risk': {
-        info: `**Please report to your local health department!**
+        info: `**1. A test is recommended. Please call your general practitioner.**
 
 Why?
-- You had contact with an infected person.
-
-**A test is recommended.**
-
-**Please call your general practitioner.**
-
-Why?
-- You display typical symptoms.
+- You have at least 1 typical symptom
 - You have an increased risk of a more severe course
 of the disease due to age or previous conditions.
+
+**2. If the local health department has not yet contacted you, please call them as well!**
+
+Why?
+- You are classified as a contact person with "higher risk of infection" (category I).
 
 *Below you can search for your local health department.*
 
@@ -113,78 +112,86 @@ of the disease due to age or previous conditions.
         todos: symptomTodos
       },
       '2_symptoms_withContact_noRisk': {
-        info: `**Please report to your local health department!**
+        info: `**1. A test is recommended. Please call your general practitioner.**
 
 Why?
-- You had contact with an infected person.
+- You have at least 1 typical symptom
 
-**A test is recommended.**
-
-**Please call your general practitioner.**
+**2. If the local health department has not yet contacted you, please call them as well!**
 
 Why?
-- You display typical symptoms.
-
-*Below you can search for your local health department.*
+- You are classified as a contact person with "higher risk of infection" (category I).
 
 Even if you do not belong to a risk group,
 you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '3_symptoms_withoutContact_risk': {
-        info: `**A test is recommended.**
-
-**Please call your general practitioner.**
+        info: `**1. A test is recommended. Please call your general practitioner.**
 
 Why?
-- You display typical symptoms.
-- You belong to a risk group and have an increased risk
-of a more severe course of the disease due to age or previous conditions.
+- You have at least 1 typical symptom
+- You have an increased risk of a more severe course
+of the disease due to age or previous conditions.
+
+**2. You are _not_ classified as a contact person with "higher risk of infection" (category I).**
+
+This means: For the time being, you do not have to report to the local health department.
 `,
         todos: symptomTodos
       },
       '3a_symptoms_withoutDirectContact_noRisk': {
-        info: `**A test is recommended.**
-
-**Please call your general practitioner.**
+        info: `**1. A test is recommended. Please call your general practitioner.**
 
 Why?
-- You display typical symptoms.
+- You have at least 1 typical symptom
 - You come into contact with people belonging to a risk group.
+
+**2. You are _not_ classified as a contact person with "higher risk of infection" (category I).**
+
+This means: For the time being, you do not have to report to the local health department.
 
 Even if you do not belong to a risk group,
 you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '4_symptoms_withoutContact_noRisk': {
-        info: `**A test is recommended.**
-
-**Please call your general practitioner.**
+        info: `**1. A test is recommended. Please call your general practitioner.**
 
 Why?
-- You display typical symptoms
+- You have at least 1 typical symptom
+
+**2. You are _not_ classified as a contact person with "higher risk of infection" (category I).**
+
+This means: For the time being, you do not have to report to the local health department.
 
 Even if you do not belong to a risk group,
 you can be or become a carrier. Protect yourself and others!`,
         todos: symptomTodos
       },
       '5_noFeatures_noRisk': {
-        info: `**A test is currently not recommended.**
+        info: `**1. A test is currently not recommended.**
 
 Why?
-- You do NOT display typical symptoms.
-- You did NOT have contact with an infected person.
+- You have **no** typical symptoms.
+
+**2. You are _not_ classified as a contact person with "higher risk of infection" (category I).**
+
+This means: For the time being, you do not have to report to the local health department.
 
 Even if you do not belong to a risk group,
 you can be or become a carrier. Protect yourself and others!`,
         todos: noSymptomTodos
       },
       '6_noFeatures_risk': {
-        info: `**A test is currently not recommended.**
+        info: `**1. A test is currently not recommended.**
 
 Why?
-- You do NOT display typical symptoms.
-- You did NOT have contact with an infected person.
+- You have **no** typical symptoms.
+
+**2. You are _not_ classified as a contact person with "higher risk of infection" (category I).**
+
+This means: For the time being, you do not have to report to the local health department.
 
 You have an increased risk of a more severe course
 of the disease due to age or previous conditions.
@@ -192,13 +199,11 @@ of the disease due to age or previous conditions.
         todos: noSymptomTodos
       },
       '7_directContact_risk': {
-        info: `**Please report to your local health department!**
-
-**Ask for a test.**
+        info: `**If the local health department has not yet contacted you, please call them as well!**
 
 Why?
-- You do NOT display typical symptoms.
-- But: You did have contact with an infected person.
+- You have **no** typical symptoms.
+- But: You are classified as a contact person with "higher risk of infection" (category I).
 
 *Below you can search for your local health department.*
 
@@ -207,13 +212,11 @@ You have an increased risk of a more severe course of the disease due to age or 
         todos: noSymptomDirectContactTodos
       },
       '8_directContact_noRisk': {
-        info: `**Please report to your local health department!**
-
-**Ask for a test.**
+        info: `**If the local health department has not yet contacted you, please call them as well!**
 
 Why?
-- You do NOT display typical symptoms.
-- But: You did have contact with an infected person.
+- You have **no** typical symptoms.
+- But: You are classified as a contact person with "higher risk of infection" (category I).
 
 *Below you can search for your local health department.*
 
@@ -238,19 +241,22 @@ and decision-making aid before calling a doctor or health authority.
 - For emergencies, call 112.`
     },
     symptoms_1: {
-      label: 'Do you have one or both of the following symptoms?',
-      info: `- cough
-- breathing difficulties`
+      label: 'Do you have a cough?'
+    },
+    symptoms_1b: {
+      label: 'Are you having trouble breathing?'
     },
     symptoms_2: {
-      label: 'Do you have one or both of the following symptoms?',
-      info: `- fever
-- sore throat`
+      label: 'Do you have a fever or high temperature?'
+    },
+    symptoms_2b: {
+      label: 'Do you have a sore throat?'
     },
     symptoms_3: {
-      label: 'Do you have one or both of the following symptoms?',
-      info: `- reduced sense of smell or taste
-- general feeling of sickness`
+      label: 'Have you noticed a reduced sense of smell or taste?'
+    },
+    symptoms_3b: {
+      label: 'Do you have a general feeling of illness?'
     },
     workRiskContact: {
       label: `Are you in contact with people who are at high risk for a severe
