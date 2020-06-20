@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.container">
+  <div>
     <div>
       <h1 ref="mainHeading" :class="$style.title" tabindex="-1">
         {{ $t('index.title') }}
@@ -23,12 +23,15 @@
         {{ $t('index.cta') }}
       </b-button>
     </div>
+    <support-banner />
   </div>
 </template>
 
 <script>
+import SupportBanner from '@/components/layout/supportBanner'
 export default {
   name: 'Index',
+  components: { SupportBanner },
   injectModels: ['Navigation'],
   mounted() {
     this.focusMainHeading()
