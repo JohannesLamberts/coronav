@@ -6,33 +6,6 @@
     <main :class="[$style.content, $style.main]">
       <nuxt />
     </main>
-    <section :class="[$style.supporter, $style.main]">
-      <strong>Mit Unterstützung von</strong>
-      <div :class="$style.footerImages">
-        <a
-          href="https://wirvsvirus.org/projekte/"
-          title="WirVsVirus Projekte"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <img
-            src="@/assets/images/wirvsvirus_logo_1.svg"
-            alt="WirVsVirus Projekt"
-          />
-        </a>
-        <a
-          href="https://lebenshilfe-bremen.de/"
-          title="Lebenshilfe Bremen"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <img
-            src="@/assets/images/logo_lebenshilfe_bremen_leichte_sprache.png"
-            alt="Lebenshilfe Bremen"
-          />
-        </a>
-      </div>
-    </section>
     <footer :class="$style.footer">
       <passed-query-link to="/impressum">{{
         $t('impressum.title')
@@ -100,25 +73,6 @@ export default {
   flex-grow: 1;
 }
 
-.supporter {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  padding: 1rem 0;
-}
-
-.footerImages {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  img {
-    width: 350px;
-    max-width: 100%;
-    padding: 0.5rem 0.5rem;
-  }
-}
-
 .footer {
   padding: 1rem;
   background-color: #0a558c;
@@ -144,10 +98,6 @@ export default {
 
 // desktop screens
 @media (min-width: 768px) {
-  .footerImages {
-    flex-direction: row;
-  }
-
   .header {
     align-items: flex-start;
     justify-content: flex-start;

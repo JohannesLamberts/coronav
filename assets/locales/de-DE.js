@@ -104,8 +104,8 @@ abrufen.`,
         info: `**1. Ein Test wird empfohlen. Bitte rufen Sie Ihren Hausarzt an.** 
         
 Warum?
-- Sie haben mindestens 1 typisches Symptom
-- Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
+- Sie haben mindestens 1 typisches Symptom.
+- Sie gehören zur Risikogruppe.
 
 **2. Falls sich das Gesundheitsamt noch nicht bei Ihnen gemeldet hat, rufen Sie bitte auch dort an!**
 
@@ -120,7 +120,7 @@ Warum?
         info: `**1. Ein Test wird empfohlen. Bitte rufen Sie Ihren Hausarzt an.** 
         
 Warum?
-- Sie haben mindestens 1 typisches Symptom
+- Sie haben mindestens 1 typisches Symptom.
 
 **2. Falls sich das Gesundheitsamt noch nicht bei Ihnen gemeldet hat, rufen Sie bitte auch dort an!**
 
@@ -137,8 +137,8 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         info: `**1. Ein Test wird empfohlen. Bitte rufen Sie Ihren Hausarzt an.** 
         
 Warum?
-- Sie haben mindestens 1 typisches Symptom
-- Sie haben aufgrund von Alter oder Vorerkrankungen ein erhöhtes Risiko für einen schwereren Krankheitsverlauf.
+- Sie haben mindestens 1 typisches Symptom.
+- Sie gehören zur Risikogruppe.
 
 **2. Sie werden _nicht_ als Kontaktperson mit „höherem Infektionsrisiko“ (Kategorie I) eingestuft.**
 
@@ -150,7 +150,7 @@ Das bedeutet: Sie müssen sich vorerst nicht beim Gesundheitsamt melden.
         info: `**1. Ein Test wird empfohlen. Bitte rufen Sie Ihren Hausarzt an.** 
         
 Warum?
-- Sie haben mindestens 1 typisches Symptom
+- Sie haben mindestens 1 typisches Symptom.
 - Sie kommen mit Menschen der Risikogruppe in Kontakt
 
 **2. Sie werden _nicht_ als Kontaktperson mit „höherem Infektionsrisiko“ (Kategorie I) eingestuft.**
@@ -165,7 +165,7 @@ können Sie Überträger sein oder werden. Schützen Sie sich und andere!`,
         info: `**1. Ein Test wird empfohlen. Bitte rufen Sie Ihren Hausarzt an.** 
         
 Warum?
-- Sie haben mindestens 1 typisches Symptom
+- Sie haben mindestens 1 typisches Symptom.
 
 **2. Sie werden _nicht_ als Kontaktperson mit „höherem Infektionsrisiko“ (Kategorie I) eingestuft.**
 
@@ -317,6 +317,11 @@ an.`
     }
   },
   components: {
+    support: {
+      title: 'Mit Unterstützung von',
+      wirVsVirusImage: 'WirVsVirus Projekt',
+      wirVsVirusLink: 'Mehr WirVsVirus Projekte'
+    },
     navbar: {
       toggleNavbarLabel: 'Navigation'
     },

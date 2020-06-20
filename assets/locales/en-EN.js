@@ -98,8 +98,7 @@ in this respect. You can also check the criteria directly
 
 Why?
 - You have at least 1 typical symptom
-- You have an increased risk of a more severe course
-of the disease due to age or previous conditions.
+- You belong to the risk group.
 
 **2. If the local health department has not yet contacted you, please call them as well!**
 
@@ -131,8 +130,7 @@ you can be or become a carrier. Protect yourself and others!`,
 
 Why?
 - You have at least 1 typical symptom
-- You have an increased risk of a more severe course
-of the disease due to age or previous conditions.
+- You belong to the risk group.
 
 **2. You are _not_ classified as a contact person with "higher risk of infection" (category I).**
 
@@ -193,8 +191,7 @@ Why?
 
 This means: For the time being, you do not have to report to the local health department.
 
-You have an increased risk of a more severe course
-of the disease due to age or previous conditions.
+You have an increased risk of a more severe course of the disease due to age or previous conditions.
 `,
         todos: noSymptomTodos
       },
@@ -303,6 +300,11 @@ course of a coronavirus infection during work or volunteer activities?
     }
   },
   components: {
+    support: {
+      title: 'With support from',
+      wirVsVirusImage: 'WirVsVirus Project',
+      wirVsVirusLink: 'More WirVsVirus Projects'
+    },
     navbar: {
       toggleNavbarLabel: 'Toggle navigation'
     },

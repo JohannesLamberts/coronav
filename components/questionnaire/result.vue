@@ -62,15 +62,17 @@
         </li>
       </ul>
     </div>
+    <support-banner />
   </div>
 </template>
 
 <script>
 import HotlineSearch from '../hotline-search'
+import SupportBanner from '@/components/layout/supportBanner'
 
 export default {
   name: 'QuestionnaireResult',
-  components: { HotlineSearch },
+  components: { SupportBanner, HotlineSearch },
   injectModels: ['Partner'],
   props: {
     responseConfig: {
