@@ -100,7 +100,12 @@ resultComputation:
     ident: contact
     true:
       ident: risk
-      true: 1_symptoms_withContact_risk
+        ident: directContact
+        yes: 1_symptoms_withContact_risk
+        # "You come into contact with people belonging to a risk group." is not helpful
+        # for people, which belong to the risk group themselves
+        # compare https://www.notion.so/Content-und-Logik-Aktualisierung-b6211873db8c43e0b8a2c192fde42493?d=b648602e-9a4c-435d-b273-b41fbe204a1e
+        default: 3_symptoms_withoutContact_risk
       default:
         ident: directContact
         yes: 2_symptoms_withContact_noRisk
