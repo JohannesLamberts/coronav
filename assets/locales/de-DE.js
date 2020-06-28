@@ -151,7 +151,7 @@ Das bedeutet: Sie müssen sich vorerst nicht beim Gesundheitsamt melden.
         
 Warum?
 - Sie haben mindestens 1 typisches Symptom.
-- Sie kommen mit Menschen der Risikogruppe in Kontakt
+- Sie kommen mit Menschen der Risikogruppe in Kontakt.
 
 **2. Sie werden _nicht_ als Kontaktperson mit „höherem Infektionsrisiko“ (Kategorie I) eingestuft.**
 
@@ -282,7 +282,7 @@ an.`
       info: `Direkter Kontakt heißt:
 - Sie leben mit der Person im selben Haushalt ODER
 - Sie hatten mindestens 15 Minuten persönlichen Kontakt, z.B. in einem Gespräch. ODER
-- Körperflüssigkeiten konnten auf Sie übertragen werden, z.B. durch Küssen, Niesen, Husten`
+- Körperflüssigkeiten konnten auf Sie übertragen werden, z.B. durch Küssen, Niesen, Husten.`
     },
     ageRisk: {
       label: 'Sind Sie 50 Jahre oder älter?'
