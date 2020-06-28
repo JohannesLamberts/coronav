@@ -97,7 +97,7 @@ in this respect. You can also check the criteria directly
         info: `**1. A test is recommended. Please call your general practitioner.**
 
 Why?
-- You have at least 1 typical symptom
+- You have at least 1 typical symptom.
 - You belong to the risk group.
 
 **2. If the local health department has not yet contacted you, please call them as well!**
@@ -114,7 +114,7 @@ Why?
         info: `**1. A test is recommended. Please call your general practitioner.**
 
 Why?
-- You have at least 1 typical symptom
+- You have at least 1 typical symptom.
 
 **2. If the local health department has not yet contacted you, please call them as well!**
 
@@ -129,7 +129,7 @@ you can be or become a carrier. Protect yourself and others!`,
         info: `**1. A test is recommended. Please call your general practitioner.**
 
 Why?
-- You have at least 1 typical symptom
+- You have at least 1 typical symptom.
 - You belong to the risk group.
 
 **2. You are _not_ classified as a contact person with "higher risk of infection" (category I).**
@@ -142,7 +142,7 @@ This means: For the time being, you do not have to report to the local health de
         info: `**1. A test is recommended. Please call your general practitioner.**
 
 Why?
-- You have at least 1 typical symptom
+- You have at least 1 typical symptom.
 - You come into contact with people belonging to a risk group.
 
 **2. You are _not_ classified as a contact person with "higher risk of infection" (category I).**
@@ -157,7 +157,7 @@ you can be or become a carrier. Protect yourself and others!`,
         info: `**1. A test is recommended. Please call your general practitioner.**
 
 Why?
-- You have at least 1 typical symptom
+- You have at least 1 typical symptom.
 
 **2. You are _not_ classified as a contact person with "higher risk of infection" (category I).**
 
@@ -266,7 +266,7 @@ course of a coronavirus infection during work or volunteer activities?
       info: `You had direct contact if:
 - you share a household with this person OR
 - you had at least 15 minutes of personal contact with this person, for example during a conversation OR
-- body fluids could have been transferred to you, e.g. by kissing, sneezing or coughing`
+- body fluids could have been transferred to you, e.g. by kissing, sneezing or coughing.`
     },
     ageRisk: {
       label: 'Are you age 50 or older?'
