@@ -100,6 +100,7 @@ resultComputation:
     ident: contact
     true:
       ident: risk
+      true:
         ident: directContact
         yes: 1_symptoms_withContact_risk
         # "You come into contact with people belonging to a risk group." is not helpful
