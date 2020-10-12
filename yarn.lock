@@ -8097,10 +8097,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-canonical@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/nuxt-canonical/-/nuxt-canonical-1.0.3.tgz#ffa51eaed631b80346ac177753642f98130054cb"
-  integrity sha512-783/JjvJUH9zXzzeVzHfhxeYuCf+FOE4oIoty7EgIh+3EwQWOrFrdIeXJmAqX3hMkdGacsi+mxw/2AhGN0Ln8g==
+nuxt-canonical@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/nuxt-canonical/-/nuxt-canonical-1.0.4.tgz#0cffd9c48c7a9c0005cf9d42fbe64553ea3de912"
+  integrity sha512-uZpAzHY5Pxn11sO9jTfopAvgVtalJrzBzKUGCOojqJ6D2hpRsl4ZMqVzE0oGUSU9n043i7AVI/rnvjjgFYcKbw==
   dependencies:
     cheerio "^1.0.0-rc.3"
     lodash "^4.17.15"
