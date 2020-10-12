@@ -29,7 +29,7 @@
     "bootstrap-vue": "^2.15.0",
     "nuxt": "^2.14.6",
     "nuxt-canonical": "^1.0.4",
-    "nuxt-i18n": "^6.12.2"
+    "nuxt-i18n": "^6.15.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
